@@ -1,10 +1,10 @@
 body {
-  font-family: Source Sans Pro; 
   text-align: center; 
   color: #333; 
 }
 
 p {
+  font-family: Source Sans Pro;
   text-align: center;
   font-size: 23px; 
   line-height: 1.3em;
@@ -21,12 +21,14 @@ img {
 }
 
 h1 {
+  font-family: Source Sans Pro;
   font-size: 50px;
   line-height: 1.2em;
   margin-bottom: 0px;
 }
 
 ul {
+  font-family: Source Sans Pro;
   padding: 0;
 }
 
