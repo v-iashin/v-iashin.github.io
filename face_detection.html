@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="<meta name="viewport" content="width=device-width"">
+
+<head>
+  <meta charset="utf-8">
+  <title>Face Detection - Vladimir Yashin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/cropper/2.3.4/cropper.min.css'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  
+      <h1>Face detection project</h1>
+    
+      <p>
+        This is a face detector. Just upload an image with people on it and give it a try!
+      </p>
+    
+      <!-- input file -->
+      <div class="box">
+          <input type="file" id="file-input" accept="image/*">
+      </div>
+      
+      <!-- input file -->
+      <div class="box">
+          <!-- save btn -->
+          <button class="btn save hide">Crop</button>
+          <!-- detect btn -->
+          <button class="btn detect hide">Detect</button>
+      </div>
+    
+      <div class="cropper_cropped">
+        <!-- leftbox -->
+        <div class="box-2">
+            <div class="result"></div>
+        </div>
+        <!--rightbox-->
+        <div class="box-2 img-result hide">
+            <!-- result of crop -->
+            <img class="cropped" src="" alt="">
+        </div>
+      </div>
+    
+    <footer class="face_detection_footer">
+      Face Detection Project ver. 0
+    </footer>
+    
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/cropperjs/0.8.1/cropper.min.js'></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script  src="js/upload_handler.js"></script>
+</body>
+</html>
