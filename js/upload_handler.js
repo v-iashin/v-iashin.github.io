@@ -1,5 +1,5 @@
-// url to server with flask running
-var SERVER_URL = 'http://35.228.26.8:5000/'
+// url to server with flask running 
+var SERVER_URL = 'https://vdyashin.ml:5000/'
 
 // adapted from https://codepen.io/nakome/pen/vmKwQg
 // vars
@@ -58,29 +58,29 @@ save.addEventListener('click', (e)=>{
 detect.addEventListener('click', (e)=>{
   e.preventDefault();
   // get result to data uri
-//  var form_data = new FormData($('#uploadform')[0]);
   var blob = dataURItoBlob(cropped.src);
   var form_data = new FormData();
   form_data.append('file', blob);
-    $.ajax({
-      type: 'POST',
-      url: SERVER_URL,
-      data: form_data,
-      contentType: false,
-      processData: false,
-      dataType: 'json'
-    }).done(function(data, textStatus, jqXHR) {
-      console.log(data);
-      console.log(textStatus);
-      console.log(jqXHR);
-      console.log('Success!');
+  $.ajax({
+    type: 'POST',
+    url: SERVER_URL,
+    data: form_data,
+    contentType: false,
+    processData: false,
+    dataType: 'json',
+  }).done(function(data, textStatus, jqXHR) {
+    console.log(data);
+    console.log(textStatus);
+    console.log(jqXHR);
+    console.log('Success!');
 //      $("#resultFilename").text("Filename: " + data['name']);
 //      $("#resultFilesize").text("File size: " + data['size']);
 //      $('#resultImg').append('<img src="' + data['image'] + '" />');
-      cropped.src = data['image'];
-    }).fail(function(data){
-      alert('error!');
-    });
+    cropped.src = data['image'];
+  }).fail(function(data){
+//    alert('error!');
+    console.log("ERRORRRR: ");
+  });
 });
 
 
