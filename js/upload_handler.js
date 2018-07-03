@@ -1,5 +1,5 @@
 // url to server with flask running
-var SERVER_URL = 'https://35.228.26.8:5000/'
+var SERVER_URL = 'http://35.228.26.8:5000/'
 
 // adapted from https://codepen.io/nakome/pen/vmKwQg
 // vars
