@@ -3,8 +3,17 @@ body {
   color: #333; 
 }
 
+h1 {
+  font-family: Source Sans Pro;
+/*  font-family: Playfair Display;*/
+  font-size: 50px;
+  line-height: 1.2em;
+  margin-bottom: 0px;
+}
+
 p {
   font-family: Source Sans Pro;
+/*  font-family: Playfair Display;*/
   text-align: center;
   font-size: 23px; 
   line-height: 1.3em;
@@ -13,22 +22,16 @@ p {
   margin-right: auto;
 }
 
-img {
+.avatar {
   margin: 0 auto; 
 /*  border-radius: 200px; */
   margin-top: 30px; 
   height: 170px; 
 }
 
-h1 {
-  font-family: Source Sans Pro;
-  font-size: 50px;
-  line-height: 1.2em;
-  margin-bottom: 0px;
-}
-
 ul {
   font-family: Source Sans Pro;
+/*  font-family: Playfair Display;*/
   padding: 0;
 }
 
@@ -49,4 +52,69 @@ a {
   font-size: 14px;
   color: #00b386;
   text-decoration: none;
+}
+
+
+
+
+
+
+.box {
+	padding: 0.5em;
+/*	width: 100%;*/
+	margin: 0.5em;
+}
+
+.box-2 {
+	padding: 0.5em;
+	width: calc(100%/2 - 1em);
+}
+
+.cropper_cropped {
+  margin: 1em auto;
+  max-width: 80%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+
+.btn{
+/*
+	background:white;
+	color:black;
+	border:1px solid black;
+	padding: 0.5em 1em;
+	text-decoration:none;
+	margin:0.8em 0.3em;
+	display:inline-block;
+	cursor:pointer;
+*/
+}
+
+.hide {
+	display: none;
+}
+
+img {
+	max-width: 100%;
+}
+.result {
+
+}
+
+div {
+  
+}
+
+.face_detection_footer {
+  font-family: monospace;
+  font-size: 10px;
+  text-align: right;
+/*  margin-right: 1em;*/
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding-right: 1em;
 }
