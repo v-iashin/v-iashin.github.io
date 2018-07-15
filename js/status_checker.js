@@ -1,9 +1,9 @@
 // url to server with flask running 
-var SERVER_URL = 'https://vdyashin.ml:5000/status_check';
+var STATUS_CHECK_URL = 'https://vdyashin.ml:5000/status_check';
 
 $.ajax({
  //your server url
- url: SERVER_URL,
+ url: STATUS_CHECK_URL,
  type: 'GET',
  success: function(){
    document.getElementById('status').innerHTML = "<span id='status_ok'> &#9679 </span>";
