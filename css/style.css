@@ -1,11 +1,11 @@
 body {
   text-align: center; 
-  color: #333; 
+  color: #333;
 }
 
 h1 {
+  text-align: center;
   font-family: Source Sans Pro;
-/*  font-family: Playfair Display;*/
   font-size: 50px;
   line-height: 1.2em;
   margin-bottom: 0px;
@@ -13,7 +13,6 @@ h1 {
 
 p {
   font-family: Source Sans Pro;
-/*  font-family: Playfair Display;*/
   text-align: center;
   font-size: 23px; 
   line-height: 1.3em;
@@ -60,9 +59,10 @@ a {
 
 
 .box {
-	padding: 0.5em;
+  padding: 0.5em;
+  padding-top: 1em;
 /*	width: 100%;*/
-	margin: 0.5em;
+  margin: 0.7em;
 }
 
 .box-2 {
@@ -81,34 +81,26 @@ a {
 
 
 .btn{
-/*
-	background:white;
-	color:black;
-	border:1px solid black;
-	padding: 0.5em 1em;
-	text-decoration:none;
-	margin:0.8em 0.3em;
-	display:inline-block;
-	cursor:pointer;
-*/
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: white;
+  color:  #333;
 }
 
 .hide {
-	display: none;
+/*	display: none;*/
+/*  color: white;*/
+  pointer-events: none;
+  text-indent: -9999px;
 }
 
 img {
 	max-width: 100%;
 }
-.result {
 
-}
-
-div {
-  
-}
-
-.face_detection_footer {
+.version {
   font-family: monospace;
   font-size: 10px;
   text-align: right;
@@ -118,3 +110,51 @@ div {
   right: 0px;
   padding-right: 1em;
 }
+
+.status {
+  font-family: monospace;
+  font-size: 10px;
+  text-align: left;
+/*  margin-right: 1em;*/
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 1em;
+}
+
+#status_ok {
+  color: limegreen
+}
+
+#status_down {
+  color: orangered
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+#progress {
+  padding: 0.5em;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.disclaimer {
+  font-family: Source Sans Pro;
+  font-size: 9;
+  line-height: 1.3em;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
