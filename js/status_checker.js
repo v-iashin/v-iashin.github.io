@@ -1,14 +1,17 @@
 // url to server with flask running 
 var STATUS_CHECK_URL = 'https://vdyashin.ml:5000/status_check';
 
+// by default it is down
+document.getElementById('status').innerHTML = "<span id='status_down' alt='down'> &#9679 </span>";
+
 $.ajax({
  //your server url
  url: STATUS_CHECK_URL,
  type: 'GET',
- success: function(){
+ success: function() {
    document.getElementById('status').innerHTML = "<span id='status_ok'> &#9679 </span>";
  },
- error: function(){
-   document.getElementById('status').innerHTML = "<span id='status_down'> &#9679 </span>";
+ error: function() {
+   document.getElementById('status').innerHTML = "<span id='status_down' alt='down'> &#9679 </span>";
  }
 });

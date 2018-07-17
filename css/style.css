@@ -42,15 +42,7 @@ li {
 }
 
 a {
-  padding: 2px 8px; 
-  border: 1px solid #00b386;
-  border-radius: 2px; 
-  letter-spacing: .1em; 
-  text-transform: uppercase; 
-  font-weight: 400; 
-  font-size: 14px;
-  color: #00b386;
-  text-decoration: none;
+/*  nothing*/
 }
 
 
@@ -158,3 +150,62 @@ input[type="file"] {
 
 
 
+
+.social {
+  font-family: Source Sans Pro;
+  color: #333;
+  border: 1px solid #333;
+}
+
+.social:link {
+  padding: 2px 8px; 
+  border: 1px solid #333;
+  border-radius: 2px;
+  letter-spacing: .1em;
+  font-size: 14px;
+  color: #333;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+}
+
+.social:hover {
+  border: 1px solid darkseagreen;
+  color: darkseagreen;
+}
+
+h2 {
+  text-align: center;
+  font-family: Source Sans Pro;
+  font-size: 36px;
+  line-height: 1.2em;
+  margin-bottom: 0px;
+}
+
+.project {
+  font-family: Source Sans Pro;
+  text-align: center;
+  font-size: 25px; 
+  line-height: 1.3em;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+.project:link {
+  text-decoration: none;
+/*  color: #333;*/
+  border-bottom: 3px dashed;
+  text-decoration: none;
+  transition: color 0.3s linear;
+  -webkit-transition: color 0.3s linear;
+  -moz-transition: color 0.3s linear;
+}
+
+.project:hover {
+  color: darkseagreen;
+  border-bottom: 3px dashed;
+}
