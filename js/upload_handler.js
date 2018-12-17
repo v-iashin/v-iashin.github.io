@@ -1,6 +1,6 @@
 // url to server with flask running 
-var SERVER_URL = 'https://v-iashin.ml:5000/';
-// try certified IP (but note the possible ephemeralizm)
+var SERVER_URL = 'https://vdyashin.ml:5000/';
+
 var MAX_SIDE_LEN = 1280;
 
 // adapted from https://codepen.io/nakome/pen/vmKwQg
