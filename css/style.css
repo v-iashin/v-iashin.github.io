@@ -5,14 +5,14 @@ body {
 
 h1 {
   text-align: center;
-  font-family: Source Sans Pro;
+  font-family: monospace;
   font-size: 50px;
   line-height: 1.2em;
   margin-bottom: 0px;
 }
 
 p {
-  font-family: Source Sans Pro;
+  font-family: monospace;
   text-align: center;
   font-size: 23px; 
   line-height: 1.3em;
@@ -29,7 +29,7 @@ p {
 }
 
 ul {
-  font-family: Source Sans Pro;
+  font-family: monospace;
 /*  font-family: Playfair Display;*/
   padding: 0;
 }
@@ -40,15 +40,6 @@ li {
   padding-right: 10px;
   justify-content: center
 }
-
-a {
-/*  nothing*/
-}
-
-
-
-
-
 
 .box {
   padding: 0.5em;
@@ -73,6 +64,7 @@ a {
 
 
 .btn{
+  font-family: monospace;
   border: 1px solid #ccc;
   display: inline-block;
   padding: 6px 12px;
@@ -82,8 +74,6 @@ a {
 }
 
 .hide {
-/*	display: none;*/
-/*  color: white;*/
   pointer-events: none;
   text-indent: -9999px;
 }
@@ -94,24 +84,22 @@ img {
 
 .version {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 14px;
   text-align: right;
-/*  margin-right: 1em;*/
   position: fixed;
-  bottom: 0px;
-  right: 0px;
-  padding-right: 1em;
+  bottom: 5px;
+  right: 5px;
+  padding-right: 5px;
 }
 
 .status {
   font-family: monospace;
-  font-size: 10px;
+  font-size: 14px;
   text-align: left;
-/*  margin-right: 1em;*/
   position: fixed;
-  bottom: 0px;
-  left: 0px;
-  padding-left: 1em;
+  bottom: 5px;
+  left: 5px;
+  padding-left: 5px;
 }
 
 #status_ok {
@@ -139,7 +127,7 @@ input[type="file"] {
 }
 
 .disclaimer {
-  font-family: Source Sans Pro;
+  font-family: monospace;
   font-size: 9;
   line-height: 1.3em;
   width: 500px;
@@ -147,12 +135,8 @@ input[type="file"] {
   margin-right: auto;
 }
 
-
-
-
-
 .social {
-  font-family: Source Sans Pro;
+  font-family: monospace;
   color: #333;
   border: 1px solid #333;
 }
@@ -178,14 +162,15 @@ input[type="file"] {
 
 h2 {
   text-align: center;
-  font-family: Source Sans Pro;
+/*  font-family: Source Sans Pro;*/
+  font-family: monospace;
   font-size: 36px;
   line-height: 1.2em;
   margin-bottom: 0px;
 }
 
 .project {
-  font-family: Source Sans Pro;
+  font-family: monospace;
   text-align: center;
   font-size: 25px; 
   line-height: 1.3em;
@@ -198,14 +183,14 @@ h2 {
 .project:link {
   text-decoration: none;
 /*  color: #333;*/
-  border-bottom: 3px dashed;
+  border-bottom: 2px dashed;
   text-decoration: none;
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
+  transition: color 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
 }
 
 .project:hover {
   color: darkseagreen;
-  border-bottom: 3px dashed;
+/*  border-bottom: 3px dashed;*/
 }

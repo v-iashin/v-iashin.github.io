@@ -1,5 +1,6 @@
 // url to server with flask running 
-var SERVER_URL = 'https://vdyashin.ml:5000/';
+var SERVER_URL = 'https://v-iashin.ml:5000/';
+//var SERVER_URL = 'http://35.228.147.191:5000/';
 
 var MAX_SIDE_LEN = 1280;
 
