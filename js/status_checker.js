@@ -12,9 +12,9 @@ $.ajax({
  url: STATUS_CHECK_URL,
  type: 'GET',
  success: function() {
-   document.getElementById('status').innerHTML = "<span id='status_ok'> &#9679 </span>";
+   document.getElementById('status').innerHTML = "<span id='status_ok'>on</span>";
  },
  error: function() {
-   document.getElementById('status').innerHTML = "<span id='status_down' alt='down'> &#9679 </span>";
+   document.getElementById('status').innerHTML = "<span id='status_down' alt='down'>off</span>";
  }
 });

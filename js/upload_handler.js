@@ -85,20 +85,15 @@ detect.addEventListener('click', function() {
     type: 'POST',
     url: SERVER_URL,
     data: form_data,
-    timeout: 1000 * 10, // ms
+    timeout: 1000 * 25, // ms
     contentType: false,
     processData: false,
     dataType: 'json',
   }).done(function(data, textStatus, jqXHR) {
-    console.log(data);
-    console.log(textStatus);
-    console.log(jqXHR);
-    console.log('Success!');
     cropped.src = data['image'];
     // progress status
     document.getElementById('progress').innerHTML = 'Done';
   }).fail(function(data){
-    console.log("ERRORRRR: ");
     alert('It seems that the detector is not working right now but you tried to upload an image. If you are still interested please contact me.');
   });
 });

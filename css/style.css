@@ -1,56 +1,61 @@
-body {
-  text-align: center; 
-  color: #333;
-}
-
-h1 {
+html,body
+{
+  width: 100%;
+/*  height: 100%;*/
+  margin: 0em;
+  padding: 0em;
+  overflow-x: hidden; 
   text-align: center;
   font-family: monospace;
-  font-size: 50px;
-  line-height: 1.2em;
-  margin-bottom: 0px;
+  color: #333;
+}
+/*
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+font-family: Source Sans Pro;*/
+*/
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 p {
-  font-family: monospace;
-  text-align: center;
-  font-size: 23px; 
-  line-height: 1.3em;
-  width: 500px;
+  font-size: 1.5em; 
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.avatar {
-  margin: 0 auto; 
-/*  border-radius: 200px; */
-  margin-top: 30px; 
-  height: 170px; 
-}
-
 ul {
+  text-align: center;
   font-family: monospace;
-/*  font-family: Playfair Display;*/
-  padding: 0;
+  padding: 0em;
 }
 
 li {
   display: inline-block;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 1em;
+  padding-right: 1em;
   justify-content: center
 }
 
 .box {
   padding: 0.5em;
   padding-top: 1em;
-/*	width: 100%;*/
   margin: 0.7em;
 }
 
 .box-2 {
-	padding: 0.5em;
-	width: calc(100%/2 - 1em);
+  padding: 0.5em;
+  width: calc(100%/2 - 1em);
 }
 
 .cropper_cropped {
@@ -79,7 +84,7 @@ li {
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .version {
@@ -103,21 +108,21 @@ img {
 }
 
 #status_ok {
-  color: limegreen
+  color: limegreen;
 }
 
 #status_down {
-  color: orangered
+  color: orangered;
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
 }
 .custom-file-upload {
-    border: 1px solid #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 #progress {
@@ -128,9 +133,9 @@ input[type="file"] {
 
 .disclaimer {
   font-family: monospace;
-  font-size: 9;
+  font-size: 1em;
   line-height: 1.3em;
-  width: 500px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -139,6 +144,8 @@ input[type="file"] {
   font-family: monospace;
   color: #333;
   border: 1px solid #333;
+  width: 20%;
+  text-align: center;
 }
 
 .social:link {
@@ -160,21 +167,11 @@ input[type="file"] {
   color: darkseagreen;
 }
 
-h2 {
-  text-align: center;
-/*  font-family: Source Sans Pro;*/
-  font-family: monospace;
-  font-size: 36px;
-  line-height: 1.2em;
-  margin-bottom: 0px;
-}
-
 .project {
   font-family: monospace;
   text-align: center;
-  font-size: 25px; 
+  font-size: 1.5em; 
   line-height: 1.3em;
-  width: 500px;
   margin-left: auto;
   margin-right: auto;
   color: #333;
@@ -192,5 +189,4 @@ h2 {
 
 .project:hover {
   color: darkseagreen;
-/*  border-bottom: 3px dashed;*/
 }
