@@ -47,7 +47,7 @@ li {
   justify-content: center
 }
 
-.box {
+.buttons {
   padding: 0.5em;
   padding-top: 1em;
   margin: 0.7em;
@@ -58,7 +58,7 @@ li {
   width: calc(100%/2 - 1em);
 }
 
-.cropper_cropped {
+.preview_detections {
   margin: 1em auto;
   max-width: 80%;
   display: flex;

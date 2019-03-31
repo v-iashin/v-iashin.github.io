@@ -4,81 +4,53 @@ var SERVER_URL = 'https://v-iashin.ml:5000/';
 
 var MAX_SIDE_LEN = 1280;
 
+console.log('upload handler COPY !!!!');
+
 // adapted from https://codepen.io/nakome/pen/vmKwQg
 // vars
-preview = document.querySelector('.preview'),
-cropped_candidate = document.querySelector('.cropped_candidate'),
-crop = document.querySelector('.crop'),
-cropped = document.querySelector('.cropped'),
-detect = document.querySelector('.detect'),
-upload = document.querySelector('#file-input'),
-cropper = '';
+preview = document.querySelector('.preview');
+detect = document.querySelector('.detect');
+upload = document.querySelector('#file-input');
 
 // on change show image
 upload.addEventListener('change', function() {
   if (event.target.files.length) {
     // start file reader
-    const reader = new FileReader();
+    var reader = new FileReader();
     reader.onload = function() {
       if(event.target.result) {
-        // create new image
+        // create new image element inside the preview div
         let img = document.createElement('img');
         img.id = 'image';
         img.src = event.target.result;
+        console.log(img.src.height)
+        // resize the image
+        var canvas = document.createElement("canvas");
+        var context = canvas.getContext("2d");
+        [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
+        context.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
+        preview.src = canvas.toDataURL();
         // clean result before
         preview.innerHTML = '';
         // append new image
         preview.appendChild(img);
+        
         // show crop btn
-        crop.classList.remove('hide');
-        // init cropper
-        cropper = new Cropper(img);
-      }
+        detect.classList.remove('hide');
+      };
     };
     reader.readAsDataURL(event.target.files[0]);
-  }
-});
-
-// crop on click
-crop.addEventListener('click', function() {
-  event.preventDefault();
-  // get result to data uri
-  var cropped_canvas = cropper.getCroppedCanvas()
-  let imgSrc = cropped_canvas.toDataURL("image/jpeg");
-  cropped.src = imgSrc;
-  // client side reduce the photo size https://embed.plnkr.co/oyaVFn/
-  var image = new Image();
-  image.onload=function(){
-    var canvas=document.createElement("canvas");
-    var context=canvas.getContext("2d");
-    [canvas.width, canvas.height] = reduceSize(cropped_canvas.width, cropped_canvas.height, MAX_SIDE_LEN);
-    context.drawImage(image,
-      0,
-      0,
-      image.width,
-      image.height,
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-    cropped.src = canvas.toDataURL();
-  }
-  image.src = cropped.src;
-  // remove hide class of img
-  cropped.classList.remove('hide');
-  cropped_candidate.classList.remove('hide');
-  detect.classList.remove('hide');
+  };
 });
 
 // detect on click
 detect.addEventListener('click', function() {
   // progress status
   document.getElementById('progress').innerHTML = 'Processing...';
-  
   event.preventDefault();
+  
   // get result to data uri
-  var blob = dataURItoBlob(cropped.src);
+  var blob = dataURItoBlob(preview.firstElementChild.src);
   var form_data = new FormData();
   form_data.append('file', blob);
   $.ajax({
@@ -90,6 +62,7 @@ detect.addEventListener('click', function() {
     processData: false,
     dataType: 'json',
   }).done(function(data, textStatus, jqXHR) {
+    preview.firstElementChild.src = data['image'];
     // progress status
     document.getElementById('progress').innerHTML = 'Done';
   }).fail(function(data){
