@@ -4,81 +4,94 @@ var SERVER_URL = 'https://v-iashin.ml:5000/';
 
 var MAX_SIDE_LEN = 1280;
 
+console.log('upload handler COPY !!!!');
+
 // adapted from https://codepen.io/nakome/pen/vmKwQg
 // vars
-preview = document.querySelector('.preview'),
-cropped_candidate = document.querySelector('.cropped_candidate'),
-crop = document.querySelector('.crop'),
-cropped = document.querySelector('.cropped'),
-detect = document.querySelector('.detect'),
-upload = document.querySelector('#file-input'),
-cropper = '';
+preview = document.querySelector('.preview');
+detect = document.querySelector('.detect');
+upload = document.querySelector('#file-input');
 
-// on change show image
+//upload.addEventListener('change', function() {
+//  event.preventDefault();
+//  
+//  if (event.target.files.length) {
+//    // start file reader
+//    var reader = new FileReader();
+//    reader.onload = function(event) {
+//      if(event.target.result) {
+//        // create new image element inside the preview div
+//        var img = document.createElement('img');
+//        img.id = 'image';
+//        img.src = event.target.result;
+//        
+//        // resize the image
+//        var resized_img = new Image();
+//        resized_img.onload = function() {
+//          var canvas = document.createElement("canvas");
+//          var context = canvas.getContext("2d");
+//          [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
+//          context.drawImage(resized_img, 0, 0, canvas.width, canvas.height);
+//          img.src = canvas.toDataURL();
+//        };
+//        // evokes the function above ('onload to src attr')
+//        resized_img.src = img.src;
+//        
+//        // clean result before
+//        preview.innerHTML = '';
+//        // append new image
+//        preview.appendChild(img);
+//        
+//        // show crop btn
+//        detect.classList.remove('hide');
+//      };
+//    };
+//    reader.readAsDataURL(event.target.files[0]);
+//  };
+//});
+
 upload.addEventListener('change', function() {
-  if (event.target.files.length) {
-    // start file reader
-    const reader = new FileReader();
-    reader.onload = function() {
-      if(event.target.result) {
-        // create new image
-        let img = document.createElement('img');
-        img.id = 'image';
-        img.src = event.target.result;
+  event.preventDefault();
+  
+  // start file reader
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    if(event.target.result) {
+      // resize the image
+      var img = new Image();
+      img.onload = function() {
+        // create a canvas, resize the sides and draw the resized image
+        var canvas = document.createElement("canvas");
+        [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
+        var context = canvas.getContext("2d");
+        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+        // create new image (solves recursion problem)
+        var resized_img = new Image();
+        // adds the image that the canvas holds to the source
+        resized_img.src = canvas.toDataURL('image/jpeg');
         // clean result before
         preview.innerHTML = '';
         // append new image
-        preview.appendChild(img);
+        preview.appendChild(resized_img);
         // show crop btn
-        crop.classList.remove('hide');
-        // init cropper
-        cropper = new Cropper(img);
-      }
+        detect.classList.remove('hide');
+      };
+      // evokes the function above ('onload to src attr')
+      img.src = event.target.result;
     };
-    reader.readAsDataURL(event.target.files[0]);
-  }
-});
-
-// crop on click
-crop.addEventListener('click', function() {
-  event.preventDefault();
-  // get result to data uri
-  var cropped_canvas = cropper.getCroppedCanvas()
-  let imgSrc = cropped_canvas.toDataURL("image/jpeg");
-  cropped.src = imgSrc;
-  // client side reduce the photo size https://embed.plnkr.co/oyaVFn/
-  var image = new Image();
-  image.onload=function(){
-    var canvas=document.createElement("canvas");
-    var context=canvas.getContext("2d");
-    [canvas.width, canvas.height] = reduceSize(cropped_canvas.width, cropped_canvas.height, MAX_SIDE_LEN);
-    context.drawImage(image,
-      0,
-      0,
-      image.width,
-      image.height,
-      0,
-      0,
-      canvas.width,
-      canvas.height
-    );
-    cropped.src = canvas.toDataURL();
-  }
-  image.src = cropped.src;
-  // remove hide class of img
-  cropped.classList.remove('hide');
-  cropped_candidate.classList.remove('hide');
-  detect.classList.remove('hide');
+  };
+  reader.readAsDataURL(event.target.files[0]);
 });
 
 // detect on click
 detect.addEventListener('click', function() {
+  event.preventDefault();
   // progress status
   document.getElementById('progress').innerHTML = 'Processing...';
-  
   event.preventDefault();
+  
   // get result to data uri
-  var blob = dataURItoBlob(cropped.src);
+  var blob = dataURItoBlob(preview.firstElementChild.src);
   var form_data = new FormData();
   form_data.append('file', blob);
   $.ajax({
@@ -90,6 +103,7 @@ detect.addEventListener('click', function() {
     processData: false,
     dataType: 'json',
   }).done(function(data, textStatus, jqXHR) {
+    preview.firstElementChild.src = data['image'];
     // progress status
     document.getElementById('progress').innerHTML = 'Done';
   }).fail(function(data){

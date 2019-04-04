@@ -1,7 +1,6 @@
 html,body
 {
   width: 100%;
-/*  height: 100%;*/
   margin: 0em;
   padding: 0em;
   overflow-x: hidden; 
@@ -17,7 +16,6 @@ h4 { font-size: 1.12em; }
 h5 { font-size: .83em; }
 h6 { font-size: .75em; }
 font-family: Source Sans Pro;*/
-*/
 
 h1 {
   font-size: 2em;
@@ -53,18 +51,9 @@ li {
   margin: 0.7em;
 }
 
-.box-2 {
-  padding: 0.5em;
-  width: calc(100%/2 - 1em);
-}
-
-.preview_detections {
+.preview {
   margin: 1em auto;
   max-width: 80%;
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  height: 100%;
 }
 
 
@@ -80,7 +69,7 @@ li {
 
 .hide {
   pointer-events: none;
-  text-indent: -9999px;
+  text-indent: -999em;
 }
 
 img {
@@ -96,21 +85,9 @@ img {
   right: 5px;
   padding-right: 5px;
 }
-
-.status {
-  font-family: monospace;
-  font-size: 14px;
-  text-align: left;
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
-  padding-left: 5px;
-}
-
 #status_ok {
   color: limegreen;
 }
-
 #status_down {
   color: orangered;
 }
@@ -147,7 +124,6 @@ input[type="file"] {
   width: 20%;
   text-align: center;
 }
-
 .social:link {
   padding: 2px 8px; 
   border: 1px solid #333;
@@ -161,7 +137,6 @@ input[type="file"] {
   -webkit-transition: color 0.3s linear;
   -moz-transition: color 0.3s linear;
 }
-
 .social:hover {
   border: 1px solid darkseagreen;
   color: darkseagreen;
@@ -176,7 +151,6 @@ input[type="file"] {
   margin-right: auto;
   color: #333;
 }
-
 .project:link {
   text-decoration: none;
 /*  color: #333;*/
@@ -186,7 +160,6 @@ input[type="file"] {
   -webkit-transition: color 0.2s linear;
   -moz-transition: color 0.2s linear;
 }
-
 .project:hover {
   color: darkseagreen;
 }
