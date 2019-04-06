@@ -45,6 +45,23 @@ li {
   justify-content: center
 }
 
+.bread_crumb {
+/*  font-size: 14pt;*/
+  color: #333;
+}
+.bread_crumb:link {
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px dashed;
+  text-decoration: none;
+  transition: color 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  -moz-transition: color 0.2s linear;
+}
+.bread_crumb:hover {
+  color: darkseagreen;
+}
+
 .buttons {
   padding: 0.5em;
   padding-top: 1em;

@@ -11,7 +11,13 @@
   </head>
 
   <body>
-
+      
+    <ul class="breadcrumb">
+      <a class='bread_crumb' href="index.html">Main</a>
+      /
+      Detector Project
+    </ul>
+    
     <h1>Detection Project</h1>
     
     <p>
@@ -21,8 +27,6 @@
     <div class='disclaimer'>    
       <b> Disclaimer</b>: please don't use personal photos that you don't want me to see.
     </div>
-    
-<!--    todo: default image and when click upload the field cleans-->
     
     <!-- buttons -->
     <div class="buttons">
@@ -34,20 +38,11 @@
       <!-- reload -->
       <button id='reload' class='btn reload hide' onclick='reload()'> Reset ↻ </button>
     </div>
-    
-<!--    <button class='reload hide' onclick="reload()"> Reset ↻ </button>-->
-    
-<!--
-    <div class='progress_bar'>
-      <span id='progress'></span>
-    </div>
--->
 
     <!-- image box -->      
     <div class="preview">
     </div>
     
-<!--    todo: add pdding to footer -->
     <footer class="version">
       Detection Project v. 0 (<span id='status'></span>)
     </footer>
