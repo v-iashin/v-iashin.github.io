@@ -64,16 +64,27 @@ li {
   padding: 6px 12px;
   cursor: pointer;
   background-color: white;
-  color:  #333;
+  color: #333;
+}
+.hide {
+  display: none;
 }
 
-.hide {
+.btn {
+  font-family: monospace;
+  background-color: white;
+  color: #333;
+}
+
+.progress {
+  color: #C1C1C1;
   pointer-events: none;
-  text-indent: -999em;
+  border: 1px solid white;
 }
 
 img {
   max-width: 100%;
+  margin-bottom: 1em;
 }
 
 .version {
@@ -81,9 +92,13 @@ img {
   font-size: 14px;
   text-align: right;
   position: fixed;
-  bottom: 5px;
-  right: 5px;
+  bottom: 0em;
+  right: 1ex;
   padding-right: 5px;
+  width: 100%;
+  line-height: 3ex;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #status_ok {
   color: limegreen;
@@ -94,18 +109,6 @@ img {
 
 input[type="file"] {
   display: none;
-}
-.custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
-#progress {
-  padding: 0.5em;
-  font-family: monospace;
-  font-size: 14px;
 }
 
 .disclaimer {

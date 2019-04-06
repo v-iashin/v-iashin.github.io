@@ -27,15 +27,21 @@
     <!-- buttons -->
     <div class="buttons">
       <!-- input file -->
-      <label for="file-input" class="btn upload"> Upload </label>
-      <input type="file" id="file-input" accept="image/*">
+      <label id="upload" for="file-input" class="btn upload"> Upload </label>
+      <input id="file-input" type="file" accept="image/*">
       <!-- detect -->
-      <button class="btn detect hide"> Detect </button>
+      <button id='detect' class='btn detect hide'> Detect </button>
+      <!-- reload -->
+      <button id='reload' class='btn reload hide' onclick='reload()'> Reset ↻ </button>
     </div>
     
+<!--    <button class='reload hide' onclick="reload()"> Reset ↻ </button>-->
+    
+<!--
     <div class='progress_bar'>
       <span id='progress'></span>
     </div>
+-->
 
     <!-- image box -->      
     <div class="preview">

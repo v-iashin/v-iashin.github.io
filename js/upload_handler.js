@@ -1,54 +1,14 @@
 // url to server with flask running 
 var SERVER_URL = 'https://v-iashin.ml:5000/';
-//var SERVER_URL = 'http://35.228.147.191:5000/';
 
+// set max side length for an uploaded image
 var MAX_SIDE_LEN = 1280;
 
-console.log('upload handler COPY !!!!');
-
-// adapted from https://codepen.io/nakome/pen/vmKwQg
 // vars
+upload = document.querySelector('#file-input');
 preview = document.querySelector('.preview');
 detect = document.querySelector('.detect');
-upload = document.querySelector('#file-input');
-
-//upload.addEventListener('change', function() {
-//  event.preventDefault();
-//  
-//  if (event.target.files.length) {
-//    // start file reader
-//    var reader = new FileReader();
-//    reader.onload = function(event) {
-//      if(event.target.result) {
-//        // create new image element inside the preview div
-//        var img = document.createElement('img');
-//        img.id = 'image';
-//        img.src = event.target.result;
-//        
-//        // resize the image
-//        var resized_img = new Image();
-//        resized_img.onload = function() {
-//          var canvas = document.createElement("canvas");
-//          var context = canvas.getContext("2d");
-//          [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
-//          context.drawImage(resized_img, 0, 0, canvas.width, canvas.height);
-//          img.src = canvas.toDataURL();
-//        };
-//        // evokes the function above ('onload to src attr')
-//        resized_img.src = img.src;
-//        
-//        // clean result before
-//        preview.innerHTML = '';
-//        // append new image
-//        preview.appendChild(img);
-//        
-//        // show crop btn
-//        detect.classList.remove('hide');
-//      };
-//    };
-//    reader.readAsDataURL(event.target.files[0]);
-//  };
-//});
+rld = document.querySelector('.reload');
 
 upload.addEventListener('change', function() {
   event.preventDefault();
@@ -73,8 +33,11 @@ upload.addEventListener('change', function() {
         preview.innerHTML = '';
         // append new image
         preview.appendChild(resized_img);
-        // show crop btn
+        // show detect btn
         detect.classList.remove('hide');
+        // remove upload btn
+        var element = document.getElementById('upload');
+        element.parentNode.removeChild(element);
       };
       // evokes the function above ('onload to src attr')
       img.src = event.target.result;
@@ -86,10 +49,14 @@ upload.addEventListener('change', function() {
 // detect on click
 detect.addEventListener('click', function() {
   event.preventDefault();
+  // make the btn unresponsive
+  var element = document.getElementById('detect');
+  element.classList.add('progress');
   // progress status
-  document.getElementById('progress').innerHTML = 'Processing...';
-  event.preventDefault();
+  element.innerHTML = 'Processing...';
   
+  // progress status
+//  document.getElementById('progress').innerHTML = 'Processing...';
   // get result to data uri
   var blob = dataURItoBlob(preview.firstElementChild.src);
   var form_data = new FormData();
@@ -105,12 +72,19 @@ detect.addEventListener('click', function() {
   }).done(function(data, textStatus, jqXHR) {
     preview.firstElementChild.src = data['image'];
     // progress status
-    document.getElementById('progress').innerHTML = 'Done';
+//    document.getElementById('progress').innerHTML = 'Done';
+//    element.innerHTML = 'Done';
+    element.parentNode.removeChild(element);
+    rld.classList.remove('hide');
   }).fail(function(data){
-    alert('It seems that the detector is not working right now but you tried to upload an image. If you are still interested please contact me.');
+    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it is online and you are seeing this message please let me know at vdyashin@gmail.com');
   });
 });
 
+// reload page (reset) on click
+function reload() {
+  location.reload();
+}
 
 // https://stackoverflow.com/a/5100158/3671347
 function dataURItoBlob(dataURI) {
