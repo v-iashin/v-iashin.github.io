@@ -1,3 +1,12 @@
+/*
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+font-family: Source Sans Pro;*/
+
 html,body
 {
   width: 100%;
@@ -8,21 +17,24 @@ html,body
   font-family: monospace;
   color: #333;
 }
-/*
-h1 { font-size: 2em; }
-h2 { font-size: 1.5em; }
-h3 { font-size: 1.17em; }
-h4 { font-size: 1.12em; }
-h5 { font-size: .83em; }
-h6 { font-size: .75em; }
-font-family: Source Sans Pro;*/
 
 h1 {
   font-size: 2em;
 }
 
+h1.project_h1 {
+  font-size: 2em;
+  margin-top: 1em;
+}
+
 h2 {
   font-size: 1.5em;
+}
+
+hr {
+  width: 80%;
+  margin-top: 3em;
+  margin-bottom: 1em
 }
 
 p {
@@ -32,7 +44,15 @@ p {
   margin-right: auto;
 }
 
-ul {
+ul.breadcrumb {
+  margin-top: 2em;
+  text-align: center;
+  font-family: monospace;
+  padding: 0em;
+}
+
+ul.social_buttons {
+  margin-top: 2em;
   text-align: center;
   font-family: monospace;
   padding: 0em;
@@ -42,11 +62,10 @@ li {
   display: inline-block;
   padding-left: 1em;
   padding-right: 1em;
-  justify-content: center
+  justify-content: center;
 }
 
 .bread_crumb {
-/*  font-size: 14pt;*/
   color: #333;
 }
 .bread_crumb:link {
@@ -73,8 +92,7 @@ li {
   max-width: 80%;
 }
 
-
-.btn{
+.btn {
   font-family: monospace;
   border: 1px solid #ccc;
   display: inline-block;
@@ -83,14 +101,11 @@ li {
   background-color: white;
   color: #333;
 }
+.btn:hover {
+  border: 1px solid #333;
+}
 .hide {
   display: none;
-}
-
-.btn {
-  font-family: monospace;
-  background-color: white;
-  color: #333;
 }
 
 .progress {
@@ -128,6 +143,19 @@ input[type="file"] {
   display: none;
 }
 
+.social {
+  color: #333;
+  font-size: 1.5em;
+}
+.social:link {
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  transition: color 0.2s linear;
+}
+.social:hover {
+  color: darkseagreen;
+}
+
 .disclaimer {
   font-family: monospace;
   font-size: 1em;
@@ -135,31 +163,6 @@ input[type="file"] {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-}
-
-.social {
-  font-family: monospace;
-  color: #333;
-  border: 1px solid #333;
-  width: 20%;
-  text-align: center;
-}
-.social:link {
-  padding: 2px 8px; 
-  border: 1px solid #333;
-  border-radius: 2px;
-  letter-spacing: .1em;
-  font-size: 14px;
-  color: #333;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: color 0.3s linear;
-  -webkit-transition: color 0.3s linear;
-  -moz-transition: color 0.3s linear;
-}
-.social:hover {
-  border: 1px solid darkseagreen;
-  color: darkseagreen;
 }
 
 .project {
@@ -173,12 +176,8 @@ input[type="file"] {
 }
 .project:link {
   text-decoration: none;
-/*  color: #333;*/
-  border-bottom: 2px dashed;
-  text-decoration: none;
+  border-bottom: 1px dashed;
   transition: color 0.2s linear;
-  -webkit-transition: color 0.2s linear;
-  -moz-transition: color 0.2s linear;
 }
 .project:hover {
   color: darkseagreen;

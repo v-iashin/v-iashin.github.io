@@ -4,36 +4,37 @@ var SERVER_URL = 'https://v-iashin.ml:5000/';
 // set max side length for an uploaded image
 var MAX_SIDE_LEN = 1280;
 
-// vars
 upload = document.querySelector('#file-input');
 preview = document.querySelector('.preview');
 detect = document.querySelector('.detect');
 rld = document.querySelector('.reload');
+canvas = document.createElement('canvas');
+context = canvas.getContext('2d');
+img = new Image();
+resized_img = new Image();
 
 upload.addEventListener('change', function() {
   event.preventDefault();
+  // clean result before
+  preview.innerHTML = '';
   
   // start file reader
   var reader = new FileReader();
+  
   reader.onload = function(event) {
     if(event.target.result) {
       // resize the image
-      var img = new Image();
       img.onload = function() {
-        // create a canvas, resize the sides and draw the resized image
-        var canvas = document.createElement("canvas");
+        // resize the sides of the canvas and draw the resized image
         [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
-        var context = canvas.getContext("2d");
         context.drawImage(img, 0, 0, canvas.width, canvas.height);
-        // create new image (solves recursion problem)
-        var resized_img = new Image();
         // adds the image that the canvas holds to the source
         resized_img.src = canvas.toDataURL('image/jpeg');
         // clean result before
         preview.innerHTML = '';
         // append new image
         preview.appendChild(resized_img);
-        // show detect btn
+        // show detect and rotate btns
         detect.classList.remove('hide');
         // remove upload btn
         var element = document.getElementById('upload');
@@ -49,16 +50,13 @@ upload.addEventListener('change', function() {
 // detect on click
 detect.addEventListener('click', function() {
   event.preventDefault();
-  // make the btn unresponsive
-  var element = document.getElementById('detect');
-  element.classList.add('progress');
+  // make the btn unresponsive and remove rotate buttons
+  detect.classList.add('progress');
   // progress status
-  element.innerHTML = 'Processing...';
-  
-  // progress status
-//  document.getElementById('progress').innerHTML = 'Processing...';
+  detect.innerHTML = 'Processing...';
   // get result to data uri
   var blob = dataURItoBlob(preview.firstElementChild.src);
+  // form POST request to the server
   var form_data = new FormData();
   form_data.append('file', blob);
   $.ajax({
@@ -70,14 +68,14 @@ detect.addEventListener('click', function() {
     processData: false,
     dataType: 'json',
   }).done(function(data, textStatus, jqXHR) {
+    // replace the current image with an image with detected objects
     preview.firstElementChild.src = data['image'];
-    // progress status
-//    document.getElementById('progress').innerHTML = 'Done';
-//    element.innerHTML = 'Done';
-    element.parentNode.removeChild(element);
+    // remove detect button
+    detect.parentNode.removeChild(detect);
+    // and show the reload button
     rld.classList.remove('hide');
   }).fail(function(data){
-    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it is online and you are seeing this message please let me know at vdyashin@gmail.com');
+    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it is online and you are seeing this message please let me know at vdyashin@gmail.com or linkedin.com/in/vladimir-iashin');
   });
 });
 
