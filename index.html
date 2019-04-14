@@ -20,24 +20,38 @@
     </p>
 
     <ul class='social_buttons'>
-      <li>
-        <a href="https://github.com/v-iashin" class='social'>
-          GitHub
-        </a>
+      <li class='social_buttons'>
+        <a href="https://github.com/v-iashin" class='social'> GitHub </a>
       </li>
-      <li>
-        <a href="https://www.linkedin.com/in/vladimir-iashin/" class='social'> 
-          LinkedIn 
-        </a>
+      <li class='social_buttons'>
+        <a href="https://www.linkedin.com/in/vladimir-iashin/" class='social'> LinkedIn </a>
       </li>
     </ul>
     
     <hr>
     
-    <h1 class='project_h1'> Project </h1>
-
-    <a href="detector.html" class="project"> Object Detection </a>
-    
+    <h1> Project </h1>  
       
+    <div class="row">
+      <div class="column_left">
+        <a href='detector.html'>
+          <img class='thumbnail' onmouseover='this.src="images/detection_result.jpeg"' 
+onmouseout='this.src="images/detection_orig.jpeg"' src='images/detection_orig.jpeg' />
+        </a>
+      </div>
+      <div class="column_right">
+          <a href='detector.html' class='project'> Object Detector </a> 
+          <p class='project_description'> A real-time object detector. Upload an image and see what is on it </p>
+          <ul class='proj_buttons'>
+            <li class='proj_buttons'>
+              <a href='detector.html' class='proj_buttons'> Demo </a>
+            </li>
+            <li class='proj_buttons'>
+              <a href='https://github.com/v-iashin/PersonalProjects/tree/master/detector' class='proj_buttons'> Code </a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    
   </body>
 </html>
