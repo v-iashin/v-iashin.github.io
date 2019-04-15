@@ -7,21 +7,17 @@ html,body
   text-align: center;
   font-family: monospace;
   color: #333;
-/*
-  margin-top: 10px;
-  margin-bottom: 10px;
-*/
 }
 
 h1 {
-  margin: 20px;
+  margin: 1em;
 }
 
 hr {
   width: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  max-width: 700px;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  max-width: 50em;
 }
 
 p {
@@ -29,9 +25,9 @@ p {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  max-width: 700px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 50em;
 }
 p.project_description {
   text-align: left;
@@ -41,13 +37,13 @@ p.project_description {
   font-size: 1em;
 }
 
-
 div.row {
   text-align: center;
-  max-width: 700px;
+  max-width: 50em;
   display: inline-block;
   vertical-align: middle;
   width: 95%;
+  margin: 0em
 }
 
 div.column_left {
@@ -56,30 +52,30 @@ div.column_left {
   text-align: left;
   display: table-cell;
   width: 30%;
-  padding: 15px;
+  padding: 1em;
   vertical-align: middle;
 }
 div.column_right {
   box-sizing: border-box;
-/*  float: none;*/
   width: 70%;
-  padding: 15px;
+  padding: 1em;
   text-align: left;
   display: table-cell;
   vertical-align: middle;
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 29em) {
   div.row {
     text-align: center;
     display: table-cell;
     width: 90%
   } 
   div.column_left {
-    width: 50%;
+    width: 70%;
     float: none;
     text-align: center;
     display: inline-block;
+    padding: 0em;
   }
   div.column_right {
     width: 90%;
@@ -93,16 +89,16 @@ div.column_right {
 }
 
 ul.breadcrumb {
-/*  margin-top: 1em;*/
+  margin-top: 2.7em;
+/*  margin-bottom: 1em;*/
   text-align: center;
   font-family: monospace;
-  margin: 20px;
   padding: 0em;
 }
 
 ul.social_buttons {
-  margin-top: 25px;
-  margin-bottom: 30px;
+  margin-top: 2em;
+  margin-bottom: 2em;
   text-align: center;
   font-family: monospace;
   padding: 0em;
@@ -110,6 +106,7 @@ ul.social_buttons {
 
 ul.proj_buttons {
   padding: 0em;
+  font-size: 1em;
 }
 
 li {
@@ -128,7 +125,7 @@ li.social_buttons {
 .bread_crumb:link {
   text-decoration: none;
   color: #333;
-  border-bottom: 1px dashed;
+  border-bottom: 0.2ex dashed;
   text-decoration: none;
   transition: color 0.3s linear;
 }
@@ -137,11 +134,12 @@ li.social_buttons {
 }
 
 div.buttons {
-  margin: 1em;
+  margin: 2em;
 }
 
 div.preview {
-  margin: 1.1em;
+  margin-top: 1ex;
+  margin-bottom: 1.1em;
   max-width: 95%;
   text-align: center;
   display: inline-block;
@@ -157,16 +155,15 @@ img.thumbnail {
 
 label.btn, button.btn {
   font-family: monospace;
-  border: 1px solid #ccc;
+  border: 0.2ex solid #ccc;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 0.5em 1em;
   cursor: pointer;
   background-color: white;
   color: #333;
-/*  margin: 15px;*/
 }
 label.btn:hover, button.btn:hover {
-  border: 1px solid #333;
+  border: 0.2ex solid #333;
 }
 label.hide, button.hide {
   display: none;
@@ -175,12 +172,12 @@ label.hide, button.hide {
 button.progress {
   color: #C1C1C1;
   pointer-events: none;
-  border: 1px solid white;
+  border: 0.2ex solid white;
 }
 
 footer.version {
   font-family: monospace;
-  font-size: 14px;
+  font-size: 1em;
   text-align: right;
   position: fixed;
   bottom: 0em;
@@ -208,7 +205,7 @@ a.social {
 a.social:link {
   font-size: 1.2em;
   text-decoration: none;
-  border-bottom: 1px dashed;
+  border-bottom: 0.2ex dashed;
   transition: color 0.3s linear;
 }
 a.social:hover {
@@ -222,7 +219,7 @@ p.disclaimer {
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 700px;
+  max-width: 50em;
 }
 
 a.project {
@@ -235,7 +232,7 @@ a.project {
 }
 a.project:link {
   text-decoration: none;
-  border-bottom: 1px dashed;
+  border-bottom: 0.2ex dashed;
   transition: color 0.3s linear;
   line-height: 1.3em;
 }
@@ -252,7 +249,7 @@ a.proj_buttons {
 }
 a.proj_buttons:link {
   text-decoration: none;
-  border-bottom: 1px dashed;
+  border-bottom: 0.2ex dashed;
   transition: color 0.3s linear;
   line-height: 1.3em;
   margin-right: 1em;
