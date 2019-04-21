@@ -76,6 +76,8 @@ detect.addEventListener('click', function() {
     rld.classList.remove('hide');
   }).fail(function(data){
     alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it is online and you are seeing this message please let me know at vdyashin@gmail.com or linkedin.com/in/vladimir-iashin');
+    // and show the reload button
+    rld.classList.remove('hide');
   });
 });
 
