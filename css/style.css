@@ -51,13 +51,13 @@ div.column_left {
 /*  float: none;*/
   text-align: left;
   display: table-cell;
-  width: 30%;
+  width: 40%;
   padding: 1em;
   vertical-align: middle;
 }
 div.column_right {
   box-sizing: border-box;
-  width: 70%;
+  width: 60%;
   padding: 1em;
   text-align: left;
   display: table-cell;
