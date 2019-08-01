@@ -25,6 +25,10 @@ upload.addEventListener('change', function() {
     if(event.target.result) {
       // resize the image
       img.onload = function() {
+        // extracting the orientation info from EXIF which will be sent to server
+        EXIF.getData(img, function() {
+          orientation = EXIF.getTag(this, 'Orientation');
+        });
         // resize the sides of the canvas and draw the resized image
         [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
         context.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -54,11 +58,13 @@ detect.addEventListener('click', function() {
   detect.classList.add('progress');
   // progress status
   detect.innerHTML = 'Processing...';
+  
   // get result to data uri
   var blob = dataURItoBlob(preview.firstElementChild.src);
   // form POST request to the server
   var form_data = new FormData();
   form_data.append('file', blob);
+  form_data.append('orientation', orientation);
   $.ajax({
     type: 'POST',
     url: SERVER_URL,
@@ -75,7 +81,7 @@ detect.addEventListener('click', function() {
     // and show the reload button
     rld.classList.remove('hide');
   }).fail(function(data){
-    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it is online and you are seeing this message please let me know at vdyashin@gmail.com or linkedin.com/in/vladimir-iashin');
+    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it happened to be offline, please come again tomorrow -- I restart the server every morning. However, if it is online and you are seeing this message please let me know at vdyashin@gmail.com or linkedin.com/in/vladimir-iashin');
     // remove detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
