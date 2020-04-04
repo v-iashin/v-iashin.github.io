@@ -125,7 +125,7 @@ li.social_buttons {
 .bread_crumb:link {
   text-decoration: none;
   color: #333;
-  border-bottom: 0.2ex dashed;
+  border-bottom: 0.2ex solid;
   text-decoration: none;
   transition: color 0.3s linear;
 }
@@ -205,7 +205,7 @@ a.social {
 a.social:link {
   font-size: 1.2em;
   text-decoration: none;
-  border-bottom: 0.2ex dashed;
+  border-bottom: 0.2ex solid;
   transition: color 0.3s linear;
 }
 a.social:hover {
@@ -232,7 +232,7 @@ a.project {
 }
 a.project:link {
   text-decoration: none;
-  border-bottom: 0.2ex dashed;
+  border-bottom: 0.2ex solid;
   transition: color 0.3s linear;
   line-height: 1.3em;
 }
@@ -249,7 +249,7 @@ a.proj_buttons {
 }
 a.proj_buttons:link {
   text-decoration: none;
-  border-bottom: 0.2ex dashed;
+  border-bottom: 0.2ex solid;
   transition: color 0.3s linear;
   line-height: 1.3em;
   margin-right: 1em;

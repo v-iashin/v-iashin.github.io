@@ -1,5 +1,5 @@
 // url to server with flask running 
-var SERVER_URL = 'https://v-iashin.ml:5000/';
+var SERVER_URL = 'https://iashin.ml:5000/';
 
 // set max side length for an uploaded image
 var MAX_SIDE_LEN = 1280;
