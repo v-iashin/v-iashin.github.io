@@ -6,7 +6,6 @@ var MAX_SIDE_LEN = 1280;
 
 upload = document.querySelector('#file-input');
 preview = document.querySelector('.preview');
-detect = document.querySelector('.detect');
 rld = document.querySelector('.reload');
 canvas = document.createElement('canvas');
 context = canvas.getContext('2d');
@@ -38,11 +37,8 @@ upload.addEventListener('change', function() {
         preview.innerHTML = '';
         // append new image
         preview.appendChild(resized_img);
-        // show detect and rotate btns
-        detect.classList.remove('hide');
-        // remove upload btn
-        var element = document.getElementById('upload');
-        element.parentNode.removeChild(element);
+        // send the user image on server and wait for response, and, then, shows the result
+        send_detect_show();
       };
       // evokes the function above ('onload to src attr')
       img.src = event.target.result;
@@ -51,14 +47,17 @@ upload.addEventListener('change', function() {
   reader.readAsDataURL(event.target.files[0]);
 });
 
-// detect on click
-detect.addEventListener('click', function() {
-  event.preventDefault();
-  // make the btn unresponsive and remove rotate buttons
+// send the user image on server and wait for response
+function send_detect_show() {
+  // remove upload button
+  var element = document.getElementById('upload');
+  element.parentNode.removeChild(element);
+  // show detect (progress) button
+  detect.classList.remove('hide');
+  // make the btn unresponsive
   detect.classList.add('progress');
   // progress status
   detect.innerHTML = 'Processing...';
-  
   // get result to data uri
   var blob = dataURItoBlob(preview.firstElementChild.src);
   // form POST request to the server
@@ -69,25 +68,25 @@ detect.addEventListener('click', function() {
     type: 'POST',
     url: SERVER_URL,
     data: form_data,
-    timeout: 1000 * 25, // ms
+    timeout: 1000 * 25, // ms, to wait until call .fail function
     contentType: false,
     processData: false,
     dataType: 'json',
-  }).done(function(data, textStatus, jqXHR) {
+  }).done(function (data, textStatus, jqXHR) {
     // replace the current image with an image with detected objects
     preview.firstElementChild.src = data['image'];
     // remove detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
     rld.classList.remove('hide');
-  }).fail(function(data){
-    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it happened to be offline, please come again tomorrow -- I restart the server every morning. However, if it is online and you are seeing this message please let me know at vdyashin@gmail.com or linkedin.com/in/vladimir-iashin');
+  }).fail(function (data) {
+    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it happened to be offline, please come again tomorrow -- I restart the server every morning. However, if it is online and you are seeing this message please let me know at vladimir.d.iashin@gmail.com or linkedin.com/in/vladimir-iashin');
     // remove detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
     rld.classList.remove('hide');
   });
-});
+}
 
 // reload page (reset) on click
 function reload() {
@@ -115,6 +114,7 @@ function dataURItoBlob(dataURI) {
   return new Blob([ia], {type:mimeString});
 }
 
+// reduces the size of the uploaded image such that max(width, hight) = max_side_len
 function reduceSize(width, height, max_side_len) {
   if (Math.max(width, height) <= max_side_len) {
     return [width, height];
