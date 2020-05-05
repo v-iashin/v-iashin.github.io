@@ -7,6 +7,7 @@ html,body
   text-align: center;
   font-family: monospace;
   color: #333;
+  padding-bottom: 3em;
 }
 
 h1 {
@@ -42,8 +43,8 @@ div.row {
   max-width: 50em;
   display: inline-block;
   vertical-align: middle;
-  width: 95%;
-  margin: 0em
+  width: 90%;
+  border: 1px solid black;
 }
 
 div.column_left {
@@ -67,15 +68,15 @@ div.column_right {
 @media screen and (max-width: 35em) {
   div.row {
     text-align: center;
-    display: table-cell;
-    width: 90%
+    display: table;
+    width: 90%;
+    margin: auto;
   } 
   div.column_left {
     width: 70%;
     float: none;
     text-align: center;
     display: inline-block;
-    padding: 0em;
   }
   div.column_right {
     width: 90%;
@@ -201,6 +202,7 @@ input[type="file"] {
 a.social {
   color: #333;
   font-size: 1em;
+  line-height: 1.5em;
 }
 a.social:link {
   font-size: 1.2em;
@@ -274,3 +276,96 @@ a.proj_buttons:hover {
   color: rgba(70, 20, 140, 0.8);
 }
 
+/* Project Page Style (Authors, conference) */
+.container_authors {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border: 3px solid green; */
+  max-width: 50em;
+}
+.author_affiliation {
+  margin: auto;
+  height: 4em;
+  /* border: 3px solid green; */
+  min-width: 15em;
+}
+.author_name {
+  height: 50%;
+}
+.affiliation {
+  height: 50%;
+}
+.conference {
+  /* font-size: 1.2em;  */
+  padding: 1em;
+}
+.section {
+  max-width: 50em;
+  margin: auto;
+  text-align: left;
+}
+.section_name {
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: auto;
+  max-width: 50em;
+  text-align: center;
+}
+.section_content {
+  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+.teaser {
+  padding: 1em;
+  margin: auto;
+  max-width: 40em;
+  text-align: left;
+}
+.our_framework {
+  padding: 1em;
+  margin: auto;
+  max-width: 70em;
+  text-align: left;
+}
+.img {
+  padding: 1.5em;
+  margin: auto;
+  /* padding-bottom: 0.5em; */
+  background-color: beige;
+  border-radius: 25px;
+}
+.caption {
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+  text-align: left;
+  margin: auto;
+  font-style: italic;
+}
+.code_box {
+  padding: 2em;
+  margin: auto;
+  text-align: left;
+  max-width: 50em;
+  background-color: beige;
+  overflow-x: auto;
+  border-radius: 25px;
+}
+.code_and_links {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* border: 3px solid green; */
+  max-width: 50em;
+}
+.div_link {
+  padding: 1em;
+  margin: auto;
+  /* border: 3px solid green; */
+  min-width: 15em;
+}

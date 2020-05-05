@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>MDVC - Vladimir Iashin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+      
+    <ul class="breadcrumb">
+      <a class="bread_crumb" href="index.html">Main</a> / Multi-modal Dense Video Captioning
+    </ul>
+    
+    <h1> Multi-modal Dense Video Captioning </h1>
+
+    <!-- Authors -->
+    <div class="container_authors">
+      <div class="author_affiliation">
+        <div class="author_name">
+          <a class="social" href="https://v-iashin.github.io/"> Vladimir Iashin </a>
+        </div>
+        <div class="affiliation"> Tampere University </div>
+      </div>
+      <div class="author_affiliation">
+        <div class="author_name">
+          <a class="social" href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+        </div>
+        <div class="affiliation"> Tampere University </div>
+      </div>
+    </div>
+    
+    <!-- Conference -->
+    <div class="conference"> 
+      <a class="social" href="https://mul-workshop.github.io/"> Workshop on Multimodal Learning 2020 (CVPR Workshop) </a>
+    </div>
+    
+    <!-- <hr> -->
+
+    <!-- Links -->
+    <div class="code_and_links">
+      <div class="div_link"> <a class="social" href="https://github.com/v-iashin/MDVC"> Code </a> </div>
+      <div class="div_link"> <a class="social" href="https://arxiv.org/abs/2003.07758"> Paper </a> </div>
+    </div>
+    
+    <!-- Teaser -->
+    <div class="teaser">
+      <div class="img">
+        <img src="./images/mdvc/Introduction.svg" alt="Teaser MDVC">
+      </div>
+      <div class="caption">
+        Figure. Example video with ground truth captions and predictions of Multi-modal Dense Video Captioning module (Ours). (<a class="intext" href="https://www.youtube.com/embed/PLqTX6ij52U?rel=0">Link to the video on YouTube</a>)
+      </div>
+    </div>
+    
+    <!-- Abstract -->
+    <div class="section">
+      <div class="section_name"> Abstract </div>
+      <div class="section_content"> 
+        Dense video captioning is a task of localizing interesting events from an untrimmed video and producing textual description (captions) for each localized event. Most of the previous works in dense video captioning are solely based on visual information and completely ignore the audio track. However, audio, and speech, in particular, are vital cues for a human observer in understanding an environment. In this paper, we present a new dense video captioning approach that is able to utilize any number of modalities for event description. Specifically, we show how audio and speech modalities may improve a dense video captioning model. We apply automatic speech recognition (ASR) system to obtain a temporally aligned textual description of the speech (similar to subtitles) and treat it as a separate input alongside video frames and the corresponding audio track. We formulate the captioning task as a machine translation problem and utilize recently proposed Transformer architecture to convert multi-modal input data into textual descriptions. We demonstrate the performance of our model on ActivityNet Captions dataset. The ablation studies indicate a considerable contribution from audio and speech components suggesting that these modalities contain substantial complementary information to video frames. Furthermore, we provide an in-depth analysis of the ActivityNet Caption results by leveraging the category tags obtained from original YouTube videos.
+      </div>
+    </div>
+    
+    <!-- Our Framework -->
+    <div class="our_framework">
+      <div class="section_name"> Our Framework </div>
+      <div class="img">
+        <img src="./images/mdvc/MDVC.svg" alt="Our Framework">
+      </div>
+      <div class="caption">
+        Figure. The proposed Multi-modal Dense Video Captioning (MDVC) framework. Given an input consisting of several modalities, namely, audio, speech, and visual, internal representations are produced by a corresponding feature transformer (middle). Then, the features are fused in the multi-modal generator (right) that outputs the distribution over the vocabulary.
+      </div>
+      <br>
+      <div class="img">
+        <img src="./images/mdvc/Transformer_individual.svg" alt="Feature Transformer">
+      </div>
+      <div class="caption">
+        Figure. The feature transformer architecture that consists of an encoder (bottom part) and a decoder (top part). The encoder inputs pre-processed and position-encoded features from I3D (in case of the visual modality), and outputs an internal representation. The decoder, in turn, is conditioned on both position-encoded caption that is generated so far and the output of the encoder. Finally, the decoder outputs its internal representation.
+      </div>
+    </div>
+    
+    <!-- BibTex -->
+    <div class="section">
+      <div class="section_name"> Citation </div>
+      <pre class="code_box"><code>@InProceedings{MDVC_Iashin_2020,
+  author = {Iashin, Vladimir and Rahtu, Esa},
+  title = {Multi-modal Dense Video Captioning},
+  booktitle = {Workshop on Multimodal Learning (CVPR Workshop)},
+  year = {2020}
+}</code></pre>
+    </div>
+    
+  </body>
+</html>
