@@ -14,11 +14,11 @@ h1 {
   margin: 1em;
 }
 
-.lastname:after{
-    content: 'Iashin';
+.name:after{
+    content: 'Vladimir Iashin';
 }
-.lastname:hover:after{
-    content:'Yashin';
+.name:hover:after{
+    content:'Vladimir Yashin';
 }
 
 hr {
