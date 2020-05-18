@@ -82,7 +82,7 @@
           Given <b style="color: #B85450;">VGGish</b> and <b style="color: #D6B656;">I3D</b> features from a video, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> outputs visual-attended audio and audio-attended visual features. These features are going to be useful for the proposal generator and decoder.
         </p>
         <p class="p_on_project_pages">
-          Our encoder consists of <b class="vanilla_transformer_color">N</b> layers. Specifically, a bi-modal encoder layer has three sub-layers: 1) Self-attention, 2) <b class="bi_modal_attention_encoder_color">Bi-modal Attention</b>, and 3) Position-wise Fully-connected network. 
+          Our encoder consists of <b class="vanilla_transformer_color">N</b> layers. Specifically, a bi-modal encoder layer has three sub-layers: 1) Self-attention, 2) <b class="word_bi_modal_encoder_color">Bi-modal</b> <b class="word_attention_encoder_color">Attention</b>, and 3) Position-wise Fully-connected network. 
         </p>
         <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em; margin-bottom: 0.5em;">
           <img id="encoder" src="./images/bmt/bi_modal_encoder.svg" alt="Bi-modal Encoder Layer">
@@ -99,7 +99,7 @@
           </div>
         </div>
         <p class="p_on_project_pages">
-          Compared to <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> can fuse features from two modalities. To this end, we propose <b class="bi_modal_attention_encoder_color">Bi-modal Attention</b> block. You may think of it as the encoder-decoder attention from the <b class="vanilla_transformer_color">Vanilla Transformer's Decoder</b>, where <i>keys</i> and <i>values</i> are taken from another modality. The other two sub-layers are similar to the <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>.
+          Compared to <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> can fuse features from two modalities. To this end, we propose <b class="word_bi_modal_encoder_color">Bi-modal</b> <b class="word_attention_encoder_color">Attention</b> block. You may think of it as the encoder-decoder attention from the <b class="vanilla_transformer_color">Vanilla Transformer's Decoder</b>, where <i>keys</i> and <i>values</i> are taken from another modality. The other two sub-layers are similar to the <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>.
         </p>
         <p class="p_on_project_pages">
           Recall, all blocks inside of the <b class="vanilla_transformer_color">Vanilla Transformer</b> has the same hidden dimension. This choice is convenient for the vanilla transformer as both source and target are text sequences. On the contrary, an application may require the source and target to be of a different kind, e.g., visual-to-text, or, in our case, audio-visual-to-text. More precisely, the features in our application are 128-d for audio (VGGish) and 1024-d for visual (I3D) modalities. Therefore, we allow the bi-modal attention to handle inputs of different dimensions.
@@ -120,7 +120,7 @@
           <b class="bi_modal_decoder_color">Bi-modal Decoder</b> inputs: a) <b style="color: #6C8EBF;">GloVe</b> embeddings obtained for the previous sequence of tokens (or, roughly, words) and b) the two-stream output of the <b class="vanilla_transformer_color">N</b><sup>th</sup> layer of <b class="bi_modal_encoder_color">Bi-modal Encoder</b>. The decoder outputs refined features that account for features at all positions of both streams coming from the encoder and at all previous positions of the input sequence. The output of the decoder will be used to select the next token (a word).
         </p>
         <p class="p_on_project_pages" style="padding-bottom: 0em;">
-          The decoder has <b class="vanilla_transformer_color">N</b> layers, and each layer consists of four sub-layers: 1) Self-attention, 2) <b class="bi_modal_attention_decoder_color">Bi-modal Attention</b>, 3) <b class="bridge_color">Bridge</b>, and 4) Position-wise Fully-connected network.
+          The decoder has <b class="vanilla_transformer_color">N</b> layers, and each layer consists of four sub-layers: 1) Self-attention, 2) <b class="word_bi_modal_decoder_color">Bi-modal</b> <b class="word_attention_decoder_color">Attention</b>, 3) <b class="bridge_color">Bridge</b>, and 4) Position-wise Fully-connected network.
         </p>
         <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em; margin-bottom: 0.5em">
           <img id="decoder" src="./images/bmt/bi_modal_decoder.svg" alt="Bi-modal Decoder Layer">

@@ -556,23 +556,45 @@ input:checked + .slider_encoder:before, input:checked + .slider_decoder:before {
 .bi_modal_encoder_color {
   color: rgb(236, 135, 40);
 }
-.bi_modal_attention_encoder_color {
-  background: linear-gradient(to right, #B85450 0%, #D6B656 80%);
+.word_bi_modal_encoder_color {
+  background: linear-gradient(to right, #B85450 0%, rgb(192, 138, 93) 100%);
   background-clip: text;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
-.bi_modal_attention_decoder_color {
-  background: linear-gradient(to right, #6C8EBF 0%, rgb(211, 183, 92) 80%);
+.word_attention_encoder_color {
+  background: linear-gradient(to right, rgb(192, 138, 93) 0%, #D6B656 80%);
   background-clip: text;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.word_bi_modal_decoder_color {
+  background: linear-gradient(to right, #6C8EBF 0%, rgb(163, 163, 144) 100%);
+  background-clip: text;
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+.word_attention_decoder_color {
+  background: linear-gradient(to right, rgb(163, 163, 144), #D6B656 100%);
+  background-clip: text;
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 .bridge_color {
   background: linear-gradient(to right, #6C8EBF 0%, rgb(190, 206, 101) 100%);
   background-clip: text;
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 .bi_modal_decoder_color {
   color: rgb(67, 161, 110);
