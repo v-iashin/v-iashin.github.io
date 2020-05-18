@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>BMT - Vladimir Iashin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+
+  <body>
+      
+    <ul class="breadcrumb">
+      <a class="bread_crumb" href="index.html">Vladimir Iashin</a> / Dense Video Captioning with Bi-modal Transformer
+    </ul>
+    
+    <h1> A Better Use of Audio-Visual Cues: <br> Dense Video Captioning with Bi-modal Transformer </h1>
+
+    <!-- Authors -->
+    <div class="container_authors">
+      <div class="author_affiliation">
+        <div class="author_name">
+          <a class="social" href="https://v-iashin.github.io/"> Vladimir Iashin </a>
+        </div>
+        <div class="affiliation"> Tampere University </div>
+      </div>
+      <div class="author_affiliation">
+        <div class="author_name">
+          <a class="social" href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+        </div>
+        <div class="affiliation"> Tampere University </div>
+      </div>
+    </div>
+    
+
+    <!-- Links -->
+    <div class="code_and_links">
+      <div class="div_link"> <a class="social" href="https://github.com/v-iashin/"> Code (will be released in Summer 2020) </a> </div>
+      <!-- <div class="div_link"> <a class="social" href="https://arxiv.org/abs/2003.07758"> Paper </a> </div> -->
+    </div>
+    
+    <hr>
+      
+    <div class="our_framework">
+      <div class="section_name" style="padding: 0.5em;">
+        Overview
+      </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          Dense video captioning aims to localize and describe important events in untrimmed videos. Existing methods mainly tackle this task by exploiting visual information alone, while completely neglecting the audio track.
+        </p>
+        <p class="p_on_project_pages">
+          To this end, we present <b>Bi-modal Transformer with Proposal Generator</b> (BMT), which efficiently utilizes audio and visual input sequences to select events in a video and, then, use these clips to generate a textual description.
+        </p>
+        <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em;">
+          <img src="./images/bmt/bi_modal_transformer.svg" alt="Bi-modal Transformer with Proposal Generator" >
+        </div>
+        <p class="p_on_project_pages">
+          Audio and visual features are encoded with <b style="color: #B85450;">VGGish</b> and <b style="color: #D6B656;">I3D</b> while caption tokens with <b style="color: #6C8EBF;">GloVe</b>. First, VGGish and I3D features are passed through the stack of <b class="vanilla_transformer_color">N</b> bi-modal encoder layers where audio and visual sequences are encoded to form, what we call, audio-attended visual and visual-attended audio features. These features are passed to the bi-modal multi-headed proposal generator, which generates a set of proposals using information from both modalities.
+        </p>
+        <p class="p_on_project_pages">
+          Then, the input features are trimmed according to the proposed segments and encoded in the bi-modal encoder again. The stack of <b class="vanilla_transformer_color">N</b> bi-modal decoder layers inputs both: a) GloVe embeddings of the previously generated caption sequence, b) the internal representation from the last layer of the encoder for both modalities. The decoder produces its internal representation which is, then, used in the generator to model the distribution over the vocabulary for the next caption word.
+        </p>
+        <p class="p_on_project_pages">
+          Next, I will introduce the essential parts of the architecture, in particular, <b class="bi_modal_encoder_color">Bi-modal Encoder</b>, <b class="bi_modal_decoder_color">Bi-modal Decoder</b>, and <b class="proposal_generator_color">Bi-modal Proposal Generator</b>. I will assume that you are familiar with the concepts of Transformer and YOLO.
+        </p>
+      </div>
+    </div>
+
+    <!-- Bi-modal Encoder -->
+    <div class="our_framework">
+      <div class="section_name" style="padding: 0.5em">
+        Bi-modal Encoder
+      </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          We use <b class="bi_modal_encoder_color">Bi-modal Encoder</b> in two situations: as an encoder in Bi-modal Transformer, which is used as a captioning module, and as a feature extractor for the <b class="proposal_generator_color">Proposal Generation Module</b>. Consequently, when used for the proposal generation, it inputs a whole video and takes only a trimmed segment for the captioning.
+        </p>
+        <p class="p_on_project_pages">
+          Given <b style="color: #B85450;">VGGish</b> and <b style="color: #D6B656;">I3D</b> features from a video, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> outputs visual-attended audio and audio-attended visual features. These features are going to be useful for the proposal generator and decoder.
+        </p>
+        <p class="p_on_project_pages">
+          Our encoder consists of <b class="vanilla_transformer_color">N</b> layers. Specifically, a bi-modal encoder layer has three sub-layers: 1) Self-attention, 2) <b class="bi_modal_attention_encoder_color">Bi-modal Attention</b>, and 3) Position-wise Fully-connected network. 
+        </p>
+        <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em; margin-bottom: 0.5em;">
+          <img id="encoder" src="./images/bmt/bi_modal_encoder.svg" alt="Bi-modal Encoder Layer">
+        </div>
+        <div class="toggle_with_text">
+          <div class="toggle_element">
+            <label class="switch">
+              <input type="checkbox" onclick="encoder_switcher()" checked>
+              <span class="slider_encoder round"></span>
+            </label>
+          </div>
+          <div id="right_text_encoder" class="right_text">
+            <b class="bi_modal_encoder_color" style="font-size: larger">Bi-modal Encoder</b>
+          </div>
+        </div>
+        <p class="p_on_project_pages">
+          Compared to <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> can fuse features from two modalities. To this end, we propose <b class="bi_modal_attention_encoder_color">Bi-modal Attention</b> block. You may think of it as the encoder-decoder attention from the <b class="vanilla_transformer_color">Vanilla Transformer's Decoder</b>, where <i>keys</i> and <i>values</i> are taken from another modality. The other two sub-layers are similar to the <b class="vanilla_transformer_color">Vanilla Transformer's Encoder</b>.
+        </p>
+        <p class="p_on_project_pages">
+          Recall, all blocks inside of the <b class="vanilla_transformer_color">Vanilla Transformer</b> has the same hidden dimension. This choice is convenient for the vanilla transformer as both source and target are text sequences. On the contrary, an application may require the source and target to be of a different kind, e.g., visual-to-text, or, in our case, audio-visual-to-text. More precisely, the features in our application are 128-d for audio (VGGish) and 1024-d for visual (I3D) modalities. Therefore, we allow the bi-modal attention to handle inputs of different dimensions.
+        </p>
+        <p class="p_on_project_pages">
+          Besides distinct dimensions of each feature, the number of these features in a sequence can also be different for each modality. For instance, audio and visual features might have a distinct time span. In our case, it is 0.96 seconds for VGGish and 2.56 for I3D. By design, the bi-modal attention block accounts for this dissimilarity and allows the input sequences to have different lengths.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Bi-modal Decoder -->
+    <div class="our_framework">
+      <div class="section_name" style="padding: 0.5em">
+        Bi-modal Decoder
+      </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          <b class="bi_modal_decoder_color">Bi-modal Decoder</b> inputs: a) <b style="color: #6C8EBF;">GloVe</b> embeddings obtained for the previous sequence of tokens (or, roughly, words) and b) the two-stream output of the <b class="vanilla_transformer_color">N</b><sup>th</sup> layer of <b class="bi_modal_encoder_color">Bi-modal Encoder</b>. The decoder outputs refined features that account for features at all positions of both streams coming from the encoder and at all previous positions of the input sequence. The output of the decoder will be used to select the next token (a word).
+        </p>
+        <p class="p_on_project_pages" style="padding-bottom: 0em;">
+          The decoder has <b class="vanilla_transformer_color">N</b> layers, and each layer consists of four sub-layers: 1) Self-attention, 2) <b class="bi_modal_attention_decoder_color">Bi-modal Attention</b>, 3) <b class="bridge_color">Bridge</b>, and 4) Position-wise Fully-connected network.
+        </p>
+        <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em; margin-bottom: 0.5em">
+          <img id="decoder" src="./images/bmt/bi_modal_decoder.svg" alt="Bi-modal Decoder Layer">
+        </div>
+        <div class="toggle_with_text">
+          <div class="toggle_element">
+            <label class="switch">
+              <input type="checkbox" onclick="decoder_switcher()" checked>
+              <span class="slider_decoder round"></span>
+            </label>
+          </div>
+          <div id="right_text_decoder" class="right_text">
+            <b class="bi_modal_decoder_color" style="font-size: larger">Bi-modal Decoder</b>
+          </div>
+        </div>
+        <p class="p_on_project_pages">
+          Compared to <b class="vanilla_transformer_color">Vanilla Transformer's Decoder</b>, <b class="bi_modal_decoder_color">Bi-modal Decoder</b> generalizes the encoder-decoder attention into a bi-modal domain. Similar to the encoder, the decoder utilizes the <b class="bi_modal_attention_decoder_color">Bi-modal Attention</b> block to attend both input streams individually. The outputs of the attention blocks are fused in the <b class="bridge_color">Bridge</b>. More precisely, the bridge layer concatenates both inputs and maps the results into two times a smaller dimension. The other two sub-layers are similar to the original transformer architecture. As well as the encoder, the bi-modal attention in the decoder allows the inputs to have distinct dimensions (GloVe embeddings are 300-d each).
+        </p>
+      </div>
+    </div>
+    
+    <div class="our_framework">
+      <div class="section_name" style="padding: 0.5em">
+        Bi-modal Multi-headed Proposal Generator
+      </div>
+      <div class="section_content">
+        <p class="p_on_project_pages"> 
+          We apply the Bi-modal Transformer for the dense video captioning task, which requires to localize the significant events first and, then, produce a caption for each of the events. For the event localization stage, we introduce <b class="proposal_generator_color">Bi-modal Multi-headed Proposal Generator</b>, which generates a set of proposals for a video.
+        </p>
+        <div class="img_with_cap_on_the_right">
+          <div class="right_side">
+            <p class="p_on_project_pages">
+              The proposal generator inputs <b style="color: #D79B00;">audio-attended visual</b> and <b style="color: #B46504;">visual-attended audio</b> features generated for a full video in the bi-modal encoder. These features are processed by the corresponding stacks of proposal generation heads. Each head has a distinct receptive field <i>k</i> and consists of three 1-D conv layers. At every position <i>t</i><sub>★</sub> and for each anchor, the head predicts: center coordinate shift <i>σ(c)</i>, anchor length coefficient <i>l</i>, and objectness score <i>σ(o)</i>. The predictions from all heads form a <b style="color: #6C8EBF;">common pool</b> of predictions. The proposals are sorted on the confidence score and passed back to clip the input for the captioning module —
+              Figure in Overview.
+            </p>
+          </div>
+          <div class="img background_white_squared left_side" style="border: none; padding: 0em;">
+            <img src="./images/bmt/proposal_generator.svg" alt="Bi-modal Multi-headed Proposal Generator">
+          </div>
+        </div>
+        <p class="p_on_project_pages"> 
+          The design of the proposal generation head is partly inspired by YOLO. Opposed to YOLO, we preserve the sequence length across all layers (no pooling was used). Moreover, YOLO utilizes predictions from three different scales to predict different-scale objects. Hence, only three sizes of receptive fields are used. Instead, our model makes predictions at a single scale while controlling the receptive field with a kernel size <i>k</i>, which is distinct in each proposal generation head.
+        </p>
+      </div>
+    </div>
+    
+    <!-- BibTex -->
+    <!-- TODO: add eprint number after arxiv submissijn -->
+    <div class="our_framework">
+      <div class="section_name" style="padding: 0.5em"> Citation </div>
+      <div class="section_content">
+        <pre class="code_box bmt old_style_shadow"><code>@misc{BMT_Iashin_2020,
+  title={A Better Use of Audio-Visual Cues: Dense Video Captioning with Bi-modal Transformer},
+  author={Vladimir Iashin and Esa Rahtu},
+  year={2020},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="our_framework">
+      <div class="section_name">
+        Check Out Our Earlier Work
+      </div>
+      <div class="section_content" style="text-align: center;">
+        <div class="row">
+          <div class="column_left">
+            <a href="mdvc.html">
+              <img class="thumbnail" onmouseover="this.src='images/mdvc.gif'" onmouseout="this.src='images/mdvc.jpg'"
+                src="images/mdvc.jpg" />
+            </a>
+          </div>
+          <div class="column_right">
+            <p class="project_description"> <b>Vladimir Iashin</b> and Esa Rahtu. <br>
+              Multi-modal Dense Video Captioning. <br>
+              In <i>Workshop on Multimodal Learning</i> <br>
+              (CVPR Workshop), 2020.
+            </p>
+            <ul class="proj_buttons">
+              <li class="proj_buttons">
+                <a href="mdvc.html" class="proj_buttons"> Project Page </a>
+              </li>
+              <li class="proj_buttons">
+                <a href="https://github.com/v-iashin/mdvc" class="proj_buttons"> Code </a>
+              </li>
+              <li class="proj_buttons">
+                <a href="https://arxiv.org/abs/2003.07758" class="proj_buttons"> Paper </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+  
+  <script>
+    function encoder_switcher() {
+      var x = document.getElementById("encoder");
+      var y = document.getElementById("right_text_encoder");
+      if (x.src.endsWith("bi_modal_encoder.svg")) {
+        x.src = "./images/bmt/encoder.svg";
+        y.innerHTML = "<b class='vanilla_transformer_color' style='font-size: larger'> Vanilla Transformer's Encoder</b>"
+      } else {
+        x.src = "./images/bmt/bi_modal_encoder.svg";
+        y.innerHTML = "<b class='bi_modal_encoder_color' style='font-size: larger'>Bi-modal Encoder</b>"
+      }
+    }
+    function decoder_switcher() {
+        var x = document.getElementById("decoder");
+        var y = document.getElementById("right_text_decoder");
+        if (x.src.endsWith("bi_modal_decoder.svg")) {
+          x.src = "./images/bmt/decoder.svg";
+          y.innerHTML = "<b class='vanilla_transformer_color' style='font-size: larger'> Vanilla Transformer's Decoder</b>"
+        } else {
+          x.src = "./images/bmt/bi_modal_decoder.svg";
+          y.innerHTML = "<b class='bi_modal_decoder_color' style='font-size: larger'>Bi-modal Decoder</b>"
+        }
+      }
+  </script>
+  <!-- Prefetching the hidden images for snappier toggles -->
+  <img src="./images/bmt/encoder.svg" style="display: none;">
+  <img src="./images/bmt/decoder.svg" style="display: none;">
+  <img src="./images/mdvc.gif" style="display: none;">
+  </html>

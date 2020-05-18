@@ -15,22 +15,46 @@ h1 {
 }
 
 .name:after{
-    content: 'Vladimir Iashin';
+    content: "Vladimir Iashin";
 }
 .name:hover:after{
     content:'Vladimir Yashin';
 }
+/* .gradient {
+	color: black;
+  background-image: -webkit-linear-gradient(0deg, #feab3a, #f35626);
+  background-clip: text;
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hue 6s infinite linear;
+	-webkit-animation: hue 6s infinite linear;
+}
+@keyframes hue {
+  from {
+    filter: hue-rotate(-360deg);
+  }
+  to {
+    filter: hue-rotate(0deg);
+  }
+}
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(0deg);
+  }
+} */
 
 hr {
-  width: 90%;
   margin-top: 1.5em;
   margin-bottom: 1.5em;
-  max-width: 50em;
+  max-width: 60em;
 }
 
 p {
   font-size: 1em; 
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1em;
@@ -46,12 +70,17 @@ p.project_description {
 }
 
 div.row {
-  text-align: center;
-  max-width: 50em;
-  display: inline-block;
+  max-width: 55em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   vertical-align: middle;
   width: 90%;
   border: 1px solid black;
+  margin: auto;
+  margin-bottom: 1.5em;
 }
 
 div.column_left {
@@ -78,6 +107,7 @@ div.column_right {
     display: table;
     width: 90%;
     margin: auto;
+    margin-bottom: 1em;
   } 
   div.column_left {
     width: 70%;
@@ -316,16 +346,23 @@ a.proj_buttons:hover {
 .section_name {
   padding: 1em;
   padding-top: 2em;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
-  margin: auto;
+  /* margin: auto; */
   max-width: 50em;
   text-align: center;
 }
 .section_content {
-  padding: 1em;
+  /* padding: 1em; */
   font-size: 1.2em;
   line-height: 1.2em;
+  padding: 1em;
+}
+.p_on_project_pages {
+  margin-top: 0em;
+  margin-bottom: 0em;
+  padding-top: 0em;
+  padding-bottom: 2em;
 }
 .teaser {
   padding: 1em;
@@ -334,34 +371,77 @@ a.proj_buttons:hover {
   text-align: left;
 }
 .our_framework {
-  padding: 1em;
   margin: auto;
   max-width: 70em;
   text-align: left;
 }
 .img {
   padding: 1.5em;
-  margin: auto;
-  /* padding-bottom: 0.5em; */
+  margin-left: auto;
+  margin-right: auto;
+}
+.img_with_cap_on_the_right {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.left_side {
+  flex: 5;
+  max-width: 90%;
+  min-width: 17em;
+}
+.right_side {
+  flex: 3;
+  min-width: 17em;
+}
+.background_beige_rounded {
   background-color: beige;
   border-radius: 25px;
+}
+.background_white_squared {
+  background-color: white;
+  border: 2px solid;
+  margin-bottom: 2em;
+}
+
+.no_background_color {
+  background-color: white;
 }
 .caption {
   padding-top: 0.5em;
   padding-bottom: 1em;
   text-align: left;
-  margin: auto;
+  /* margin: auto; */
   font-style: italic;
 }
+
 .code_box {
-  padding: 2em;
+  padding: 1em;
   margin: auto;
   text-align: left;
   max-width: 50em;
-  background-color: beige;
   overflow-x: auto;
-  border-radius: 25px;
+  overflow-wrap: break-word;
 }
+.old_style_shadow {
+  box-shadow: 5px 5px rgb(105, 105, 105);
+}
+code {
+  font-size: 0.8em;
+}
+.bmt {
+  white-space: pre-wrap;       /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  border: 1px solid; 
+  width: 90%; 
+  /* margin: auto; */
+}
+
 .code_and_links {
   display: flex;
   margin: auto;
@@ -375,4 +455,128 @@ a.proj_buttons:hover {
   margin: auto;
   /* border: 3px solid green; */
   min-width: 15em;
+}
+
+.toggle_with_text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  /* border: 3px solid green; */
+  /* padding: 0 2em 2em 0; */
+  padding: 0 0 2em 1em;
+  margin: auto;
+  width: 90%;
+}
+.toggle_element {
+  /* border: 3px solid green; */
+  padding-right: 1em;
+  /* padding-left: 1em; */
+  max-width: 4em;
+}
+.right_text {
+  /* border: 3px solid green; */
+  flex-grow: 1;
+  min-width: 50%;
+}
+
+/* Switches (Toggles) */
+.switch {
+  position: relative;
+  display: inline-block;
+  /* width: 60px; */
+  width: 30px;
+  /* height: 34px; */
+  height: 17px;
+}
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider_encoder, .slider_decoder {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider_encoder:before, .slider_decoder:before {
+  position: absolute;
+  content: "";
+  /* height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px; */
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider_encoder {
+  background-color: rgb(236, 135, 40);
+  box-shadow: 0 0 3px rgb(236, 135, 40);
+}
+input:checked + .slider_decoder {
+  background-color: rgb(67, 161, 110);
+  box-shadow: 0 0 3px rgb(67, 161, 110);
+}
+/* input:focus + .slider_decoder {
+  box-shadow: 0 0 2px rgb(46, 139, 87);
+} */
+input:checked + .slider_encoder:before, input:checked + .slider_decoder:before {
+  /* -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px); */
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
+}
+/* Rounded sliders */
+.slider_encoder.round, .slider_decoder.round {
+  /* border-radius: 34px; */
+  border-radius: 17px;
+}
+.slider_encoder.round:before, .slider_decoder.round:before {
+  border-radius: 50%;
+}
+
+/* Colors */
+.vanilla_transformer_color {
+  color: #808080;
+}
+.bi_modal_encoder_color {
+  color: rgb(236, 135, 40);
+}
+.bi_modal_attention_encoder_color {
+  background: linear-gradient(to right, #B85450 0%, #D6B656 80%);
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.bi_modal_attention_decoder_color {
+  background: linear-gradient(to right, #6C8EBF 0%, rgb(211, 183, 92) 80%);
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.bridge_color {
+  background: linear-gradient(to right, #6C8EBF 0%, rgb(190, 206, 101) 100%);
+  background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.bi_modal_decoder_color {
+  color: rgb(67, 161, 110);
+}
+.proposal_generator_color {
+  color: rgb(55, 70, 207)
 }
