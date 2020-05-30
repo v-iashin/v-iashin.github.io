@@ -80,7 +80,7 @@ function send_detect_show() {
     // and show the reload button
     rld.classList.remove('hide');
   }).fail(function (data) {
-    alert('It seems that the detector is not working right now but you have tried to upload an image. Please check the server status at the bottom of the page. If it happened to be offline, please come again tomorrow -- I restart the server every morning. However, if it is online and you are seeing this message please let me know at vladimir.d.iashin@gmail.com or linkedin.com/in/vladimir-iashin');
+    alert("Wow! That's weird. It seems it didn't work for you, but it had to. Please let me know about this odd situation on vdyashin@gmail.com or in Issues on GitHub. Or update the page and try again.");
     // remove detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
