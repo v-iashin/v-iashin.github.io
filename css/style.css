@@ -101,7 +101,6 @@ ul.breadcrumb {
   margin-top: 2.7em;
 /*  margin-bottom: 1em;*/
   text-align: center;
-  font-family: monospace;
   padding: 0em;
 }
 
@@ -109,7 +108,6 @@ ul.social_buttons {
   margin-top: 2em;
   margin-bottom: 2em;
   text-align: center;
-  font-family: monospace;
   padding: 0em;
 }
 
@@ -161,7 +159,6 @@ img.thumbnail {
 }
 
 label.btn, button.btn {
-  font-family: monospace;
   border: 0.2ex solid #ccc;
   display: inline-block;
   padding: 0.5em 1em;
@@ -183,7 +180,6 @@ button.progress {
 }
 
 footer.version {
-  font-family: monospace;
   text-align: right;
   position: fixed;
   bottom: 0em;
@@ -218,7 +214,6 @@ a.social:hover {
 }
 
 a.intext {
-  font-family: monospace;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -233,7 +228,6 @@ a.intext:hover {
 }
 
 p.disclaimer {
-  font-family: monospace;
   line-height: 1.3em;
   width: 95%;
   margin-left: auto;
@@ -242,7 +236,6 @@ p.disclaimer {
 }
 
 a.project {
-  font-family: monospace;
   text-align: center;
   font-size: 1.2em;
   margin-left: auto;
@@ -259,7 +252,6 @@ a.project:hover {
 }
 
 a.proj_buttons {
-  font-family: monospace;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -297,7 +289,6 @@ a.proj_buttons:hover {
   height: 50%;
 }
 .conference {
-  /* font-size: 1.2em;  */
   padding: 1em;
 }
 .section {
