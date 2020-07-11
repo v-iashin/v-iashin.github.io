@@ -163,6 +163,7 @@ label.btn, button.btn {
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
+  font-family: monospace;
   background-color: white;
   color: #333;
 }
