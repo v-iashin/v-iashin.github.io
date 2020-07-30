@@ -12,7 +12,7 @@
     <ul class="breadcrumb">
       <a class="bread_crumb" href="index.html">Vladimir Iashin</a> / Dense Video Captioning with Bi-modal Transformer
     </ul>
-    
+
     <h1> A Better Use of Audio-Visual Cues: <br> Dense Video Captioning with Bi-modal Transformer </h1>
 
     <!-- Authors -->
@@ -30,16 +30,21 @@
         <div class="affiliation"> Tampere University </div>
       </div>
     </div>
-    
+
 
     <!-- Links -->
     <div class="code_and_links">
       <div class="div_link"> <a class="social" href="https://github.com/v-iashin/BMT"> Code </a> </div>
       <div class="div_link"> <a class="social" href="https://arxiv.org/abs/2005.08271"> Paper </a> </div>
     </div>
-    
+
+    <!-- Conference -->
+    <div class="conference">
+      <a class="social" href="https://bmvc2020.github.io/"> British Machine Vision Conference (BMVC), 2020 </a>
+    </div>
+
     <hr>
-      
+
     <div class="our_framework">
       <div class="section_name" style="padding: 0.5em;">
         Overview
@@ -79,7 +84,7 @@
           Given <b style="color: #B85450;">VGGish</b> and <b style="color: #D6B656;">I3D</b> features from a video, <b class="bi_modal_encoder_color">Bi-modal Encoder</b> outputs visual-attended audio and audio-attended visual features. These features are going to be useful for the proposal generator and decoder.
         </p>
         <p class="p_on_project_pages">
-          Our encoder consists of <b class="vanilla_transformer_color">N</b> layers. Specifically, a bi-modal encoder layer has three sub-layers: 1) Self-attention, 2) <b class="word_bi_modal_encoder_color">Bi-modal</b> <b class="word_attention_encoder_color">Attention</b>, and 3) Position-wise Fully-connected network. 
+          Our encoder consists of <b class="vanilla_transformer_color">N</b> layers. Specifically, a bi-modal encoder layer has three sub-layers: 1) Self-attention, 2) <b class="word_bi_modal_encoder_color">Bi-modal</b> <b class="word_attention_encoder_color">Attention</b>, and 3) Position-wise Fully-connected network.
         </p>
         <div class="img background_white_squared" style="width: 90%; border: none; padding: 0em; margin-bottom: 0.5em;">
           <img id="encoder" src="./images/bmt/bi_modal_encoder.svg" alt="Bi-modal Encoder Layer">
@@ -106,7 +111,7 @@
         </p>
       </div>
     </div>
-    
+
     <!-- Bi-modal Decoder -->
     <div class="our_framework">
       <div class="section_name" style="padding: 0.5em">
@@ -138,13 +143,13 @@
         </p>
       </div>
     </div>
-    
+
     <div class="our_framework">
       <div class="section_name" style="padding: 0.5em">
         Bi-modal Multi-headed Proposal Generator
       </div>
       <div class="section_content">
-        <p class="p_on_project_pages"> 
+        <p class="p_on_project_pages">
           We apply the Bi-modal Transformer for the dense video captioning task, which requires to localize the significant events first and, then, produce a caption for each of the events. For the event localization stage, we introduce <b class="proposal_generator_color">Bi-modal Multi-headed Proposal Generator</b>, which generates a set of proposals for a video.
         </p>
         <div class="img_with_cap_on_the_right">
@@ -158,23 +163,21 @@
             <img src="./images/bmt/proposal_generator.svg" alt="Bi-modal Multi-headed Proposal Generator">
           </div>
         </div>
-        <p class="p_on_project_pages"> 
+        <p class="p_on_project_pages">
           The design of the proposal generation head is partly inspired by YOLO. Opposed to YOLO, we preserve the sequence length across all layers (no pooling was used). Moreover, YOLO utilizes predictions from three different scales to predict different-scale objects. Hence, only three sizes of receptive fields are used. Instead, our model makes predictions at a single scale while controlling the receptive field with a kernel size <i>k</i>, which is distinct in each proposal generation head.
         </p>
       </div>
     </div>
-    
+
     <!-- BibTex -->
     <div class="our_framework">
       <div class="section_name" style="padding: 0.5em"> Citation </div>
       <div class="section_content">
-        <pre class="code_box bmt old_style_shadow"><code>@misc{BMT_Iashin_2020,
+        <pre class="code_box bmt old_style_shadow"><code>@InProceedings{BMT_Iashin_2020,
   title={A Better Use of Audio-Visual Cues: Dense Video Captioning with Bi-modal Transformer},
-  author={Vladimir Iashin and Esa Rahtu},
-  year={2020},
-  eprint={2005.08271},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV}
+  author={Iashin, Vladimir and Rahtu, Esa},
+  booktitle={British Machine Vision Conference (BMVC)},
+  year={2020}
 }</code></pre>
       </div>
     </div>
@@ -219,7 +222,7 @@
 
 
   </body>
-  
+
   <script>
     function encoder_switcher() {
       var x = document.getElementById("encoder");
