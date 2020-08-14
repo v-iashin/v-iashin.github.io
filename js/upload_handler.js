@@ -1,45 +1,74 @@
-// url to server with flask running 
+// url to server with flask running
 var SERVER_URL = 'https://v-iashin.ml:5000/';
 
 // set max side length for an uploaded image
 var MAX_SIDE_LEN = 1280;
 
 upload = document.querySelector('#file-input');
+examples_text = document.querySelector('#examples_text');
+example_street = document.querySelector('#example_street');
+example_room = document.querySelector('#example_room');
 preview = document.querySelector('.preview');
 rld = document.querySelector('.reload');
 canvas = document.createElement('canvas');
 context = canvas.getContext('2d');
 img = new Image();
 resized_img = new Image();
+var orientation;
+
+function onload_func() {
+  // extracting the orientation info from EXIF which will be sent to server
+  EXIF.getData(img, function () {
+    orientation = EXIF.getTag(this, 'Orientation');
+  });
+  // resize the sides of the canvas and draw the resized image
+  [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
+  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  // adds the image that the canvas holds to the source
+  resized_img.src = canvas.toDataURL('image/jpeg');
+  // clean result before doing anything
+  preview.innerHTML = '';
+  // append new image
+  preview.appendChild(resized_img);
+  // hide examples text
+  examples_text.classList.remove('examples_text');
+  examples_text.classList.add('hide');
+  // send the user image on server and wait for response, and, then, shows the result
+  send_detect_show();
+}
+
+// example on click
+example_street.addEventListener('click', function () {
+  event.preventDefault();
+  // clean result before
+  preview.innerHTML = '';
+  // resize the image
+  img.onload = onload_func;
+  img.src = "../images/detector_examples/street.jpg";
+});
+// example on click
+example_room.addEventListener('click', function () {
+  event.preventDefault();
+  // clean result before
+  preview.innerHTML = '';
+  // resize the image
+  img.onload = onload_func;
+  img.src = "../images/detector_examples/room.jpg";
+});
+
 
 upload.addEventListener('change', function() {
   event.preventDefault();
   // clean result before
   preview.innerHTML = '';
-  
+
   // start file reader
   var reader = new FileReader();
-  
+
   reader.onload = function(event) {
     if(event.target.result) {
       // resize the image
-      img.onload = function() {
-        // extracting the orientation info from EXIF which will be sent to server
-        EXIF.getData(img, function() {
-          orientation = EXIF.getTag(this, 'Orientation');
-        });
-        // resize the sides of the canvas and draw the resized image
-        [canvas.width, canvas.height] = reduceSize(img.width, img.height, MAX_SIDE_LEN);
-        context.drawImage(img, 0, 0, canvas.width, canvas.height);
-        // adds the image that the canvas holds to the source
-        resized_img.src = canvas.toDataURL('image/jpeg');
-        // clean result before
-        preview.innerHTML = '';
-        // append new image
-        preview.appendChild(resized_img);
-        // send the user image on server and wait for response, and, then, shows the result
-        send_detect_show();
-      };
+      img.onload = onload_func;
       // evokes the function above ('onload to src attr')
       img.src = event.target.result;
     };
@@ -64,6 +93,7 @@ function send_detect_show() {
   var form_data = new FormData();
   form_data.append('file', blob);
   form_data.append('orientation', orientation);
+  console.log(orientation);
   $.ajax({
     type: 'POST',
     url: SERVER_URL,
@@ -80,7 +110,7 @@ function send_detect_show() {
     // and show the reload button
     rld.classList.remove('hide');
   }).fail(function (data) {
-    alert("Wow! That's weird. It seems it didn't work for you, but it had to. Please let me know about this odd situation on vdyashin@gmail.com or in Issues on GitHub. Or update the page and try again.");
+    alert("Wow! That's weird. It seems it didn't work for you, but it had to. Please let me know about this odd situation on vdyashin@gmail.com or in Issues on GitHub. Or reaload the page and try again.");
     // remove detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button

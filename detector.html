@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Object Detector - Vladimir Iashin</title>
+    <title>Online Object Detector - Vladimir Iashin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -11,25 +11,22 @@
   </head>
 
   <body>
-      
+
     <ul class="breadcrumb">
-      <a class="bread_crumb" href="index.html">Vladimir Iashin</a> / Object Detector
+      <a class="bread_crumb" href="index.html">Vladimir Iashin</a> / Online Object Detector
     </ul>
-    
-    <h1> Object Detection Project </h1>
-    
+
+    <h1> Online Object Detector </h1>
+
     <p>
-      This is an object detector. Just upload an image with some objects on it and give it a try!
+      It will localize objects on an image.
     </p>
-    
-    <p>
-      <b> Disclaimer</b>: please don't use personal photos that you don't want me to see.
-    </p>
-    
+
     <!-- buttons -->
     <div class="buttons">
       <!-- input file -->
-      <label id="upload" for="file-input" class="btn upload"> Upload </label>
+      <div id="examples_text" class="examples_text">Try examples: a <li id="example_street" class="example">street</li> and a <li id="example_room" class="example">room</li> <br> or </div>
+      <label id="upload" for="file-input" class="btn upload"> Upload Your Image </label>
       <input id="file-input" type="file" accept="image/*">
       <!-- detect -->
       <button id="detect" class="btn detect hide"> Detect </button>
@@ -37,14 +34,14 @@
       <button id="reload" class="btn reload hide" onclick="reload()"> Reset ↻ </button>
     </div>
 
-    <!-- image box -->      
+    <!-- image box -->
     <div class="preview">
     </div>
-    
+
     <footer class="version">
-      Detection Project v. 0 (<span id="status"></span>)
+      Detection Project, 2019 (<span id="status"></span>)
     </footer>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
     <script src="js/upload_handler.js"></script>

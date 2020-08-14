@@ -3,7 +3,7 @@ html,body
   width: 100%;
   margin: 0em;
   padding: 0em;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   text-align: center;
   font-family: monospace;
   color: #333;
@@ -26,7 +26,7 @@ hr {
   max-width: 60em;
 }
 
-p { 
+p {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -79,7 +79,7 @@ div.column_right {
     width: 90%;
     margin: auto;
     margin-bottom: 1em;
-  } 
+  }
   div.column_left {
     width: 70%;
     float: none;
@@ -166,16 +166,17 @@ label.btn, button.btn {
   font-family: monospace;
   background-color: white;
   color: #333;
+  margin-top: 1em;
 }
 label.btn:hover, button.btn:hover {
   border: 0.2ex solid #333;
 }
-label.hide, button.hide {
+label.hide, button.hide, div.hide {
   display: none;
 }
 
 button.progress {
-  color: #C1C1C1;
+  color: #919191;
   pointer-events: none;
   border: 0.2ex solid white;
 }
@@ -391,8 +392,8 @@ code {
   white-space: -pre-wrap;      /* Opera 4-6 */
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
-  border: 1px solid; 
-  width: 90%; 
+  border: 1px solid;
+  width: 90%;
   /* margin: auto; */
 }
 
@@ -444,7 +445,7 @@ code {
   /* height: 34px; */
   height: 17px;
 }
-.switch input { 
+.switch input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -557,3 +558,16 @@ input:checked + .slider_encoder:before, input:checked + .slider_decoder:before {
   color: rgb(55, 70, 207)
 }
 
+li.example {
+  color: #333;
+  border-bottom: 1px dashed;
+}
+li.example:hover {
+  color: rgba(70, 20, 140, 0.8);
+  cursor: pointer;
+}
+
+div.examples_text {
+  padding-bottom: 1em;
+  display: inline;
+}
