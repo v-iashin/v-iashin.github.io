@@ -8,6 +8,7 @@ upload = document.querySelector('#file-input');
 examples_text = document.querySelector('#examples_text');
 example_street = document.querySelector('#example_street');
 example_room = document.querySelector('#example_room');
+example_dog = document.querySelector('#example_dog');
 preview = document.querySelector('.preview');
 rld = document.querySelector('.reload');
 canvas = document.createElement('canvas');
@@ -37,6 +38,15 @@ function onload_func() {
   send_detect_show();
 }
 
+// example on click
+example_dog.addEventListener('click', function () {
+  event.preventDefault();
+  // clean result before
+  preview.innerHTML = '';
+  // resize the image
+  img.onload = onload_func;
+  img.src = "../images/detector_examples/dog.jpg";
+});
 // example on click
 example_street.addEventListener('click', function () {
   event.preventDefault();
