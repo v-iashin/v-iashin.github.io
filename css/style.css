@@ -307,6 +307,14 @@ a.proj_buttons:hover {
   max-width: 50em;
   text-align: center;
 }
+.subsection_name {
+  padding: 1em;
+  padding-top: 2em;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-left: 1em;
+  max-width: 50em;
+}
 .section_content {
   /* padding: 1em; */
   font-size: 1.2em;
