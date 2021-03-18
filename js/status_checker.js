@@ -1,5 +1,5 @@
-// url to server with flask running 
-var STATUS_CHECK_URL = 'https://v-iashin.ml:5000/status_check';
+// url to server with flask running
+var STATUS_CHECK_URL = 'https://iashin.ml:5000/status_check';
 
 // try certified IP (but note the possible ephemeralizm)
 
