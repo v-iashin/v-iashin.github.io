@@ -7,7 +7,8 @@ var MAX_SIDE_LEN = 1280;
 upload = document.querySelector('#file-input');
 examples_text = document.querySelector('#examples_text');
 example_street = document.querySelector('#example_street');
-example_room = document.querySelector('#example_room');
+example_wedding = document.querySelector('#example_wedding');
+example_ngc1499 = document.querySelector('#example_ngc1499');
 example_dog = document.querySelector('#example_dog');
 preview = document.querySelector('.preview');
 rld = document.querySelector('.reload');
@@ -47,7 +48,6 @@ example_dog.addEventListener('click', function () {
   img.onload = onload_func;
   img.src = "../images/detector_examples/dog.jpg";
 });
-// example on click
 example_street.addEventListener('click', function () {
   event.preventDefault();
   // clean result before
@@ -56,14 +56,21 @@ example_street.addEventListener('click', function () {
   img.onload = onload_func;
   img.src = "../images/detector_examples/street.jpg";
 });
-// example on click
-example_room.addEventListener('click', function () {
+example_wedding.addEventListener('click', function () {
   event.preventDefault();
   // clean result before
   preview.innerHTML = '';
   // resize the image
   img.onload = onload_func;
-  img.src = "../images/detector_examples/room.jpg";
+  img.src = "../images/detector_examples/wedding.jpg";
+});
+example_ngc1499.addEventListener('click', function () {
+  event.preventDefault();
+  // clean result before
+  preview.innerHTML = '';
+  // resize the image
+  img.onload = onload_func;
+  img.src = "../images/detector_examples/NGC1499.jpg";
 });
 
 
