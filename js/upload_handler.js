@@ -42,33 +42,33 @@ function onload_func() {
 // example on click
 example_dog.addEventListener('click', function () {
   event.preventDefault();
-  // clean result before
+  // clean the previous result
   preview.innerHTML = '';
-  // resize the image
+  // resize the image, send to the server, and show to a user
   img.onload = onload_func;
   img.src = "../images/detector_examples/dog.jpg";
 });
 example_street.addEventListener('click', function () {
   event.preventDefault();
-  // clean result before
+  // clean the previous result
   preview.innerHTML = '';
-  // resize the image
+  // resize the image, send to the server, and show to a user
   img.onload = onload_func;
   img.src = "../images/detector_examples/street.jpg";
 });
 example_wedding.addEventListener('click', function () {
   event.preventDefault();
-  // clean result before
+  // clean the previous result
   preview.innerHTML = '';
-  // resize the image
+  // resize the image, send to the server, and show to a user
   img.onload = onload_func;
   img.src = "../images/detector_examples/wedding.jpg";
 });
 example_ngc1499.addEventListener('click', function () {
   event.preventDefault();
-  // clean result before
+  // clean the previous result
   preview.innerHTML = '';
-  // resize the image
+  // resize the image, send to the server, and show to a user
   img.onload = onload_func;
   img.src = "../images/detector_examples/NGC1499.jpg";
 });
@@ -76,7 +76,7 @@ example_ngc1499.addEventListener('click', function () {
 
 upload.addEventListener('change', function() {
   event.preventDefault();
-  // clean result before
+  // clean the previous result
   preview.innerHTML = '';
 
   // start file reader
@@ -84,7 +84,7 @@ upload.addEventListener('change', function() {
 
   reader.onload = function(event) {
     if(event.target.result) {
-      // resize the image
+      // resize the image, send to the server, and show to a user
       img.onload = onload_func;
       // evokes the function above ('onload to src attr')
       img.src = event.target.result;
