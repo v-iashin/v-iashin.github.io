@@ -1,18 +1,9 @@
 html,body
 {
-  width: 100%;
-  margin: 0em;
-  padding: 0em;
-  overflow-x: hidden;
   text-align: center;
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   color: #333;
   padding-bottom: 3em;
-  font-size: 1.1em;
-}
-
-h1 {
-  margin: 1em;
 }
 
 .name:after{
@@ -22,17 +13,10 @@ h1 {
     content:'Vladimir Yashin';
 }
 
-hr {
-  max-width: 60em;
-}
-
 p {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  max-width: 50em;
+  max-width: 60em;
 }
 p.project_description {
   text-align: left;
@@ -138,10 +122,6 @@ li.social_buttons {
   color: rgba(70, 20, 140, 0.8);
 }
 
-div.buttons {
-  margin: 2em;
-}
-
 div.preview {
   margin-top: 1ex;
   margin-bottom: 1.1em;
@@ -154,19 +134,14 @@ img {
   width: 100%;
 }
 
-img.thumbnail {
-  width: 100%;
-}
-
 label.btn, button.btn {
   border: 0.2ex solid #ccc;
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
-  font-family: monospace;
+  font-family: 'Roboto Mono', monospace;
   background-color: white;
   color: #333;
-  margin-top: 1em;
 }
 label.btn:hover, button.btn:hover {
   border: 0.2ex solid #333;
@@ -227,14 +202,6 @@ a.intext:link {
 }
 a.intext:hover {
   color: rgba(70, 20, 140, 0.8);
-}
-
-p.disclaimer {
-  line-height: 1.3em;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50em;
 }
 
 a.project {
@@ -299,26 +266,24 @@ a.proj_buttons:hover {
   text-align: left;
 }
 .section_name {
-  padding: 1em;
-  padding-top: 2em;
+  padding: 0.5em;
+  /* padding-top: 1.5em; */
+  /* padding: 1em;
+  padding-top: 2em; */
   font-size: 2em;
   font-weight: bold;
   /* margin: auto; */
-  max-width: 50em;
   text-align: center;
 }
 .subsection_name {
   padding-top: 2em;
   font-size: 1.6em;
   font-weight: bold;
-  max-width: 50em;
-  margin-left: auto;
-  margin-right: auto;
 }
 .section_content {
   /* padding: 1em; */
   font-size: 1.2em;
-  line-height: 1.2em;
+  line-height: 1.35em;
   padding: 1em;
 }
 .p_on_project_pages {
@@ -349,15 +314,18 @@ a.proj_buttons:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 .left_side {
-  flex: 5;
-  max-width: 90%;
-  min-width: 17em;
-}
-.right_side {
   flex: 3;
   min-width: 17em;
+  padding-right: 1em;
+}
+.right_side {
+  flex: 5;
+  min-width: 20em;
+  padding-right: 1em;
 }
 .background_beige_rounded {
   background-color: beige;
@@ -384,15 +352,12 @@ a.proj_buttons:hover {
   padding: 1em;
   margin: auto;
   text-align: left;
-  max-width: 50em;
+  max-width: 90%;
   overflow-x: auto;
   overflow-wrap: break-word;
 }
 .old_style_shadow {
   box-shadow: 5px 5px rgb(105, 105, 105);
-}
-code {
-  font-size: 0.8em;
 }
 .bmt {
   white-space: pre-wrap;       /* Since CSS 2.1 */
@@ -513,57 +478,27 @@ input:checked + .slider_encoder:before, input:checked + .slider_decoder:before {
 }
 
 /* Colors */
-.vanilla_transformer_color {
-  color: #808080;
-}
-.bi_modal_encoder_color {
-  color: rgb(236, 135, 40);
-}
 .word_bi_modal_encoder_color {
   background: linear-gradient(to right, #B85450 0%, rgb(192, 138, 93) 100%);
-  background-clip: text;
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 .word_attention_encoder_color {
   background: linear-gradient(to right, rgb(192, 138, 93) 0%, #D6B656 80%);
-  background-clip: text;
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 .word_bi_modal_decoder_color {
   background: linear-gradient(to right, #6C8EBF 0%, rgb(163, 163, 144) 100%);
-  background-clip: text;
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 .word_attention_decoder_color {
   background: linear-gradient(to right, rgb(163, 163, 144), #D6B656 100%);
-  background-clip: text;
-	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
 }
 .bridge_color {
   background: linear-gradient(to right, #6C8EBF 0%, rgb(190, 206, 101) 100%);
+}
+.gradient {
   background-clip: text;
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-}
-.bi_modal_decoder_color {
-  color: rgb(67, 161, 110);
-}
-.proposal_generator_color {
-  color: rgb(55, 70, 207)
 }
 
 li.example {
@@ -578,4 +513,9 @@ li.example:hover {
 div.examples_text {
   padding-bottom: 1em;
   display: inline;
+}
+
+div.audio-player {
+  text-align: center;
+  width: 100%;
 }
