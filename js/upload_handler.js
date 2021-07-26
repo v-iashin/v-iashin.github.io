@@ -19,7 +19,7 @@ resized_img = new Image();
 var orientation;
 
 function onload_func() {
-  // extracting the orientation info from EXIF which will be sent to server
+  // extracting the orientation info from EXIF which will be sent to the server
   EXIF.getData(img, function () {
     orientation = EXIF.getTag(this, 'Orientation');
   });
@@ -28,11 +28,11 @@ function onload_func() {
   context.drawImage(img, 0, 0, canvas.width, canvas.height);
   // adds the image that the canvas holds to the source
   resized_img.src = canvas.toDataURL('image/jpeg');
-  // clean result before doing anything
+  // clean the result before doing anything
   preview.innerHTML = '';
   // append new image
   preview.appendChild(resized_img);
-  // hide examples text
+  // hides the text with examples
   examples_text.classList.remove('examples_text');
   examples_text.classList.add('hide');
   // send the user image on server and wait for response, and, then, shows the result
@@ -95,40 +95,39 @@ upload.addEventListener('change', function() {
 
 // send the user image on server and wait for response
 function send_detect_show() {
-  // remove upload button
+  // remove the upload button
   var element = document.getElementById('upload');
   element.parentNode.removeChild(element);
-  // show detect (progress) button
+  // show the detect (progress) button
   detect.classList.remove('hide');
-  // make the btn unresponsive
+  // make the button unresponsive
   detect.classList.add('progress');
-  // progress status
+  // shows the status notification
   detect.innerHTML = 'Processing...';
-  // get result to data uri
+  // form a blob from data uri
   var blob = dataURItoBlob(preview.firstElementChild.src);
-  // form POST request to the server
+  // form a POST request to the server
   var form_data = new FormData();
   form_data.append('file', blob);
   form_data.append('orientation', orientation);
-  console.log(orientation);
   $.ajax({
     type: 'POST',
     url: SERVER_URL,
     data: form_data,
-    timeout: 1000 * 25, // ms, to wait until call .fail function
+    timeout: 1000 * 25, // ms, to wait until .fail function is called
     contentType: false,
     processData: false,
     dataType: 'json',
   }).done(function (data, textStatus, jqXHR) {
     // replace the current image with an image with detected objects
     preview.firstElementChild.src = data['image'];
-    // remove detect button
+    // remove the detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
     rld.classList.remove('hide');
   }).fail(function (data) {
-    alert("Wow! That's weird. It seems it didn't work for you, but it had to. Please let me know about this odd situation on vdyashin@gmail.com or in Issues on GitHub. Or reaload the page and try again.");
-    // remove detect button
+    alert("Wow! That's weird. It seems it didn't work for you, but it had to. Please let me know about this odd situation on vdyashin@gmail.com or in Issues on GitHub. Or reload the page and try again.");
+    // remove the detect button
     detect.parentNode.removeChild(detect);
     // and show the reload button
     rld.classList.remove('hide');

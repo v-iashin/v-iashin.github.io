@@ -1,16 +1,18 @@
 html,body
 {
-  text-align: center;
   font-family: 'Roboto Mono', monospace;
   color: #333;
-  padding-bottom: 3em;
+}
+
+h1 {
+  text-align: center;
 }
 
 .name:after{
-    content: "Vladimir Iashin";
+  content: "Vladimir Iashin";
 }
 .name:hover:after{
-    content:'Vladimir Yashin';
+  content:'Vladimir Yashin';
 }
 
 p {
@@ -26,7 +28,7 @@ p.project_description {
 }
 
 div.row {
-  max-width: 55em;
+  max-width: 60em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -43,13 +45,13 @@ div.column_left {
   box-sizing: border-box;
   text-align: left;
   display: table-cell;
-  width: 40%;
+  width: 30%;
   padding: 1em;
   vertical-align: middle;
 }
 div.column_right {
   box-sizing: border-box;
-  width: 60%;
+  width: 70%;
   padding: 1em;
   text-align: left;
   display: table-cell;
@@ -127,6 +129,9 @@ div.preview {
   margin-bottom: 1.1em;
   max-width: 95%;
   text-align: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
   display: inline-block;
 }
 
@@ -240,24 +245,26 @@ a.proj_buttons:hover {
 .container_authors {
   display: flex;
   margin: auto;
-  flex-direction: row;
   flex-wrap: wrap;
   /* border: 3px solid green; */
   max-width: 50em;
+  align-items: center;
 }
 .author_affiliation {
   margin: auto;
   height: 4em;
-  /* border: 3px solid green; */
   min-width: 15em;
 }
 .author_name {
   height: 50%;
+  text-align: center;
 }
 .affiliation {
   height: 50%;
+  text-align: center;
 }
 .conference {
+  text-align: center;
   padding: 1em;
 }
 .section {
@@ -373,9 +380,7 @@ a.proj_buttons:hover {
 .code_and_links {
   display: flex;
   margin: auto;
-  flex-direction: row;
   flex-wrap: wrap;
-  /* border: 3px solid green; */
   max-width: 50em;
 }
 .div_link {
@@ -383,6 +388,7 @@ a.proj_buttons:hover {
   margin: auto;
   /* border: 3px solid green; */
   min-width: 15em;
+  text-align: center;
 }
 
 .toggle_with_text {
