@@ -22,6 +22,9 @@
   li {
     display: list-item;
   }
+  a.intext {
+    word-wrap: break-word;
+  }
 
   .toc_section {
     padding-top: 2em;
@@ -42,6 +45,7 @@
   code {
     border-radius: 0.7ex;
     font-size: 1em;
+    word-wrap: break-word;
   }
 
   .inline {
@@ -802,7 +806,7 @@ cd ../</code></pre>
         <code class="javascript inline">_acme-challenge.your.domain  6wMpfi5ZXG0rbJt7_H2qFtT9_YUVJY_5VzEtbsJnD8</code>.
         Don't press <code class="javascript inline">Enter</code> yet, go to DNS provider page and add a <code
           class="javascript inline">TXT</code> entry:
-      <table style="font-size: 1em;">
+      <table>
         <thead>
           <tr>
             <th style="text-align:right">Name</th>
