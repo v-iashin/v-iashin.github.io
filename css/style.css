@@ -284,8 +284,10 @@ a.proj_buttons:hover {
 }
 .subsection_name {
   padding-top: 2em;
-  font-size: 1.6em;
+  padding-bottom: 1.1em;
+  font-size: 1.4em;
   font-weight: bold;
+  line-height: 1.2em;
 }
 .section_content {
   /* padding: 1em; */
@@ -519,9 +521,4 @@ li.example:hover {
 div.examples_text {
   padding-bottom: 1em;
   display: inline;
-}
-
-div.audio-player {
-  text-align: center;
-  width: 100%;
 }
