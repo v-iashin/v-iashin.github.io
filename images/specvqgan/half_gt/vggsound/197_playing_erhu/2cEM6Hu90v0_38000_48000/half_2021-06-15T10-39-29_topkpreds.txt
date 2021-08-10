@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing violin, fiddle: 0.39271
+	playing shofar: 0.16482
+	people humming: 0.10661
+	female singing: 0.07736
+	playing steel guitar, slide guitar: 0.07600
+	playing theremin: 0.03837
+	child singing: 0.02725
+	male singing: 0.02051
+	playing erhu: 0.01660
+	playing saxophone: 0.01061

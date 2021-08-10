@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people humming: 0.64385
+	playing french horn: 0.07525
+	playing theremin: 0.06981
+	people battle cry: 0.04396
+	playing shofar: 0.02309

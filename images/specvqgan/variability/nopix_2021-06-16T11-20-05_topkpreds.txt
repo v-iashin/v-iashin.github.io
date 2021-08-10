@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	male speech, man speaking: 0.67007
+	female speech, woman speaking: 0.14963
+	people booing: 0.01503
+	opening or closing drawers: 0.01318
+	striking pool: 0.01155
+	sliding door: 0.01019
+	playing ukulele: 0.00870
+	playing darts: 0.00508
+	people marching: 0.00487
+	playing squash: 0.00421

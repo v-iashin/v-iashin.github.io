@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	dog barking: 0.85033
+	dog bow-wow: 0.14838
+	dog baying: 0.00122
+	coyote howling: 0.00002
+	sea lion barking: 0.00002
+	fox barking: 0.00001
+	dog howling: 0.00001
+	dog growling: 0.00001
+	dog whimpering: 0.00000
+	playing darts: 0.00000

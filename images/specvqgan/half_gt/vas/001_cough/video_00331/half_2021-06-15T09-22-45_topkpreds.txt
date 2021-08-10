@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people belly laughing: 0.51670
+	people coughing: 0.21556
+	people sniggering: 0.13472
+	baby laughter: 0.06128
+	people giggling: 0.05371
+	people hiccup: 0.00424
+	people screaming: 0.00419
+	people sneezing: 0.00363
+	people sobbing: 0.00236
+	people gargling: 0.00133

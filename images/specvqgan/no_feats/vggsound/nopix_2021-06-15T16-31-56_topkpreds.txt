@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	wind noise: 0.35642
+	wind rustling leaves: 0.16561
+	rowboat, canoe, kayak rowing: 0.08279
+	horse clip-clop: 0.06827
+	driving motorcycle: 0.05238
+	air conditioning noise: 0.02947
+	sailing: 0.02203
+	volcano explosion: 0.02016
+	motorboat, speedboat acceleration: 0.01604
+	people running: 0.01504

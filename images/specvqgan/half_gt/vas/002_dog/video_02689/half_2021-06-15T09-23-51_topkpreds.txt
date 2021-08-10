@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people slapping: 0.55966
+	people sneezing: 0.05289
+	skateboarding: 0.05079
+	golf driving: 0.04406
+	dog bow-wow: 0.03940
+	hammering nails: 0.03722
+	playing darts: 0.03077
+	people farting: 0.02816
+	firing cannon: 0.02105
+	door slamming: 0.01696

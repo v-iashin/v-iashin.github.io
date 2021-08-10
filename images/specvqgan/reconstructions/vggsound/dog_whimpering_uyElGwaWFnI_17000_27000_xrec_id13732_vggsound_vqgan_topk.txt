@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people sneezing: 0.48976
+	people nose blowing: 0.20539
+	people battle cry: 0.05968
+	yodelling: 0.03102
+	singing choir: 0.03002

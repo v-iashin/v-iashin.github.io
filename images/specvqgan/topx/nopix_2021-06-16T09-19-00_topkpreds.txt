@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	civil defense siren: 0.59918
+	vehicle horn, car horn, honking: 0.17878
+	train horning: 0.07984
+	playing accordion: 0.03984
+	fire truck siren: 0.03967
+	railroad car, train wagon: 0.02013
+	playing violin, fiddle: 0.00976
+	playing shofar: 0.00715
+	playing synthesizer: 0.00299
+	playing saxophone: 0.00248

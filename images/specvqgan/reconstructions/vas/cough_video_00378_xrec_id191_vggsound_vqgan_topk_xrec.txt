@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing tabla: 0.90685
+	playing bongo: 0.05738
+	playing congas: 0.01465
+	people marching: 0.00627
+	playing didgeridoo: 0.00412

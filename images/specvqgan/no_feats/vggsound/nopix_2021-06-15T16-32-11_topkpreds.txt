@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	train whistling: 0.51994
+	lathe spinning: 0.17672
+	people crowd: 0.12070
+	railroad car, train wagon: 0.06383
+	singing choir: 0.02167
+	train horning: 0.01937
+	motorboat, speedboat acceleration: 0.00922
+	race car, auto racing: 0.00708
+	electric grinder grinding: 0.00682
+	planing timber: 0.00558

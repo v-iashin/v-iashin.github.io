@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	chicken crowing: 0.17611
+	baby laughter: 0.16126
+	chicken clucking: 0.11686
+	pheasant crowing: 0.11010
+	chopping wood: 0.06770
+	hammering nails: 0.06744
+	goat bleating: 0.03193
+	skateboarding: 0.03079
+	goose honking: 0.02699
+	people giggling: 0.02584

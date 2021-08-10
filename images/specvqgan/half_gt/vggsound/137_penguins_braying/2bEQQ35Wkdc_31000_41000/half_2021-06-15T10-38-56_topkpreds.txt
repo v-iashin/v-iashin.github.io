@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	cat hissing: 0.16838
+	cat growling: 0.15144
+	bee, wasp, etc. buzzing: 0.07563
+	ferret dooking: 0.06224
+	people nose blowing: 0.04370
+	mouse pattering: 0.04337
+	baby babbling: 0.03965
+	sheep bleating: 0.03712
+	writing on blackboard with chalk: 0.02696
+	goat bleating: 0.02329

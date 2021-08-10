@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	roller coaster running: 0.41502
+	arc welding: 0.19820
+	railroad car, train wagon: 0.06629
+	woodpecker pecking tree: 0.06587
+	driving buses: 0.03579

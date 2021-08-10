@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+        dog bow-wow: 0.65978
+        dog baying: 0.19737
+        dog barking: 0.02808
+        skateboarding: 0.01759
+        pig oinking: 0.01476
+        coyote howling: 0.01047
+        dog whimpering: 0.01025
+        people sniggering: 0.00829
+        dog growling: 0.00625
+        sea lion barking: 0.00545

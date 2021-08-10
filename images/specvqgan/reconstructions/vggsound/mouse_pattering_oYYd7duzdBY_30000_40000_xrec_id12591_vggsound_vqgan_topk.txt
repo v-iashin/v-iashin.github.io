@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	bee, wasp, etc. buzzing: 0.42431
+	barn swallow calling: 0.07972
+	black capped chickadee calling: 0.06035
+	otter growling: 0.04623
+	wind rustling leaves: 0.03436

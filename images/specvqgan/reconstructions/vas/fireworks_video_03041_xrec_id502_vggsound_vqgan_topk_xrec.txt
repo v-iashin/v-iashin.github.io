@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	lighting firecrackers: 0.53301
+	fireworks banging: 0.45646
+	basketball bounce: 0.00282
+	firing cannon: 0.00224
+	missile launch: 0.00183

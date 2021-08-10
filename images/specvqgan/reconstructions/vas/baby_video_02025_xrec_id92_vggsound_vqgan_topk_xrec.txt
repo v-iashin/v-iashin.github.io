@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people screaming: 0.28310
+	people belly laughing: 0.26361
+	people sobbing: 0.17556
+	people babbling: 0.10321
+	children shouting: 0.05640

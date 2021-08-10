@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	eating with cutlery: 0.91822
+	opening or closing drawers: 0.02470
+	arc welding: 0.02021
+	child speech, kid speaking: 0.01214
+	female speech, woman speaking: 0.00316

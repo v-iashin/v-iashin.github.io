@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	hammering nails: 0.63471
+	arc welding: 0.22995
+	forging swords: 0.03822
+	playing guiro: 0.02611
+	cap gun shooting: 0.01466
+	playing washboard: 0.01068
+	beat boxing: 0.00982
+	chopping wood: 0.00826
+	popping popcorn: 0.00639
+	playing bass drum: 0.00208

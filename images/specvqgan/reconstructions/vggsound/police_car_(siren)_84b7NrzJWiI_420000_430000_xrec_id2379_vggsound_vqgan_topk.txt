@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people whistling: 0.36026
+	playing theremin: 0.19684
+	playing acoustic guitar: 0.09909
+	playing steel guitar, slide guitar: 0.04987
+	playing violin, fiddle: 0.03647

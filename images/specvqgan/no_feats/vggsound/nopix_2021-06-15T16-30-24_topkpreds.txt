@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	railroad car, train wagon: 0.37622
+	train wheels squealing: 0.28436
+	train horning: 0.17888
+	train whistling: 0.15072
+	roller coaster running: 0.00359
+	skiing: 0.00119
+	subway, metro, underground: 0.00090
+	driving motorcycle: 0.00080
+	hail: 0.00074
+	helicopter: 0.00041

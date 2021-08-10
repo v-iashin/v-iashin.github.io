@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing bass guitar: 0.28195
+	playing synthesizer: 0.18177
+	playing double bass: 0.12241
+	playing bass drum: 0.08717
+	playing drum kit: 0.08680

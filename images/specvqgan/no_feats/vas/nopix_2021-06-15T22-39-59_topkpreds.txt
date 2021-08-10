@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	pheasant crowing: 0.85529
+	francolin calling: 0.05605
+	people belly laughing: 0.04136
+	people giggling: 0.01143
+	people sniggering: 0.01025
+	eating with cutlery: 0.00709
+	people gargling: 0.00487
+	baby laughter: 0.00467
+	child speech, kid speaking: 0.00199
+	mouse pattering: 0.00134

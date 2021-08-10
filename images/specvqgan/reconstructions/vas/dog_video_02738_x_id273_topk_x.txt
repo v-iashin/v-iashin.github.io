@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	dog bow-wow: 0.57010
+	dog barking: 0.42345
+	dog baying: 0.00298
+	dog whimpering: 0.00100
+	dog growling: 0.00068

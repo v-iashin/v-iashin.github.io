@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing flute: 0.22801
+	playing saxophone: 0.18178
+	playing theremin: 0.15198
+	playing shofar: 0.11884
+	people humming: 0.09133

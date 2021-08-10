@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	skateboarding: 0.39823
+	skiing: 0.29827
+	bowling impact: 0.03137
+	playing badminton: 0.02995
+	bouncing on trampoline: 0.02853

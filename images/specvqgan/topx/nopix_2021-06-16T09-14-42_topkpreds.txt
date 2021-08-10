@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing accordion: 1.00000
+	playing harmonica: 0.00000
+	playing saxophone: 0.00000
+	playing clarinet: 0.00000
+	playing violin, fiddle: 0.00000
+	yodelling: 0.00000
+	goose honking: 0.00000
+	playing bagpipes: 0.00000
+	donkey, ass braying: 0.00000
+	playing trombone: 0.00000

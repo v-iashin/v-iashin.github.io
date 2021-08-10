@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing snare drum: 0.93900
+	playing cymbal: 0.03153
+	playing bass drum: 0.01435
+	playing drum kit: 0.01100
+	playing double bass: 0.00373

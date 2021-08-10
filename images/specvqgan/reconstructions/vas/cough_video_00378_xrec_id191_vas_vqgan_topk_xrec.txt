@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	rapping: 0.39081
+	child singing: 0.33021
+	people battle cry: 0.06388
+	male singing: 0.06114
+	female singing: 0.03733

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	horse clip-clop: 0.31159
+	golf driving: 0.30864
+	wind rustling leaves: 0.05723
+	playing tennis: 0.02769
+	elk bugling: 0.02257

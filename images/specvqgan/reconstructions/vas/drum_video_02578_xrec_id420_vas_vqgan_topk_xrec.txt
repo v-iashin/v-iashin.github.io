@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	lighting firecrackers: 0.89371
+	playing tabla: 0.03173
+	driving motorcycle: 0.02410
+	firing cannon: 0.01915
+	fireworks banging: 0.00639

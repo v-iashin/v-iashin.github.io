@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing flute: 0.44659
+	playing saxophone: 0.34591
+	playing clarinet: 0.13258
+	orchestra: 0.02604
+	playing trumpet: 0.02179

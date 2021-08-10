@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	ice cracking: 0.98908
+	cap gun shooting: 0.00952
+	machine gun shooting: 0.00061
+	squishing water: 0.00053
+	typing on computer keyboard: 0.00007

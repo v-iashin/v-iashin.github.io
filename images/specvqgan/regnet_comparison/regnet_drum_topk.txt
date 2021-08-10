@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+        playing cymbal: 0.30528
+        playing snare drum: 0.28801
+        playing bass drum: 0.14484
+        playing double bass: 0.09128
+        playing drum kit: 0.07194
+        playing synthesizer: 0.05792
+        driving motorcycle: 0.00955
+        engine accelerating, revving, vroom: 0.00334
+        playing bass guitar: 0.00308
+        driving snowmobile: 0.00304

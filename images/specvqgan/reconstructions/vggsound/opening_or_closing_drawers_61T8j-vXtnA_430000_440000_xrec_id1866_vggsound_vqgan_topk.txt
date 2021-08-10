@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	opening or closing drawers: 0.40474
+	cap gun shooting: 0.16093
+	sliding door: 0.15811
+	typing on typewriter: 0.13038
+	hammering nails: 0.04172

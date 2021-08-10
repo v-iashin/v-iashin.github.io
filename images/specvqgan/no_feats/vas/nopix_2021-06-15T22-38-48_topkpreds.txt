@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	magpie calling: 0.32657
+	francolin calling: 0.25322
+	turkey gobbling: 0.08993
+	goose honking: 0.08016
+	police car (siren): 0.04028
+	chicken clucking: 0.02144
+	dog howling: 0.01992
+	baby laughter: 0.01725
+	playing marimba, xylophone: 0.01539
+	people sniggering: 0.01523

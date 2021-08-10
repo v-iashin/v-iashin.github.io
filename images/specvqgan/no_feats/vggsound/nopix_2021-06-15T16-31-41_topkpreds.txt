@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing drum kit: 0.26915
+	people marching: 0.21131
+	playing cymbal: 0.10495
+	horse clip-clop: 0.08986
+	playing bass drum: 0.07533
+	machine gun shooting: 0.03586
+	train whistling: 0.03017
+	playing snare drum: 0.02627
+	lighting firecrackers: 0.01678
+	bouncing on trampoline: 0.01464

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing acoustic guitar: 0.68627
+	playing ukulele: 0.06613
+	male singing: 0.06517
+	people humming: 0.05479
+	playing steel guitar, slide guitar: 0.02839

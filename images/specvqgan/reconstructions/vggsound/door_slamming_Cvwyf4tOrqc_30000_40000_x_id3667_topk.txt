@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	opening or closing drawers: 0.25029
+	playing darts: 0.20004
+	sliding door: 0.08559
+	door slamming: 0.04241
+	chopping food: 0.03069

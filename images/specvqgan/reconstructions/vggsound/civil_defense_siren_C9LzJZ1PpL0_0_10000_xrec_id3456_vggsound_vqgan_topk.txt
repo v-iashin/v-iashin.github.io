@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	civil defense siren: 0.97917
+	fire truck siren: 0.01676
+	ambulance siren: 0.00217
+	police car (siren): 0.00173
+	dog howling: 0.00004

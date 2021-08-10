@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing accordion: 0.88070
+	playing clarinet: 0.11311
+	playing violin, fiddle: 0.00351
+	playing saxophone: 0.00167
+	playing trumpet: 0.00091
+	playing harmonica: 0.00004
+	playing tabla: 0.00002
+	playing bagpipes: 0.00002
+	playing cornet: 0.00001
+	donkey, ass braying: 0.00001

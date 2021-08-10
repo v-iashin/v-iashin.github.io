@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	pheasant crowing: 0.21241
+	sliding door: 0.10493
+	woodpecker pecking tree: 0.10447
+	sharpen knife: 0.06800
+	bathroom ventilation fan running: 0.02278
+	opening or closing car electric windows: 0.02071
+	opening or closing drawers: 0.01983
+	writing on blackboard with chalk: 0.01945
+	cap gun shooting: 0.01332
+	forging swords: 0.01332

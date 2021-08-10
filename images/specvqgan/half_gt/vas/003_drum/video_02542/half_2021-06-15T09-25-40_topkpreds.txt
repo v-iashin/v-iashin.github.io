@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing bass drum: 0.60485
+	playing cymbal: 0.14674
+	playing snare drum: 0.10932
+	playing bongo: 0.03937
+	playing double bass: 0.03078
+	playing drum kit: 0.02898
+	playing timbales: 0.00882
+	playing djembe: 0.00686
+	playing tympani: 0.00652
+	playing congas: 0.00513

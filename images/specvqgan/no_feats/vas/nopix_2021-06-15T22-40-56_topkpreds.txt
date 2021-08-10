@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing bass drum: 0.23279
+	lighting firecrackers: 0.13778
+	basketball bounce: 0.07491
+	firing muskets: 0.06615
+	bouncing on trampoline: 0.06574
+	door slamming: 0.03618
+	playing drum kit: 0.03594
+	playing cymbal: 0.03530
+	opening or closing car doors: 0.03476
+	playing snare drum: 0.03113

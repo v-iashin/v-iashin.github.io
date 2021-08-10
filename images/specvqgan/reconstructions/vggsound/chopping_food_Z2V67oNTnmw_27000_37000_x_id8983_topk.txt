@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing darts: 0.27093
+	eating with cutlery: 0.18417
+	chopping food: 0.10514
+	opening or closing drawers: 0.05357
+	cap gun shooting: 0.03604

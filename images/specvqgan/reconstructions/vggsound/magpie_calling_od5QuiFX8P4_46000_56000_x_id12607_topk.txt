@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	mynah bird singing: 0.24510
+	wood thrush calling: 0.18523
+	bird chirping, tweeting: 0.16588
+	magpie calling: 0.11791
+	baltimore oriole calling: 0.11657

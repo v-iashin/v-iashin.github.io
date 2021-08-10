@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	bowling impact: 0.52001
+	playing steelpan: 0.06519
+	people shuffling: 0.06289
+	people slapping: 0.05735
+	roller coaster running: 0.05704
+	airplane: 0.04590
+	playing drum kit: 0.02794
+	tap dancing: 0.02389
+	bouncing on trampoline: 0.02052
+	slot machine: 0.01986

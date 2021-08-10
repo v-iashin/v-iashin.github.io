@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing cymbal: 0.40860
+	playing bass drum: 0.27093
+	playing drum kit: 0.16193
+	playing snare drum: 0.04980
+	playing double bass: 0.03048
+	driving snowmobile: 0.01216
+	lighting firecrackers: 0.00564
+	arc welding: 0.00441
+	alligators, crocodiles hissing: 0.00396
+	pumping water: 0.00384

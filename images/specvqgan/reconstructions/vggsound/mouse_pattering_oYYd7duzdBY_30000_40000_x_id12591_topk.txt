@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	bee, wasp, etc. buzzing: 0.17592
+	barn swallow calling: 0.12415
+	bathroom ventilation fan running: 0.05097
+	otter growling: 0.05090
+	sharpen knife: 0.03118

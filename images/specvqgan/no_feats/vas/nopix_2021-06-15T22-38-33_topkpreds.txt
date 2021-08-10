@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people marching: 0.97430
+	playing bugle: 0.01160
+	people battle cry: 0.00152
+	playing trombone: 0.00151
+	people crowd: 0.00140
+	playing drum kit: 0.00115
+	people farting: 0.00097
+	people cheering: 0.00072
+	vehicle horn, car horn, honking: 0.00071
+	people screaming: 0.00057

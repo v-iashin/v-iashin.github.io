@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people sobbing: 0.53787
+	people screaming: 0.12613
+	baby crying: 0.12129
+	people belly laughing: 0.05853
+	people babbling: 0.05832
+	donkey, ass braying: 0.01912
+	child singing: 0.01050
+	cat growling: 0.00793
+	baby laughter: 0.00764
+	child speech, kid speaking: 0.00628

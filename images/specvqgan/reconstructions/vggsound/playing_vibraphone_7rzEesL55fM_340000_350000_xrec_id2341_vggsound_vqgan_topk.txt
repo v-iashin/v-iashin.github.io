@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing acoustic guitar: 0.76781
+	male singing: 0.04431
+	female singing: 0.04319
+	playing cello: 0.03642
+	playing piano: 0.03078

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	eating with cutlery: 0.81762
+	people coughing: 0.04122
+	child speech, kid speaking: 0.03741
+	opening or closing drawers: 0.02043
+	parrot talking: 0.01603

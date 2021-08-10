@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing acoustic guitar: 0.39116
+	playing double bass: 0.37651
+	playing bass guitar: 0.19901
+	playing electric guitar: 0.01599
+	playing cello: 0.01392
+	playing steel guitar, slide guitar: 0.00309
+	male singing: 0.00011
+	playing piano: 0.00006
+	playing harp: 0.00004
+	playing zither: 0.00003

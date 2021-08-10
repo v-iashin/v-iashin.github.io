@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	yodelling: 0.21563
+	singing choir: 0.13916
+	people battle cry: 0.11045
+	people humming: 0.10908
+	people sneezing: 0.08427

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	machine gun shooting: 0.95408
+	cap gun shooting: 0.01634
+	typing on typewriter: 0.01082
+	people sneezing: 0.00674
+	ice cracking: 0.00651

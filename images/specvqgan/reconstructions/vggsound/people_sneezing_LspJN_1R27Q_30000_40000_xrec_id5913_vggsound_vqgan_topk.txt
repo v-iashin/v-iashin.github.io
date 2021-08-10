@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	machine gun shooting: 0.54866
+	cap gun shooting: 0.19727
+	people sneezing: 0.19263
+	hammering nails: 0.02220
+	typing on typewriter: 0.01997

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	skiing: 0.80374
+	splashing water: 0.02063
+	sloshing water: 0.01826
+	sheep bleating: 0.01590
+	bowling impact: 0.01298
+	cattle mooing: 0.01291
+	goose honking: 0.01115
+	people farting: 0.01053
+	bouncing on trampoline: 0.00883
+	skateboarding: 0.00712

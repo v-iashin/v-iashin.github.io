@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	child speech, kid speaking: 0.08396
+	playing darts: 0.07996
+	mouse pattering: 0.06120
+	opening or closing drawers: 0.04660
+	people babbling: 0.03306

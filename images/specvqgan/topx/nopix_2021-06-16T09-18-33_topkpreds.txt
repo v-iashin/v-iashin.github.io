@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing trumpet: 0.95208
+	playing cornet: 0.03816
+	playing clarinet: 0.00339
+	playing saxophone: 0.00298
+	playing accordion: 0.00229
+	playing trombone: 0.00101
+	playing violin, fiddle: 0.00003
+	orchestra: 0.00002
+	vehicle horn, car horn, honking: 0.00001
+	playing bugle: 0.00001

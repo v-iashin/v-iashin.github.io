@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing drum kit: 0.41641
+	playing bass drum: 0.29854
+	roller coaster running: 0.11849
+	playing bass guitar: 0.02243
+	playing electric guitar: 0.01743
+	driving snowmobile: 0.01586
+	playing snare drum: 0.01155
+	playing timbales: 0.00878
+	lighting firecrackers: 0.00852
+	playing steelpan: 0.00802

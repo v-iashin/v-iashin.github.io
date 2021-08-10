@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing bass drum: 0.31384
+	playing double bass: 0.18536
+	playing cymbal: 0.14981
+	playing synthesizer: 0.13612
+	playing drum kit: 0.08789

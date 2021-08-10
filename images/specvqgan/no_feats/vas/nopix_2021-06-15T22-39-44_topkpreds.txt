@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	chicken clucking: 0.46378
+	pheasant crowing: 0.22693
+	zebra braying: 0.06454
+	people belly laughing: 0.04772
+	chicken crowing: 0.04163
+	people sniggering: 0.03659
+	francolin calling: 0.03532
+	baby laughter: 0.02539
+	donkey, ass braying: 0.02175
+	people giggling: 0.01514

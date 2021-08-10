@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.23186
+	airplane: 0.22034
+	airplane flyby: 0.13542
+	playing lacrosse: 0.10895
+	car passing by: 0.05007
+	driving snowmobile: 0.02732
+	missile launch: 0.02440
+	playing bass guitar: 0.02018
+	slot machine: 0.01919
+	volcano explosion: 0.01731

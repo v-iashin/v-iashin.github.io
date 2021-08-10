@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people eating apple: 0.45801
+	baby babbling: 0.12356
+	people eating: 0.03625
+	people babbling: 0.03366
+	baby crying: 0.03250
+	magpie calling: 0.03183
+	francolin calling: 0.02720
+	people eating crisps: 0.02248
+	people sobbing: 0.02036
+	cat hissing: 0.01912

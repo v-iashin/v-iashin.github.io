@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	bee, wasp, etc. buzzing: 0.85031
+	mouse pattering: 0.03392
+	mouse squeaking: 0.01904
+	printer printing: 0.00919
+	barn swallow calling: 0.00893

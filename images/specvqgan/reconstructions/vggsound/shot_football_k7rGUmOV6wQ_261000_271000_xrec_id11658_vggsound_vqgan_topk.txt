@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	shot football: 0.98741
+	skiing: 0.00369
+	playing lacrosse: 0.00226
+	playing volleyball: 0.00224
+	roller coaster running: 0.00184

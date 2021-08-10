@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing trumpet: 0.85489
+	donkey, ass braying: 0.10488
+	playing accordion: 0.01914
+	playing cornet: 0.01829
+	playing clarinet: 0.00218
+	playing violin, fiddle: 0.00021
+	playing electronic organ: 0.00016
+	playing harmonica: 0.00012
+	playing oboe: 0.00004
+	zebra braying: 0.00004

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing accordion: 0.99999
+	playing harmonica: 0.00001
+	playing trumpet: 0.00000
+	vehicle horn, car horn, honking: 0.00000
+	playing clarinet: 0.00000
+	playing oboe: 0.00000
+	air horn: 0.00000
+	playing saxophone: 0.00000
+	playing violin, fiddle: 0.00000
+	orchestra: 0.00000

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people marching: 0.27216
+	playing washboard: 0.22592
+	playing trombone: 0.07958
+	orchestra: 0.06736
+	people shuffling: 0.04761
+	playing bugle: 0.03830
+	playing snare drum: 0.03476
+	people crowd: 0.03215
+	printer printing: 0.02954
+	playing drum kit: 0.01888

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	tap dancing: 0.99656
+	people finger snapping: 0.00107
+	rope skipping: 0.00091
+	playing bass drum: 0.00070
+	beat boxing: 0.00018

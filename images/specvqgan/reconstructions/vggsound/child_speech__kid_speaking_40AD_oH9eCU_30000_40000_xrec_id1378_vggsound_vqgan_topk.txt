@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	otter growling: 0.54710
+	splashing water: 0.14849
+	rowboat, canoe, kayak rowing: 0.05636
+	stream burbling: 0.02902
+	baby crying: 0.02841

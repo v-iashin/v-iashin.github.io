@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	golf driving: 0.68440
+	sliding door: 0.06090
+	opening or closing car doors: 0.04739
+	horse clip-clop: 0.01775
+	wind rustling leaves: 0.01410

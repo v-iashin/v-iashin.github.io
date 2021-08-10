@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	skateboarding: 0.78101
+	striking bowling: 0.11069
+	bowling impact: 0.04023
+	fireworks banging: 0.03455
+	skiing: 0.01343
+	lighting firecrackers: 0.00877
+	machine gun shooting: 0.00203
+	door slamming: 0.00191
+	firing cannon: 0.00161
+	firing muskets: 0.00127

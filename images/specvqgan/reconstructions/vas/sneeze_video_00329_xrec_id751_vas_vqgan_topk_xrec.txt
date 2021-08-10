@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people sneezing: 0.89677
+	people nose blowing: 0.05833
+	people hiccup: 0.02122
+	people coughing: 0.01695
+	people farting: 0.00258

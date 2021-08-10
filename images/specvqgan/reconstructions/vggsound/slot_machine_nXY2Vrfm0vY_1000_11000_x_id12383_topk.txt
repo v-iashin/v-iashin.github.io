@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing electric guitar: 0.52936
+	playing bass guitar: 0.17250
+	slot machine: 0.09862
+	playing acoustic guitar: 0.04996
+	tapping guitar: 0.04217

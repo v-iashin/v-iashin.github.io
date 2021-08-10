@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	fireworks banging: 0.61091
+	lighting firecrackers: 0.37713
+	dinosaurs bellowing: 0.00507
+	missile launch: 0.00227
+	firing muskets: 0.00131

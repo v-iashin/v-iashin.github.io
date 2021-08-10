@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people sobbing: 0.59310
+	people belly laughing: 0.13887
+	baby crying: 0.10363
+	baby laughter: 0.10291
+	people screaming: 0.03512
+	people babbling: 0.01202
+	people giggling: 0.00569
+	children shouting: 0.00389
+	eagle screaming: 0.00299
+	people sniggering: 0.00043

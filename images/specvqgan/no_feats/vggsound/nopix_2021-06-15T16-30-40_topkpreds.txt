@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	horse clip-clop: 0.57797
+	golf driving: 0.05113
+	people running: 0.04572
+	playing tennis: 0.01381
+	baby crying: 0.01251
+	mouse pattering: 0.01177
+	volcano explosion: 0.01022
+	wind rustling leaves: 0.00950
+	driving buses: 0.00911
+	sliding door: 0.00901

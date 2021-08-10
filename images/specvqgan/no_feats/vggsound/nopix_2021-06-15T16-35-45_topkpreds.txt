@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	eletric blender running: 0.49754
+	engine accelerating, revving, vroom: 0.17933
+	car engine starting: 0.06783
+	vacuum cleaner cleaning floors: 0.06308
+	driving motorcycle: 0.04643
+	electric grinder grinding: 0.04616
+	lathe spinning: 0.02395
+	toilet flushing: 0.01556
+	skateboarding: 0.01232
+	race car, auto racing: 0.00941

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing snare drum: 0.55651
+	driving motorcycle: 0.08521
+	engine accelerating, revving, vroom: 0.06796
+	playing tabla: 0.05883
+	playing drum kit: 0.05825

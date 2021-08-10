@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	lathe spinning: 0.98536
+	electric grinder grinding: 0.00329
+	eletric blender running: 0.00208
+	printer printing: 0.00206
+	blowtorch igniting: 0.00146

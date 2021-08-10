@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	civil defense siren: 0.86232
+	fire truck siren: 0.11805
+	police car (siren): 0.01011
+	ambulance siren: 0.00785
+	playing shofar: 0.00023

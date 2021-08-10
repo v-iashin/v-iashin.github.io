@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing violin, fiddle: 0.32176
+	playing cello: 0.17119
+	people humming: 0.16295
+	playing theremin: 0.15179
+	orchestra: 0.05419
+	playing shofar: 0.03010
+	playing double bass: 0.02039
+	yodelling: 0.01177
+	playing erhu: 0.00917
+	foghorn: 0.00876

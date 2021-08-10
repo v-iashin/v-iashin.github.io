@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+        fireworks banging: 0.94331
+        lighting firecrackers: 0.05588
+        footsteps on snow: 0.00070
+        missile launch: 0.00005
+        machine gun shooting: 0.00004
+        cat purring: 0.00001
+        people eating crisps: 0.00000
+        people farting: 0.00000
+        fire crackling: 0.00000
+        wind noise: 0.00000

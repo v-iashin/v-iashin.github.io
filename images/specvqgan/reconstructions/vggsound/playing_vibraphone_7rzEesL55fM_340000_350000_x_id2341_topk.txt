@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	female singing: 0.58278
+	male singing: 0.18135
+	playing acoustic guitar: 0.07894
+	rope skipping: 0.04789
+	dinosaurs bellowing: 0.03266

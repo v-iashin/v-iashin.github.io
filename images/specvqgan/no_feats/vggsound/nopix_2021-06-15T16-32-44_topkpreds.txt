@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	penguins braying: 0.18722
+	elk bugling: 0.18626
+	baby crying: 0.07665
+	horse neighing: 0.06626
+	people screaming: 0.06617
+	mosquito buzzing: 0.04296
+	roller coaster running: 0.03957
+	eagle screaming: 0.03921
+	pheasant crowing: 0.02458
+	whale calling: 0.02294

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people sneezing: 0.99066
+	people nose blowing: 0.00734
+	people slapping: 0.00052
+	people farting: 0.00028
+	golf driving: 0.00024

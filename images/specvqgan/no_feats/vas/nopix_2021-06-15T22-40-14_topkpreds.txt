@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	fireworks banging: 0.99968
+	lighting firecrackers: 0.00032
+	machine gun shooting: 0.00000
+	firing cannon: 0.00000
+	missile launch: 0.00000
+	thunder: 0.00000
+	firing muskets: 0.00000
+	skateboarding: 0.00000
+	cap gun shooting: 0.00000
+	door slamming: 0.00000

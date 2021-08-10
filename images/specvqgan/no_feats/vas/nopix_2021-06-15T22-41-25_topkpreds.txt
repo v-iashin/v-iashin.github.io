@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.27457
+	skiing: 0.20543
+	dinosaurs bellowing: 0.18119
+	otter growling: 0.12636
+	baby crying: 0.05133
+	eagle screaming: 0.02033
+	elephant trumpeting: 0.01053
+	driving snowmobile: 0.01013
+	bouncing on trampoline: 0.00980
+	people screaming: 0.00893

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing bass guitar: 0.50408
+	playing electric guitar: 0.39150
+	female singing: 0.04943
+	male singing: 0.01961
+	playing gong: 0.00889
+	orchestra: 0.00405
+	playing steel guitar, slide guitar: 0.00251
+	playing steelpan: 0.00229
+	playing violin, fiddle: 0.00229
+	child singing: 0.00176

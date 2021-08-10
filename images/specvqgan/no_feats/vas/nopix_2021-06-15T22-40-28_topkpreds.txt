@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	volcano explosion: 0.67784
+	missile launch: 0.07507
+	engine accelerating, revving, vroom: 0.04686
+	train wheels squealing: 0.04198
+	car passing by: 0.02509
+	roller coaster running: 0.01444
+	driving buses: 0.00961
+	firing cannon: 0.00951
+	airplane: 0.00818
+	race car, auto racing: 0.00806

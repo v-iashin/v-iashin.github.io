@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	canary calling: 0.99967
+	people whistling: 0.00014
+	bird chirping, tweeting: 0.00012
+	mynah bird singing: 0.00003
+	playing harmonica: 0.00002

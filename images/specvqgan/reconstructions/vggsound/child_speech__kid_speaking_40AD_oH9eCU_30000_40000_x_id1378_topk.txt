@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	rowboat, canoe, kayak rowing: 0.24328
+	motorboat, speedboat acceleration: 0.18570
+	splashing water: 0.11702
+	raining: 0.10934
+	stream burbling: 0.06296

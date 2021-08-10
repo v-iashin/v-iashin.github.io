@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	sharpen knife: 0.55621
+	pig oinking: 0.09691
+	rowboat, canoe, kayak rowing: 0.02950
+	hair dryer drying: 0.02792
+	railroad car, train wagon: 0.02614
+	printer printing: 0.02551
+	train wheels squealing: 0.02304
+	wind rustling leaves: 0.01824
+	helicopter: 0.01434
+	spraying water: 0.01269

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	dog barking: 0.59938
+	dog bow-wow: 0.19062
+	dog growling: 0.03251
+	pig oinking: 0.02162
+	dog baying: 0.02065
+	dog whimpering: 0.01737
+	fox barking: 0.01431
+	cat growling: 0.01029
+	people hiccup: 0.01024
+	people coughing: 0.00862

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	skiing: 0.93618
+	driving snowmobile: 0.03050
+	skateboarding: 0.01417
+	roller coaster running: 0.00449
+	firing cannon: 0.00304

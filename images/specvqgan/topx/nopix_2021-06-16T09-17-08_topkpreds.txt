@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing accordion: 0.99946
+	playing trumpet: 0.00011
+	playing trombone: 0.00009
+	vehicle horn, car horn, honking: 0.00009
+	train horning: 0.00005
+	civil defense siren: 0.00004
+	playing banjo: 0.00004
+	fire truck siren: 0.00002
+	playing violin, fiddle: 0.00002
+	playing saxophone: 0.00002

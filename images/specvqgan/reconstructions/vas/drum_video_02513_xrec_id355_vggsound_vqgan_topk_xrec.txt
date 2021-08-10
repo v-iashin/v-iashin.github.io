@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing drum kit: 0.46387
+	playing snare drum: 0.19749
+	playing cymbal: 0.10537
+	playing timbales: 0.09444
+	playing bass drum: 0.07228

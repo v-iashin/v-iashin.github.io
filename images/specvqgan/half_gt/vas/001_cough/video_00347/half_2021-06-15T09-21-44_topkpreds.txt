@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	car engine starting: 0.73240
+	baby laughter: 0.19146
+	people belly laughing: 0.06291
+	people giggling: 0.00711
+	people sniggering: 0.00515
+	people coughing: 0.00028
+	lawn mowing: 0.00025
+	people sneezing: 0.00020
+	people slapping: 0.00007
+	people nose blowing: 0.00004

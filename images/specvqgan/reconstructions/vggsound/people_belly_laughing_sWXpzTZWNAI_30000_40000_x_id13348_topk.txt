@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people belly laughing: 0.53485
+	baby laughter: 0.18350
+	people babbling: 0.14976
+	people giggling: 0.04884
+	child speech, kid speaking: 0.03869

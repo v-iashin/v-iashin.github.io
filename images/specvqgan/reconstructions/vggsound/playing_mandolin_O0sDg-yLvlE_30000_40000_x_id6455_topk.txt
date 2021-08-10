@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing acoustic guitar: 0.30178
+	playing banjo: 0.20580
+	people humming: 0.19743
+	playing ukulele: 0.07196
+	playing steel guitar, slide guitar: 0.05061

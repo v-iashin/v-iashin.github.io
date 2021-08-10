@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	child singing: 0.81532
+	female singing: 0.07503
+	female speech, woman speaking: 0.03350
+	children shouting: 0.02803
+	people battle cry: 0.01694
+	people humming: 0.00943
+	yodelling: 0.00739
+	people booing: 0.00511
+	child speech, kid speaking: 0.00459
+	playing ukulele: 0.00210

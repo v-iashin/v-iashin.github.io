@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	plastic bottle crushing: 0.41001
+	opening or closing drawers: 0.30391
+	typing on typewriter: 0.12159
+	eating with cutlery: 0.05387
+	hammering nails: 0.02146

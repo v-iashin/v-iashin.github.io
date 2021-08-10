@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people sobbing: 0.52729
+	baby crying: 0.17319
+	people babbling: 0.13845
+	people belly laughing: 0.07671
+	people screaming: 0.03107

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	squishing water: 0.34345
+	chopping wood: 0.22103
+	ice cracking: 0.12461
+	cap gun shooting: 0.11070
+	hammering nails: 0.04922
+	machine gun shooting: 0.02659
+	lighting firecrackers: 0.01567
+	people eating apple: 0.01524
+	opening or closing car doors: 0.01397
+	goose honking: 0.01117

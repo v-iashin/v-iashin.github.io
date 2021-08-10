@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing oboe: 0.96150
+	playing electronic organ: 0.00955
+	playing erhu: 0.00656
+	singing bowl: 0.00636
+	playing clarinet: 0.00463
+	playing shofar: 0.00192
+	playing trumpet: 0.00148
+	playing cornet: 0.00145
+	playing flute: 0.00132
+	playing bassoon: 0.00094

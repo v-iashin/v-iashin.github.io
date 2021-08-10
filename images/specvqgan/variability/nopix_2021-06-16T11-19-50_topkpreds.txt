@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people booing: 0.46610
+	male speech, man speaking: 0.12793
+	people marching: 0.09132
+	playing volleyball: 0.05103
+	basketball bounce: 0.03839
+	people battle cry: 0.02770
+	playing squash: 0.02747
+	people sniggering: 0.02492
+	female speech, woman speaking: 0.02305
+	yodelling: 0.02187

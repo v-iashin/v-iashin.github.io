@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing saxophone: 0.47199
+	playing accordion: 0.17348
+	female singing: 0.09456
+	playing violin, fiddle: 0.07243
+	child singing: 0.04824
+	people humming: 0.04314
+	foghorn: 0.02925
+	orchestra: 0.01331
+	playing electronic organ: 0.01009
+	train horning: 0.00832

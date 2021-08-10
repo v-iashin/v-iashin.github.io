@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	chopping food: 0.23512
+	bowling impact: 0.20485
+	striking bowling: 0.19383
+	roller coaster running: 0.13036
+	arc welding: 0.05271

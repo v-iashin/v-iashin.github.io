@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	chicken crowing: 0.49551
+	pheasant crowing: 0.08742
+	dinosaurs bellowing: 0.04228
+	skidding: 0.03395
+	horse neighing: 0.02927

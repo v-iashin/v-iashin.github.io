@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	dog bow-wow: 0.73206
+	dog barking: 0.26060
+	people coughing: 0.00225
+	dog growling: 0.00141
+	dog baying: 0.00131

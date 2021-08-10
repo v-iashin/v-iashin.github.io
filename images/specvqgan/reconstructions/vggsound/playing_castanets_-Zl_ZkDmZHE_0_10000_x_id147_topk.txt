@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	eagle screaming: 0.39108
+	people screaming: 0.11260
+	coyote howling: 0.05748
+	horse neighing: 0.05078
+	elk bugling: 0.04741

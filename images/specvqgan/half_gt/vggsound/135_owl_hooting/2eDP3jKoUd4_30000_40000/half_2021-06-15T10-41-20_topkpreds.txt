@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	pigeon, dove cooing: 0.27135
+	mouse pattering: 0.26977
+	lions growling: 0.20353
+	horse neighing: 0.06830
+	horse clip-clop: 0.05124
+	pig oinking: 0.04029
+	sheep bleating: 0.01307
+	cheetah chirrup: 0.00942
+	cattle mooing: 0.00935
+	rowboat, canoe, kayak rowing: 0.00921

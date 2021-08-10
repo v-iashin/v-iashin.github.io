@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	hammering nails: 0.93902
+	cap gun shooting: 0.01174
+	skateboarding: 0.01140
+	arc welding: 0.00834
+	chopping wood: 0.00804

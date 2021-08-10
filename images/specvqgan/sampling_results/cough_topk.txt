@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people coughing: 0.64103
+	people sneezing: 0.27985
+	baby laughter: 0.05940
+	people belly laughing: 0.00970
+	people nose blowing: 0.00327
+	people giggling: 0.00176
+	people farting: 0.00152
+	people sobbing: 0.00100
+	people slapping: 0.00045
+	people sniggering: 0.00045

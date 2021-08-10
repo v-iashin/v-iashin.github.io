@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	hammering nails: 0.84889
+	machine gun shooting: 0.03657
+	lighting firecrackers: 0.02446
+	cap gun shooting: 0.02250
+	fireworks banging: 0.02244

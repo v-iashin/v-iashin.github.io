@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing banjo: 0.88926
+	playing harpsichord: 0.04267
+	playing mandolin: 0.02692
+	playing saxophone: 0.01377
+	orchestra: 0.00909
+	playing violin, fiddle: 0.00895
+	playing zither: 0.00229
+	playing acoustic guitar: 0.00194
+	playing timbales: 0.00121
+	metronome: 0.00080

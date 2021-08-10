@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing lacrosse: 0.45733
+	roller coaster running: 0.09873
+	people sniggering: 0.09797
+	playing volleyball: 0.08639
+	basketball bounce: 0.06876
+	sheep bleating: 0.02577
+	goat bleating: 0.02333
+	people crowd: 0.02241
+	people booing: 0.01357
+	skateboarding: 0.01227

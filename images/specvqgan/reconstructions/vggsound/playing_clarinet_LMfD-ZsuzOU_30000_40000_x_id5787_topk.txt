@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing saxophone: 0.69960
+	playing trumpet: 0.07347
+	playing acoustic guitar: 0.04099
+	orchestra: 0.03774
+	playing trombone: 0.03188

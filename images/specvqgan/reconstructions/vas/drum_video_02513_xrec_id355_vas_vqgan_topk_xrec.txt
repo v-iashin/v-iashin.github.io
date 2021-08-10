@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing drum kit: 0.41150
+	playing snare drum: 0.19119
+	playing timbales: 0.16513
+	people marching: 0.07055
+	playing cymbal: 0.04414

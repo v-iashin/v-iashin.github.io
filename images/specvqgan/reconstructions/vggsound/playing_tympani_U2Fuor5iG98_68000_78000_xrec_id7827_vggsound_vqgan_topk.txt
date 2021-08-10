@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing tympani: 0.36339
+	playing bass drum: 0.34064
+	playing drum kit: 0.14234
+	playing timpani: 0.06384
+	people marching: 0.02787

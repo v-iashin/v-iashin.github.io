@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	cap gun shooting: 0.74072
+	machine gun shooting: 0.25885
+	fireworks banging: 0.00041
+	chopping wood: 0.00001
+	firing cannon: 0.00000
+	firing muskets: 0.00000
+	hammering nails: 0.00000
+	lighting firecrackers: 0.00000
+	skateboarding: 0.00000
+	chainsawing trees: 0.00000

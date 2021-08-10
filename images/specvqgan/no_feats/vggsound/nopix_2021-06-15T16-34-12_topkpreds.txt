@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	using sewing machines: 0.22917
+	stream burbling: 0.12608
+	hail: 0.12228
+	pigeon, dove cooing: 0.11378
+	railroad car, train wagon: 0.05517
+	pumping water: 0.05126
+	rowboat, canoe, kayak rowing: 0.03299
+	bird wings flapping: 0.03071
+	car engine starting: 0.02440
+	waterfall burbling: 0.02387

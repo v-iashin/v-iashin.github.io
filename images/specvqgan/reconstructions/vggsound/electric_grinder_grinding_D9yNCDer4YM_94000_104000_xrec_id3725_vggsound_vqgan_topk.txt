@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	helicopter: 0.23993
+	chainsawing trees: 0.18997
+	electric grinder grinding: 0.16404
+	car engine knocking: 0.13455
+	car engine starting: 0.06714

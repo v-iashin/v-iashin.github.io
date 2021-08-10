@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	hammering nails: 0.92503
+	playing tambourine: 0.04792
+	playing drum kit: 0.00671
+	cap gun shooting: 0.00412
+	playing bass drum: 0.00307

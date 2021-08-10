@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	fireworks banging: 0.98172
+	lighting firecrackers: 0.01528
+	skateboarding: 0.00123
+	machine gun shooting: 0.00098
+	firing cannon: 0.00026
+	dinosaurs bellowing: 0.00019
+	firing muskets: 0.00010
+	bowling impact: 0.00006
+	striking bowling: 0.00005
+	squishing water: 0.00003

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	lathe spinning: 0.32920
+	printer printing: 0.29548
+	playing cymbal: 0.16782
+	popping popcorn: 0.04398
+	electric grinder grinding: 0.03184
+	toilet flushing: 0.01491
+	train whistling: 0.01439
+	playing drum kit: 0.01259
+	vacuum cleaner cleaning floors: 0.01162
+	slot machine: 0.00676

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing ukulele: 0.36423
+	child singing: 0.21271
+	playing sitar: 0.11290
+	playing mandolin: 0.07789
+	female singing: 0.05771

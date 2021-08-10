@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+        people sobbing: 0.66508
+        baby crying: 0.27416
+        cat growling: 0.01201
+        people babbling: 0.01082
+        goat bleating: 0.00553
+        sheep bleating: 0.00342
+        pig oinking: 0.00253
+        penguins braying: 0.00246
+        people belly laughing: 0.00218
+        baby laughter: 0.00170

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing trombone: 0.92190
+	playing cello: 0.04087
+	playing trumpet: 0.01691
+	playing double bass: 0.00766
+	playing saxophone: 0.00528
+	orchestra: 0.00506
+	playing french horn: 0.00084
+	playing violin, fiddle: 0.00077
+	fly, housefly buzzing: 0.00028
+	playing shofar: 0.00017

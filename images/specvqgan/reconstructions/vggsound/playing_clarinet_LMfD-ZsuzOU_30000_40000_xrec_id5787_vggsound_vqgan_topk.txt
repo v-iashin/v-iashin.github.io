@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing saxophone: 0.27178
+	playing mandolin: 0.23935
+	playing banjo: 0.11760
+	playing acoustic guitar: 0.06330
+	orchestra: 0.05285

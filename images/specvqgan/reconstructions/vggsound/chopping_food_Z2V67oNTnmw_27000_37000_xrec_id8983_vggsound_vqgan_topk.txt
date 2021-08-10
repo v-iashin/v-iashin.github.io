@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing darts: 0.43549
+	cutting hair with electric trimmers: 0.08422
+	electric shaver, electric razor shaving: 0.06674
+	opening or closing drawers: 0.06053
+	planing timber: 0.05406

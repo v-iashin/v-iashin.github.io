@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	lathe spinning: 0.98082
+	blowtorch igniting: 0.01161
+	electric grinder grinding: 0.00186
+	driving snowmobile: 0.00094
+	sharpen knife: 0.00081

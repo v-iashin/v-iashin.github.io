@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.82491
+	slot machine: 0.05715
+	dinosaurs bellowing: 0.03383
+	airplane: 0.02748
+	people screaming: 0.01104
+	people crowd: 0.00580
+	bowling impact: 0.00527
+	people slapping: 0.00493
+	bouncing on trampoline: 0.00390
+	eagle screaming: 0.00350

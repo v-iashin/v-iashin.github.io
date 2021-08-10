@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	tap dancing: 0.98009
+	playing double bass: 0.00622
+	playing bass drum: 0.00618
+	playing drum kit: 0.00099
+	typing on typewriter: 0.00091

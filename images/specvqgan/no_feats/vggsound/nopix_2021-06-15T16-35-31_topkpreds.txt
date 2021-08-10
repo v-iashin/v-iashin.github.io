@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.58292
+	train whistling: 0.15119
+	fireworks banging: 0.05072
+	machine gun shooting: 0.04872
+	hail: 0.04857
+	train horning: 0.04531
+	railroad car, train wagon: 0.03326
+	train wheels squealing: 0.01463
+	lighting firecrackers: 0.00517
+	tornado roaring: 0.00420

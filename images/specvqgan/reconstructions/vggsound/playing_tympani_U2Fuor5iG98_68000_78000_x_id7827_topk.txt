@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing tympani: 0.36882
+	playing bass drum: 0.19532
+	playing timpani: 0.12734
+	playing drum kit: 0.06150
+	playing gong: 0.04454

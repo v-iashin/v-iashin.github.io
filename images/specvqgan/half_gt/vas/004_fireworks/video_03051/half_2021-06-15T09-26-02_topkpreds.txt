@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.87213
+	bowling impact: 0.02970
+	lighting firecrackers: 0.02815
+	skateboarding: 0.01982
+	people running: 0.01887
+	striking bowling: 0.01285
+	tap dancing: 0.00961
+	firing muskets: 0.00124
+	hail: 0.00119
+	people shuffling: 0.00068

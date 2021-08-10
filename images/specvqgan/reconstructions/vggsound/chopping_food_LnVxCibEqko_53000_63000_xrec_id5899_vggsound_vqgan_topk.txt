@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	shot football: 0.73063
+	bowling impact: 0.07546
+	playing lacrosse: 0.05037
+	playing volleyball: 0.03510
+	bouncing on trampoline: 0.02292

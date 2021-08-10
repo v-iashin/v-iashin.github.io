@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing electric guitar: 0.21814
+	slot machine: 0.19987
+	male singing: 0.14327
+	playing washboard: 0.12275
+	playing bass guitar: 0.09756

@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing snare drum: 0.36270
+	driving motorcycle: 0.17843
+	helicopter: 0.05300
+	playing drum kit: 0.04871
+	playing bass drum: 0.04500

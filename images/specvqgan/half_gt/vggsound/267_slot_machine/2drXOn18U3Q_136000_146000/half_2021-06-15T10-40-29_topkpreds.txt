@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	slot machine: 0.93580
+	playing tambourine: 0.02373
+	people farting: 0.00862
+	roller coaster running: 0.00634
+	people shuffling: 0.00456
+	people marching: 0.00368
+	playing drum kit: 0.00331
+	orchestra: 0.00295
+	playing tympani: 0.00138
+	male singing: 0.00131

@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing drum kit: 0.65845
+	playing timbales: 0.20274
+	playing bass drum: 0.10654
+	playing cymbal: 0.00913
+	playing bongo: 0.00357
+	playing steelpan: 0.00299
+	orchestra: 0.00191
+	playing guiro: 0.00187
+	people marching: 0.00170
+	bowling impact: 0.00168

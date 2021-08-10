@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	dog barking: 0.71768
+	dog bow-wow: 0.27329
+	fox barking: 0.00486
+	baby laughter: 0.00272
+	people belly laughing: 0.00053
+	dog growling: 0.00031
+	dog howling: 0.00017
+	dog whimpering: 0.00017
+	dog baying: 0.00012
+	people giggling: 0.00005

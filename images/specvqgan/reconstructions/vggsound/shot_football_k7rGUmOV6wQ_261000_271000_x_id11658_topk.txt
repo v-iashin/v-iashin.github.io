@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	shot football: 0.96669
+	skiing: 0.01909
+	playing volleyball: 0.00464
+	playing lacrosse: 0.00345
+	basketball bounce: 0.00235

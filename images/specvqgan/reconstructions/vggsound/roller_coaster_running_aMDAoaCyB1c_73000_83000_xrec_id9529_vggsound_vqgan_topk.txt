@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	roller coaster running: 0.30420
+	tractor digging: 0.19327
+	skateboarding: 0.07594
+	horse clip-clop: 0.04969
+	driving buses: 0.04311

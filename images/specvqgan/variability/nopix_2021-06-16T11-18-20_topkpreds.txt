@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people cheering: 0.45097
+	people crowd: 0.34606
+	playing lacrosse: 0.08777
+	people shuffling: 0.02618
+	people marching: 0.01377
+	roller coaster running: 0.01092
+	rope skipping: 0.00832
+	fire truck siren: 0.00711
+	people battle cry: 0.00608
+	playing volleyball: 0.00474

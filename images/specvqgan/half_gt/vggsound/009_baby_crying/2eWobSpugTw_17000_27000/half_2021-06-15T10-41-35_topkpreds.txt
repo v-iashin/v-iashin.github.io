@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people sobbing: 0.35839
+	baby crying: 0.26607
+	people humming: 0.13201
+	playing saxophone: 0.07528
+	playing electric guitar: 0.03936
+	people belly laughing: 0.02629
+	goat bleating: 0.01665
+	dog whimpering: 0.01574
+	mosquito buzzing: 0.01374
+	people screaming: 0.00629

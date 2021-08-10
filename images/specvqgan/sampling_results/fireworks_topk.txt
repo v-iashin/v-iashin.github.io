@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	fireworks banging: 0.99805
+	machine gun shooting: 0.00121
+	lighting firecrackers: 0.00067
+	playing hockey: 0.00002
+	skateboarding: 0.00002
+	playing squash: 0.00001
+	firing cannon: 0.00001
+	missile launch: 0.00000
+	squishing water: 0.00000
+	firing muskets: 0.00000

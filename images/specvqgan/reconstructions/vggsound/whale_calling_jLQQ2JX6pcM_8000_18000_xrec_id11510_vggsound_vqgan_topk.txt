@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people humming: 0.40932
+	playing theremin: 0.19759
+	playing french horn: 0.18236
+	dog howling: 0.05001
+	people battle cry: 0.02904

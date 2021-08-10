@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	roller coaster running: 0.51148
+	horse clip-clop: 0.05488
+	goose honking: 0.04190
+	wind noise: 0.03311
+	sailing: 0.02717

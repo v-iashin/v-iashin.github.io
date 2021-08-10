@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	baby laughter: 0.39575
+	people belly laughing: 0.31239
+	people giggling: 0.12449
+	francolin calling: 0.06668
+	pheasant crowing: 0.04337
+	dog whimpering: 0.01948
+	zebra braying: 0.01293
+	bird squawking: 0.00333
+	people sobbing: 0.00259
+	people gargling: 0.00244

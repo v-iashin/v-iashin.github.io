@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	roller coaster running: 0.48013
+	missile launch: 0.19634
+	dinosaurs bellowing: 0.19493
+	volcano explosion: 0.03845
+	lighting firecrackers: 0.01835
+	skateboarding: 0.01444
+	people marching: 0.01378
+	skiing: 0.01150
+	bowling impact: 0.00599
+	machine gun shooting: 0.00582

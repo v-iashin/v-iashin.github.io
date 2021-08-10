@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	dog bow-wow: 0.48625
+	dog barking: 0.24978
+	people coughing: 0.07447
+	dog baying: 0.05357
+	baby laughter: 0.02654
+	people belly laughing: 0.01442
+	sea lion barking: 0.01374
+	dog howling: 0.01207
+	people sneezing: 0.00686
+	people farting: 0.00648

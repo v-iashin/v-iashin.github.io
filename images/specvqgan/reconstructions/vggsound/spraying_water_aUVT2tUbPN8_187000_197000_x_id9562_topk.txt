@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	roller coaster running: 0.19542
+	woodpecker pecking tree: 0.17124
+	arc welding: 0.07082
+	driving buses: 0.05825
+	horse clip-clop: 0.05640

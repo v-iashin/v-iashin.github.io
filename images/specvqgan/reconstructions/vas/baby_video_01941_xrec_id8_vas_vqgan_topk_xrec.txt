@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people sobbing: 0.70269
+	baby crying: 0.22884
+	people screaming: 0.03944
+	goat bleating: 0.01260
+	sheep bleating: 0.00762

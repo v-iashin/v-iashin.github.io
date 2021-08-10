@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people booing: 0.45811
+	people cheering: 0.11969
+	playing hockey: 0.11058
+	people crowd: 0.10848
+	singing choir: 0.06370
+	swimming: 0.02707
+	male speech, man speaking: 0.02360
+	basketball bounce: 0.02199
+	people battle cry: 0.00872
+	playing tennis: 0.00588

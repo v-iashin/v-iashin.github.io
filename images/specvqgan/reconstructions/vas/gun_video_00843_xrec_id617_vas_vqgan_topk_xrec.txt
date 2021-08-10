@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	playing badminton: 0.19449
+	child speech, kid speaking: 0.10575
+	skateboarding: 0.09045
+	playing hockey: 0.04364
+	people shuffling: 0.03897

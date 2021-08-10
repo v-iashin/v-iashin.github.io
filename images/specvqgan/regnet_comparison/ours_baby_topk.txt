@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	people sobbing: 0.84060
+	baby crying: 0.14630
+	people babbling: 0.00469
+	people belly laughing: 0.00443
+	baby laughter: 0.00161
+	people giggling: 0.00093
+	people screaming: 0.00067
+	otter growling: 0.00023
+	goat bleating: 0.00012
+	people sniggering: 0.00012

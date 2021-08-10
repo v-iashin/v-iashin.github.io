@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	machine gun shooting: 0.46105
+	car engine starting: 0.34608
+	lighting firecrackers: 0.04658
+	dinosaurs bellowing: 0.03661
+	firing muskets: 0.01929
+	firing cannon: 0.01781
+	fireworks banging: 0.01376
+	skateboarding: 0.01179
+	squishing water: 0.00867
+	engine accelerating, revving, vroom: 0.00857

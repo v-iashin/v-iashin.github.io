@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing bass drum: 0.45716
+	playing drum kit: 0.33875
+	playing cymbal: 0.12139
+	playing tambourine: 0.02805
+	playing double bass: 0.01276
+	playing guiro: 0.00855
+	playing timbales: 0.00623
+	disc scratching: 0.00483
+	arc welding: 0.00389
+	playing bass guitar: 0.00336

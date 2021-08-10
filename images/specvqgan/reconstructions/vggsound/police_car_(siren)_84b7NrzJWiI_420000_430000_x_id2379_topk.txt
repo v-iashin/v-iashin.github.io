@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	people whistling: 0.13509
+	playing acoustic guitar: 0.11329
+	playing steel guitar, slide guitar: 0.09486
+	ice cream truck, ice cream van: 0.08821
+	playing theremin: 0.08034

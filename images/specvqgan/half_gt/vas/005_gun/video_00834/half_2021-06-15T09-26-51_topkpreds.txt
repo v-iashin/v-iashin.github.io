@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	fireworks banging: 0.59073
+	lighting firecrackers: 0.19343
+	machine gun shooting: 0.18483
+	skateboarding: 0.02029
+	firing muskets: 0.00428
+	skiing: 0.00181
+	squishing water: 0.00175
+	firing cannon: 0.00148
+	door slamming: 0.00025
+	hail: 0.00021

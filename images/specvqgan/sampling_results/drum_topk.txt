@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	playing cymbal: 0.56668
+	playing bass drum: 0.27518
+	playing drum kit: 0.09605
+	playing double bass: 0.04068
+	playing snare drum: 0.01372
+	playing tympani: 0.00362
+	playing timbales: 0.00091
+	playing bass guitar: 0.00065
+	disc scratching: 0.00025
+	playing timpani: 0.00024

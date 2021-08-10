@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	electric grinder grinding: 0.22656
+	car engine starting: 0.21779
+	using sewing machines: 0.17437
+	lathe spinning: 0.13885
+	car engine knocking: 0.11205

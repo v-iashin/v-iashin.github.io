@@ -1,0 +1,6 @@
+Classifier Opinion (K=5):
+	cupboard opening or closing: 0.38138
+	swimming: 0.09781
+	opening or closing car doors: 0.08427
+	firing cannon: 0.08258
+	strike lighter: 0.07873

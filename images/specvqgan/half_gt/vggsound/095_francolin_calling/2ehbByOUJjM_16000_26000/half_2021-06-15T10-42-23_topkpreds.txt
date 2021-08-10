@@ -1,0 +1,11 @@
+Classifier Opinion (K=10):
+	mynah bird singing: 0.45429
+	francolin calling: 0.20842
+	bird chirping, tweeting: 0.18783
+	warbler chirping: 0.08929
+	parrot talking: 0.03225
+	mouse squeaking: 0.00871
+	black capped chickadee calling: 0.00532
+	canary calling: 0.00474
+	cuckoo bird calling: 0.00339
+	wood thrush calling: 0.00271
