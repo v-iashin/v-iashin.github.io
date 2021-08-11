@@ -317,25 +317,6 @@ a.proj_buttons:hover {
   margin-left: auto;
   margin-right: auto;
 }
-.img_with_cap_on_the_right {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-}
-.left_side {
-  flex: 3;
-  min-width: 17em;
-  padding-right: 1em;
-}
-.right_side {
-  flex: 5;
-  min-width: 20em;
-  padding-right: 1em;
-}
 .background_beige_rounded {
   background-color: beige;
   border-radius: 25px;

@@ -188,23 +188,19 @@
           For the event localization stage, we introduce
           <b style="color: rgb(55, 70, 207)">Bi-modal Multi-headed Proposal Generator</b>, which generates a set of proposals for a video.
         </p>
-        <div class="img_with_cap_on_the_right">
-          <div class="left_side">
-            <p class="p_on_project_pages">
-              The proposal generator inputs <b style="color: #D79B00;">audio-attended visual</b> and
-              <b style="color: #B46504;">visual-attended audio</b> features generated for a full video in the bi-modal encoder.
-              These features are processed by the corresponding stacks of proposal generation heads.
-              Each head has a distinct receptive field \(k\) and consists of three 1-D conv layers.
-              At every position \(t_\star\) and for each anchor, the head predicts: center coordinate shift
-              \(\sigma(c)\), anchor length coefficient \(l\), and objectness score \(\sigma(o)\).
-              The predictions from all heads form a <b style="color: #6C8EBF;">common pool</b> of predictions.
-              The proposals are sorted on the confidence score and passed back to clip the input for the captioning module — Figure in Overview.
-            </p>
-          </div>
-          <div class="img background_white_squared right_side" style="border: none; padding: 0em;">
-            <img src="./images/bmt/proposal_generator.svg" alt="Bi-modal Multi-headed Proposal Generator">
-          </div>
+        <div class="img background_white_squared right_side" style="border: none; padding: 0em; ">
+          <img src="./images/bmt/proposal_generator.svg" alt="Bi-modal Multi-headed Proposal Generator">
         </div>
+        <p class="p_on_project_pages">
+          The proposal generator inputs <b style="color: #D79B00;">audio-attended visual</b> and
+          <b style="color: #B46504;">visual-attended audio</b> features generated for a full video in the bi-modal encoder.
+          These features are processed by the corresponding stacks of proposal generation heads.
+          Each head has a distinct receptive field \(k\) and consists of three 1-D conv layers.
+          At every position \(t_\star\) and for each anchor, the head predicts: center coordinate shift
+          \(\sigma(c)\), anchor length coefficient \(l\), and objectness score \(\sigma(o)\).
+          The predictions from all heads form a <b style="color: #6C8EBF;">common pool</b> of predictions.
+          The proposals are sorted on the confidence score and passed back to clip the input for the captioning module — Figure in Overview.
+        </p>
         <p class="p_on_project_pages">
           The design of the proposal generation head is partly inspired by YOLO.
           Opposed to YOLO, we preserve the sequence length across all layers (no pooling was used).
