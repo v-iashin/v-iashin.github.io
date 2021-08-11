@@ -12,165 +12,179 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
-<style>
-  table {
-    border-spacing: 0 5px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 100%;
-    /* line-height: 120%; */
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-    /* padding-bottom: 1em; */
-    margin-bottom: 2em;
-    border-collapse: collapse;
-  }
-  thead, th {
-    border-bottom: 2px solid black;
-    border-spacing: 5px 5px;
-  }
-  tr.mid_rule {
-    border-bottom: 2pt solid black;
-  }
-  th, td {
-    padding: 0.4em 1em 0.4em 1em;
-    text-align: right;
-  }
-  img.gt {
-    border: 4px solid black;
-  }
-  img.rec_vggsound_with_vggsound {
-    border: 4px solid #99FFFF;
-  }
-  img.rec_vas_with_vggsound {
-    border: 4px solid #CC99FF;
-  }
-  img.rec_vas_with_vas {
-    border: 4px solid #FFCC99;
-  }
-  div.middle {
-     margin: auto 0em auto 0em;
-  }
-  div.rec_results, div.sampling_results {
-    text-align: center;
-    font-size: 0.8em;
-    line-height: 1.4em;
-    /* padding-bottom: 5em; */
-  }
-  div.bold {
-    font-weight: bold;
-  }
-  div.italic {
-    font-style: italic;
-  }
-  .zero_font_size_and_line_hight {
-    font-size: 0em;
-    line-height: 0em;
-  }
-  summary {
-    cursor: pointer;
-  }
-  /* tables */
-  @media screen and (max-width: 50em) {
+  <style>
     table {
-      font-size: 2.4vw;
-      line-height: 3.8vw;
-      border-top: 0.3vw solid black;
-      border-bottom: 0.3vw solid black;
+      border-spacing: 0 5px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 100%;
+      border-top: 3px solid black;
+      border-bottom: 3px solid black;
+      margin-bottom: 2em;
       border-collapse: collapse;
     }
     thead, th {
-      border-bottom: 0.2vw solid black;
-    }
-    th, td {
-      padding: 0.4vh 2vw 0.4vh 2vw;
+      border-bottom: 2px solid black;
+      border-spacing: 5px 5px;
     }
     tr.mid_rule {
-      border-bottom: 0.2vw solid black;
+      border-bottom: 2pt solid black;
     }
-  }
-  /* results */
-  @media screen and (max-width: 80em) {
+    th, td {
+      padding: 0.4em 1em 0.4em 1em;
+      text-align: right;
+    }
+    img.gt {
+      border: 4px solid black;
+    }
+    img.rec_vggsound_with_vggsound {
+      border: 4px solid #99FFFF;
+    }
+    img.rec_vas_with_vggsound {
+      border: 4px solid #CC99FF;
+    }
+    img.rec_vas_with_vas {
+      border: 4px solid #FFCC99;
+    }
+    img.black_border {
+      border: 3px solid black;
+    }
+    div.middle {
+      margin: auto 0em auto 0em;
+    }
     div.rec_results, div.sampling_results {
-      font-size: 1.3vw;
-      line-height: 1.6vw;
+      text-align: center;
+      font-size: 0.8em;
+      line-height: 1.4em;
     }
-  }
-  /* Popup */
-  .popup_link {
-    color: black;
-    border-bottom: 1px dotted;
-    color: #333;
-  }
-  .popup {
-    position: relative;
-    display: inline-block;
-  }
-  .popup_content {
-    text-align: left;
-    display: none;
-    /* display: block; */
-    position: absolute;
-    background-color: white;
-    border: 1px solid lightgray;
-    padding: 1em;
-    border-radius: 1em;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    width: 20em;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .popup:hover .popup_content {
-    display: block;
-  }
-  /* hopefully helps with hovers on touch screens */
-  .popup:active .popup_content {
-    display: block;
-  }
-  /* Double Border Color */
-  .double {
-    float: left;
-    position: relative;
-    padding: 4px;
-    background: #01BAEF;
-  }
-  .double:after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 50%;
-    height: 100%;
-    background: #20BF55;
-    right: 0;
-    bottom: 0;
-  }
-  .double img {
-    position: relative;
-    z-index: 1;
-  }
-  /* Top-X overlay */
-  .topx_overlay {
-    border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0.4);
-    padding: 0.3em;
-  }
-  /* ToC */
-  li {
-    display: list-item;
-  }
-  .toc_section {
-    padding-top: 2em;
-  }
-  .toc_subsection {
-    padding-top: 0.7em;
-    font-size: 0.8em;
-    padding-bottom: 0em;
-  }
-  #toc_container li, #toc_container ul, #toc_container ul li {
-    list-style: outside none none !important;
-  }
-</style>
+    div.bold {
+      font-weight: bold;
+    }
+    div.italic {
+      font-style: italic;
+    }
+    .zero_font_size_and_line_hight {
+      font-size: 0em;
+      line-height: 0em;
+    }
+    summary {
+      cursor: pointer;
+    }
+    /* tables */
+    @media screen and (max-width: 50em) {
+      table {
+        font-size: 2.4vw;
+        line-height: 3.8vw;
+        border-top: 0.3vw solid black;
+        border-bottom: 0.3vw solid black;
+        border-collapse: collapse;
+      }
+      thead, th {
+        border-bottom: 0.2vw solid black;
+      }
+      th, td {
+        padding: 0.4vh 2vw 0.4vh 2vw;
+      }
+      tr.mid_rule {
+        border-bottom: 0.2vw solid black;
+      }
+      img.gt {
+        border: 0.4vw solid black;
+      }
+      img.rec_vggsound_with_vggsound {
+        border: 0.4vw solid #99FFFF;
+      }
+      img.rec_vas_with_vggsound {
+        border: 0.4vw solid #CC99FF;
+      }
+      img.rec_vas_with_vas {
+        border: 0.4vw solid #FFCC99;
+      }
+      img.black_border {
+        border: 0.3vw solid black;
+      }
+    }
+    /* results */
+    @media screen and (max-width: 80em) {
+      div.rec_results, div.sampling_results {
+        font-size: 1.3vw;
+        line-height: 1.6vw;
+      }
+    }
+    /* Popup */
+    .popup_link {
+      color: black;
+      border-bottom: 1px dotted;
+      color: #333;
+    }
+    .popup {
+      position: relative;
+      display: inline-block;
+    }
+    .popup_content {
+      text-align: left;
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid lightgray;
+      padding: 1em;
+      border-radius: 1em;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 20em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .popup:hover .popup_content {
+      display: block;
+    }
+    /* hopefully helps with hovers on touch screens */
+    .popup:active .popup_content {
+      display: block;
+    }
+    /* Double Border Color */
+    .double {
+      float: left;
+      position: relative;
+      padding: 4px;
+      background: #01BAEF;
+    }
+    .double:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #20BF55;
+      right: 0;
+      bottom: 0;
+    }
+    .double img {
+      position: relative;
+      z-index: 1;
+    }
+    /* Top-X overlay */
+    .topx_overlay {
+      border: 1px solid black;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0.3em;
+    }
+    /* ToC */
+    li {
+      display: list-item;
+    }
+    .toc_section {
+      padding-top: 2em;
+    }
+    .toc_subsection {
+      padding-top: 0.7em;
+      font-size: 0.8em;
+      padding-bottom: 0em;
+    }
+    #toc_container li, #toc_container ul, #toc_container ul li {
+      list-style: outside none none !important;
+    }
+  </style>
 
   <body>
     <ul class="breadcrumb"> <a class="bread_crumb" href="index.html">Vladimir Iashin</a> / Taming Visually Guided Sound Generation </ul>
@@ -220,7 +234,7 @@
         </div>
 
         <div class="audio-player">
-          <audio style="width: 100%;" controls>
+          <audio style="width: 100%;" controls preload="none">
             <source src="./images/specvqgan/drum-solo-audio.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
           </audio>
@@ -240,19 +254,19 @@
           </div>
           <div style="flex: 1; display: flex; flex-direction: column; text-align: center;">
             <div style="flex: 1;">
-              <audio style="width: 90%;" controls>
+              <audio style="width: 90%;" controls preload="none">
                 <source src="./images/specvqgan/harp.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
             </div>
             <div style="flex: 1">
-              <audio style="width: 90%;" controls>
+              <audio style="width: 90%;" controls preload="none">
                 <source src="./images/specvqgan/lions_roaring.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
             </div>
             <div style="flex: 1;" class="middle">
-              <audio style="width: 90%;" controls>
+              <audio style="width: 90%;" controls preload="none">
                 <source src="./images/specvqgan/canary_calling.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -313,9 +327,12 @@
               Datasets
             </a> </li>
 
-            <li class="toc_section"> Results
+            <li class="toc_section">
+              <a href="#results-spectrogram-reconstruction" class="intext">
+                  Results
+              </a>
               <ul>
-                <li class="toc_subsection"><a href="#qualitative-results-vggsound-dataset" class="intext">
+                <li class="toc_subsection"><a href="#results-spectrogram-reconstruction" class="intext">
                   Spectrogram Reconstruction
                 </a></li>
                 <li class="toc_subsection">
@@ -403,12 +420,13 @@
         </p>
         <div class="img background_white_squared" style="border: none; padding: 0em;">
           <img src="./images/specvqgan/codebook.png" alt="Spectrogram VQGAN" >
+          <img src="./images/specvqgan/codebook.svg" alt="Spectrogram VQGAN" >
         </div>
         <p class="p_on_project_pages">
           The goal of the autoencoder is to reliably reconstruct the input spectrogram \(x\) from a small-scale
-          codebook (quantized) representation \(z_\mathbf{q}\).
+          codebook (quantized) representation \(z_\mathbf{q}.\)
           The codebook representation \(z_\mathbf{q}\) is obtained from the encoded representation \(\hat{z}\)
-          just by looking up the closest elements from the codebook \(\mathcal{Z}\).
+          just by looking up the closest elements from the codebook \(\mathcal{Z}.\)
           Both the Codebook Encoder (\(E\)) and Codebook Decoder (\(G\)) are generic 2D Conv stacks.
         </p>
         <p class="p_on_project_pages">
@@ -469,13 +487,13 @@
         <p class="p_on_project_pages">
           When sampling of tokens is done, we cut out the visual tokens from the generated sequence
           and replace the predicted codebook indices \(\hat{s}\) with vectors from the codebook \(\mathcal{Z}\)
-          to form the codebook representation \(\hat{z}_\mathbf{q}\).
+          to form the codebook representation \(\hat{z}_\mathbf{q}.\).
           We reshape the sequence \(\hat{s}\) into the 2D representation \(\hat{z}_\mathbf{q}\) in a
           <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" class="intext">column-major</a>
           way.
-          Then, we can decode this representation into a spectrogram by the pre-trained codebook decoder \(G\).
+          Then, we can decode this representation into a spectrogram by the pre-trained codebook decoder \(G.\)
           The generated spectrogram \(\hat{x}_\mathcal{F}\) can finally be transformed to a waveform \(\hat{w}\)
-          with a pre-trained spectrogram vocoder \(V\):
+          with a pre-trained spectrogram vocoder \(V:\)
         </p>
         <div class="img background_white_squared" style="border: none; padding: 0em;">
           <img src="./images/specvqgan/from_tokens_to_waveform.png" alt="From Generated Tokens to a Waveform" >
@@ -483,7 +501,7 @@
 
         <p class="p_on_project_pages">
           Overall, the <b>Vision-based Conditional Cross-modal Sampler</b> also includes
-          the pretrained decoder from the codebook autoencoder \(G\) and a pretrained <b>Spectrogram Vocoder</b> \(V\):
+          the pretrained decoder from the codebook autoencoder \(G\) and a pretrained <b>Spectrogram Vocoder</b> \(V:\)
         </p>
         <div class="img background_white_squared" style="border: none; padding: 0em;">
           <img src="./images/specvqgan/transformer.png" alt="Vision-based Conditional Autoregressive Sampler" >
@@ -653,7 +671,7 @@
                    src="./images/specvqgan/reconstructions/vggsound/pjuyGQPd4S4_39000_49000_x_id12804.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vggsound/djembe_gt.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -666,7 +684,7 @@
                    src="./images/specvqgan/reconstructions/vggsound/pjuyGQPd4S4_39000_49000_xrec_id12804_by2021-05-19T22-16-54_vggsound_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vggsound/djembe_vggsound.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -685,7 +703,7 @@
               src="./images/specvqgan/reconstructions/vggsound/2pHfgh_G1yo_10000_20000_x_id1051.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vggsound/siren_gt.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -698,7 +716,7 @@
                    src="./images/specvqgan/reconstructions/vggsound/2pHfgh_G1yo_10000_20000_xrec_id1051_by2021-05-19T22-16-54_vggsound_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vggsound/siren_vggsound.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -725,7 +743,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/canary_calling_n4jf0RXGw7I_19000_29000_x_id12298.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/canary_calling_n4jf0RXGw7I_19000_29000_x_id12298.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -738,7 +756,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/canary_calling_n4jf0RXGw7I_19000_29000_xrec_id12298_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/canary_calling_n4jf0RXGw7I_19000_29000_xrec_id12298_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -758,7 +776,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/child_speech__kid_speaking_40AD_oH9eCU_30000_40000_x_id1378.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/child_speech__kid_speaking_40AD_oH9eCU_30000_40000_x_id1378.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -771,7 +789,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/child_speech__kid_speaking_40AD_oH9eCU_30000_40000_xrec_id1378_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/child_speech__kid_speaking_40AD_oH9eCU_30000_40000_xrec_id1378_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -791,7 +809,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/chimpanzee_pant-hooting_gXDltX0l33E_5000_15000_x_id10902.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/chimpanzee_pant-hooting_gXDltX0l33E_5000_15000_x_id10902.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -804,7 +822,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/chimpanzee_pant-hooting_gXDltX0l33E_5000_15000_x_id10902.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/chimpanzee_pant-hooting_gXDltX0l33E_5000_15000_xrec_id10902_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -824,7 +842,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/chopping_food_LnVxCibEqko_53000_63000_x_id5899.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/chopping_food_LnVxCibEqko_53000_63000_x_id5899.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -837,7 +855,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/chopping_food_LnVxCibEqko_53000_63000_xrec_id5899_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/chopping_food_LnVxCibEqko_53000_63000_xrec_id5899_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -857,7 +875,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/civil_defense_siren_C9LzJZ1PpL0_0_10000_x_id3456.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/civil_defense_siren_C9LzJZ1PpL0_0_10000_x_id3456.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -870,7 +888,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/civil_defense_siren_C9LzJZ1PpL0_0_10000_xrec_id3456_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/civil_defense_siren_C9LzJZ1PpL0_0_10000_xrec_id3456_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -890,7 +908,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/dog_whimpering_PVSHN_arz2k_21000_31000_x_id6777.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/dog_whimpering_PVSHN_arz2k_21000_31000_x_id6777.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -903,7 +921,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/dog_whimpering_PVSHN_arz2k_21000_31000_xrec_id6777_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/dog_whimpering_PVSHN_arz2k_21000_31000_xrec_id6777_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -923,7 +941,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/door_slamming_Cvwyf4tOrqc_30000_40000_x_id3667.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/door_slamming_Cvwyf4tOrqc_30000_40000_x_id3667.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -936,7 +954,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/door_slamming_Cvwyf4tOrqc_30000_40000_xrec_id3667_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/door_slamming_Cvwyf4tOrqc_30000_40000_xrec_id3667_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -956,7 +974,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/eating_with_cutlery_dy7klgwlfNs_280000_290000_x_id10335.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/eating_with_cutlery_dy7klgwlfNs_280000_290000_x_id10335.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -969,7 +987,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/eating_with_cutlery_dy7klgwlfNs_280000_290000_xrec_id10335_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/eating_with_cutlery_dy7klgwlfNs_280000_290000_xrec_id10335_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -989,7 +1007,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/electric_grinder_grinding_D9yNCDer4YM_94000_104000_x_id3725.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/electric_grinder_grinding_D9yNCDer4YM_94000_104000_x_id3725.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1002,7 +1020,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/electric_grinder_grinding_D9yNCDer4YM_94000_104000_xrec_id3725_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/electric_grinder_grinding_D9yNCDer4YM_94000_104000_xrec_id3725_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1022,7 +1040,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/eletric_blender_running_E67DLGqXPMo_200000_210000_x_id3989.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/eletric_blender_running_E67DLGqXPMo_200000_210000_x_id3989.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1035,7 +1053,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/eletric_blender_running_E67DLGqXPMo_200000_210000_xrec_id3989_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/eletric_blender_running_E67DLGqXPMo_200000_210000_xrec_id3989_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1055,7 +1073,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/golf_driving_hekfjJRfSXM_32000_42000_x_id11146.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/golf_driving_hekfjJRfSXM_32000_42000_x_id11146.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1068,7 +1086,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/golf_driving_hekfjJRfSXM_32000_42000_xrec_id11146_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/golf_driving_hekfjJRfSXM_32000_42000_xrec_id11146_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1088,7 +1106,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/ice_cracking_PxpGb6RozhI_24000_34000_x_id6888.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/ice_cracking_PxpGb6RozhI_24000_34000_x_id6888.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1101,7 +1119,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/ice_cracking_PxpGb6RozhI_24000_34000_xrec_id6888_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/ice_cracking_PxpGb6RozhI_24000_34000_xrec_id6888_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1121,7 +1139,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/magpie_calling_od5QuiFX8P4_46000_56000_x_id12607.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/magpie_calling_od5QuiFX8P4_46000_56000_x_id12607.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1134,7 +1152,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/magpie_calling_od5QuiFX8P4_46000_56000_xrec_id12607_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/magpie_calling_od5QuiFX8P4_46000_56000_xrec_id12607_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1154,7 +1172,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/mouse_pattering_oYYd7duzdBY_30000_40000_x_id12591.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/mouse_pattering_oYYd7duzdBY_30000_40000_x_id12591.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1167,7 +1185,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/mouse_pattering_oYYd7duzdBY_30000_40000_xrec_id12591_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/mouse_pattering_oYYd7duzdBY_30000_40000_xrec_id12591_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1187,7 +1205,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/opening_or_closing_drawers_61T8j-vXtnA_430000_440000_x_id1866.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/opening_or_closing_drawers_61T8j-vXtnA_430000_440000_x_id1866.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1200,7 +1218,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/opening_or_closing_drawers_61T8j-vXtnA_430000_440000_xrec_id1866_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/opening_or_closing_drawers_61T8j-vXtnA_430000_440000_xrec_id1866_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1220,7 +1238,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/people_belly_laughing_sWXpzTZWNAI_30000_40000_x_id13348.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/people_belly_laughing_sWXpzTZWNAI_30000_40000_x_id13348.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1233,7 +1251,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/people_belly_laughing_sWXpzTZWNAI_30000_40000_xrec_id13348_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/people_belly_laughing_sWXpzTZWNAI_30000_40000_xrec_id13348_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1253,7 +1271,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/people_sneezing_LspJN_1R27Q_30000_40000_x_id5913.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/people_sneezing_LspJN_1R27Q_30000_40000_x_id5913.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1266,7 +1284,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/people_sneezing_LspJN_1R27Q_30000_40000_xrec_id5913_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/people_sneezing_LspJN_1R27Q_30000_40000_xrec_id5913_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1286,7 +1304,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_bagpipes_WAztA-Iqb4g_30000_40000_x_id8313.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_bagpipes_WAztA-Iqb4g_30000_40000_x_id8313.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1299,7 +1317,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_bagpipes_WAztA-Iqb4g_30000_40000_xrec_id8313_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_bagpipes_WAztA-Iqb4g_30000_40000_xrec_id8313_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1319,7 +1337,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_castanets_-Zl_ZkDmZHE_0_10000_x_id147.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_castanets_-Zl_ZkDmZHE_0_10000_x_id147.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1332,7 +1350,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_castanets_-Zl_ZkDmZHE_0_10000_xrec_id147_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_castanets_-Zl_ZkDmZHE_0_10000_xrec_id147_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1352,7 +1370,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_clarinet_LMfD-ZsuzOU_30000_40000_x_id5787.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_clarinet_LMfD-ZsuzOU_30000_40000_x_id5787.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1365,7 +1383,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_clarinet_LMfD-ZsuzOU_30000_40000_xrec_id5787_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_clarinet_LMfD-ZsuzOU_30000_40000_xrec_id5787_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1385,7 +1403,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_flute_O7puBCRI2Bc_30000_40000_x_id6484.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_flute_O7puBCRI2Bc_30000_40000_x_id6484.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1398,7 +1416,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_flute_O7puBCRI2Bc_30000_40000_xrec_id6484_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_flute_O7puBCRI2Bc_30000_40000_xrec_id6484_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1418,7 +1436,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_mandolin_O0sDg-yLvlE_30000_40000_x_id6455.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_mandolin_O0sDg-yLvlE_30000_40000_x_id6455.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1431,7 +1449,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_mandolin_O0sDg-yLvlE_30000_40000_xrec_id6455_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_mandolin_O0sDg-yLvlE_30000_40000_xrec_id6455_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1451,7 +1469,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_snare_drum_iAK8xAOUob8_297000_307000_x_id11254.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_snare_drum_iAK8xAOUob8_297000_307000_x_id11254.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1464,7 +1482,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_snare_drum_iAK8xAOUob8_297000_307000_xrec_id11254_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_snare_drum_iAK8xAOUob8_297000_307000_xrec_id11254_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1484,7 +1502,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_synthesizer_SkIDF7iNJQE_30000_40000_x_id7558.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_synthesizer_SkIDF7iNJQE_30000_40000_x_id7558.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1497,7 +1515,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_synthesizer_SkIDF7iNJQE_30000_40000_xrec_id7558_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_synthesizer_SkIDF7iNJQE_30000_40000_xrec_id7558_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1517,7 +1535,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_tympani_U2Fuor5iG98_68000_78000_x_id7827.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_tympani_U2Fuor5iG98_68000_78000_x_id7827.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1530,7 +1548,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_tympani_U2Fuor5iG98_68000_78000_xrec_id7827_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_tympani_U2Fuor5iG98_68000_78000_xrec_id7827_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1550,7 +1568,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_vibraphone_7rzEesL55fM_340000_350000_x_id2341.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_vibraphone_7rzEesL55fM_340000_350000_x_id2341.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1563,7 +1581,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/playing_vibraphone_7rzEesL55fM_340000_350000_xrec_id2341_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/playing_vibraphone_7rzEesL55fM_340000_350000_xrec_id2341_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1583,7 +1601,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/police_car_(siren)_84b7NrzJWiI_420000_430000_x_id2379.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/police_car_(siren)_84b7NrzJWiI_420000_430000_x_id2379.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1596,7 +1614,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/police_car_(siren)_84b7NrzJWiI_420000_430000_xrec_id2379_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/police_car_(siren)_84b7NrzJWiI_420000_430000_xrec_id2379_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1616,7 +1634,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/roller_coaster_running_aMDAoaCyB1c_73000_83000_x_id9529.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/roller_coaster_running_aMDAoaCyB1c_73000_83000_x_id9529.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1629,7 +1647,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/roller_coaster_running_aMDAoaCyB1c_73000_83000_xrec_id9529_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/roller_coaster_running_aMDAoaCyB1c_73000_83000_xrec_id9529_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1649,7 +1667,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/shot_football_k7rGUmOV6wQ_261000_271000_x_id11658.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/shot_football_k7rGUmOV6wQ_261000_271000_x_id11658.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1662,7 +1680,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/shot_football_k7rGUmOV6wQ_261000_271000_xrec_id11658_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/shot_football_k7rGUmOV6wQ_261000_271000_xrec_id11658_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1682,7 +1700,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/slot_machine_nXY2Vrfm0vY_1000_11000_x_id12383.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/slot_machine_nXY2Vrfm0vY_1000_11000_x_id12383.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1695,7 +1713,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/slot_machine_nXY2Vrfm0vY_1000_11000_xrec_id12383_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/slot_machine_nXY2Vrfm0vY_1000_11000_xrec_id12383_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1715,7 +1733,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/spraying_water_aUVT2tUbPN8_187000_197000_x_id9562.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/spraying_water_aUVT2tUbPN8_187000_197000_x_id9562.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1728,7 +1746,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/spraying_water_aUVT2tUbPN8_187000_197000_xrec_id9562_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/spraying_water_aUVT2tUbPN8_187000_197000_xrec_id9562_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1748,7 +1766,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/tap_dancing_MPW-geOjDG4_197000_207000_x_id6065.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/tap_dancing_MPW-geOjDG4_197000_207000_x_id6065.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1761,7 +1779,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/tap_dancing_MPW-geOjDG4_197000_207000_xrec_id6065_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/tap_dancing_MPW-geOjDG4_197000_207000_xrec_id6065_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1781,7 +1799,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/whale_calling_jLQQ2JX6pcM_8000_18000_x_id11510.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/whale_calling_jLQQ2JX6pcM_8000_18000_x_id11510.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1794,7 +1812,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/whale_calling_jLQQ2JX6pcM_8000_18000_xrec_id11510_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/whale_calling_jLQQ2JX6pcM_8000_18000_xrec_id11510_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1814,7 +1832,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/woodpecker_pecking_tree_eoWx7tqlCc0_260000_270000_x_id10497.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/woodpecker_pecking_tree_eoWx7tqlCc0_260000_270000_x_id10497.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1827,7 +1845,7 @@
                 src="./images/specvqgan/reconstructions/vggsound/woodpecker_pecking_tree_eoWx7tqlCc0_260000_270000_xrec_id10497_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vggsound/woodpecker_pecking_tree_eoWx7tqlCc0_260000_270000_xrec_id10497_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1858,7 +1876,7 @@
               src="./images/specvqgan/reconstructions/vas/video_02783_x_id318.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/dog_gt.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1872,7 +1890,7 @@
               src="./images/specvqgan/reconstructions/vas/video_02783_xrec_id318_by2021-05-19T22-16-54_vggsound_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/dog_vggsound.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1886,7 +1904,7 @@
               src="./images/specvqgan/reconstructions/vas/video_02783_xrec_id318_by2021-06-06T19-42-53_vas_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/dog_vas.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1906,7 +1924,7 @@
               src="./images/specvqgan/reconstructions/vas/video_01962_x_id29.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/baby_gt.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1920,7 +1938,7 @@
                 src="./images/specvqgan/reconstructions/vas/video_01962_xrec_id29_by2021-05-19T22-16-54_vggsound_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/baby_vggsound.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1934,7 +1952,7 @@
                 src="./images/specvqgan/reconstructions/vas/video_01962_xrec_id29_by2021-06-06T19-42-53_vas_specs_vqgan.jpg">
             </div>
             <div class="middle" style="flex: 1;">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/reconstructions/vas/baby_vas.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -1961,7 +1979,7 @@
                 src="./images/specvqgan/reconstructions/vas/baby_video_01941_x_id8.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_01941_x_id8_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1975,7 +1993,7 @@
                   src="./images/specvqgan/reconstructions/vas/baby_video_01941_xrec_id8_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_01941_xrec_id8_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -1989,7 +2007,7 @@
                   src="./images/specvqgan/reconstructions/vas/baby_video_01941_xrec_id8_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_01941_xrec_id8_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2010,7 +2028,7 @@
                 src="./images/specvqgan/reconstructions/vas/baby_video_02025_x_id92.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_02025_x_id92_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2024,7 +2042,7 @@
                   src="./images/specvqgan/reconstructions/vas/baby_video_02025_xrec_id92_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_02025_xrec_id92_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2038,7 +2056,7 @@
                   src="./images/specvqgan/reconstructions/vas/baby_video_02025_xrec_id92_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/baby_video_02025_xrec_id92_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2059,7 +2077,7 @@
                 src="./images/specvqgan/reconstructions/vas/cough_video_00378_x_id191.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/cough_video_00378_x_id191_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2073,7 +2091,7 @@
                   src="./images/specvqgan/reconstructions/vas/cough_video_00378_xrec_id191_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/cough_video_00378_xrec_id191_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2087,7 +2105,7 @@
                   src="./images/specvqgan/reconstructions/vas/cough_video_00378_xrec_id191_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/cough_video_00378_xrec_id191_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2108,7 +2126,7 @@
                 src="./images/specvqgan/reconstructions/vas/dog_video_02738_x_id273.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/dog_video_02738_x_id273_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2122,7 +2140,7 @@
                   src="./images/specvqgan/reconstructions/vas/dog_video_02738_xrec_id273_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/dog_video_02738_xrec_id273_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2136,7 +2154,7 @@
                   src="./images/specvqgan/reconstructions/vas/dog_video_02738_xrec_id273_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/dog_video_02738_xrec_id273_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2157,7 +2175,7 @@
                 src="./images/specvqgan/reconstructions/vas/drum_video_02513_x_id355.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02513_x_id355_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2171,7 +2189,7 @@
                   src="./images/specvqgan/reconstructions/vas/drum_video_02513_xrec_id355_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02513_xrec_id355_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2185,7 +2203,7 @@
                   src="./images/specvqgan/reconstructions/vas/drum_video_02513_xrec_id355_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02513_xrec_id355_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2206,7 +2224,7 @@
                 src="./images/specvqgan/reconstructions/vas/drum_video_02578_x_id420.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02578_x_id420_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2220,7 +2238,7 @@
                   src="./images/specvqgan/reconstructions/vas/drum_video_02578_xrec_id420_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02578_xrec_id420_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2234,7 +2252,7 @@
                   src="./images/specvqgan/reconstructions/vas/drum_video_02578_xrec_id420_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/drum_video_02578_xrec_id420_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2255,7 +2273,7 @@
                 src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_x_id502.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_x_id502_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2269,7 +2287,7 @@
                   src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_xrec_id502_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_xrec_id502_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2283,7 +2301,7 @@
                   src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_xrec_id502_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/fireworks_video_03041_xrec_id502_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2304,7 +2322,7 @@
                 src="./images/specvqgan/reconstructions/vas/gun_video_00843_x_id617.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/gun_video_00843_x_id617_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2318,7 +2336,7 @@
                   src="./images/specvqgan/reconstructions/vas/gun_video_00843_xrec_id617_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/gun_video_00843_xrec_id617_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2332,7 +2350,7 @@
                   src="./images/specvqgan/reconstructions/vas/gun_video_00843_xrec_id617_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/gun_video_00843_xrec_id617_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2353,7 +2371,7 @@
                 src="./images/specvqgan/reconstructions/vas/hammer_video_00334_x_id655.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/hammer_video_00334_x_id655_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2367,7 +2385,7 @@
                   src="./images/specvqgan/reconstructions/vas/hammer_video_00334_xrec_id655_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/hammer_video_00334_xrec_id655_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2381,7 +2399,7 @@
                   src="./images/specvqgan/reconstructions/vas/hammer_video_00334_xrec_id655_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/hammer_video_00334_xrec_id655_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2402,7 +2420,7 @@
                 src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_x_id751.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_x_id751_x.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2416,7 +2434,7 @@
                   src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_xrec_id751_vggsound_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_xrec_id751_vggsound_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2430,7 +2448,7 @@
                   src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_xrec_id751_vas_vqgan.jpeg">
               </div>
               <div class="middle" style="flex: 1;">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/reconstructions/vas/sneeze_video_00329_xrec_id751_vas_vqgan.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -2589,7 +2607,7 @@
           Next, we show samples from all three different settings:
         </p>
         <div id="a-trained-on-vggsound-to-sample-from-vggsound-codebook" class="subsection_name" style="padding-top: 0;">
-         (a) – Trained on <i>VGGSound</i> to sample from <i>VGGSound</i> codebook
+        (a) – Trained on <i>VGGSound</i> to sample from <i>VGGSound</i> codebook
         </div>
 
         <div class="sampling_results">
@@ -2598,20 +2616,20 @@
               Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-19 at 12.18.59.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-19 at 12.20.57.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-19 at 12.22.09.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-19 at 12.22.20.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -2626,11 +2644,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/nopix_2021-06-18T11-58-33.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/female.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -2643,20 +2661,20 @@
               Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.39.29.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.39.35.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.39.39.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.39.55.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2671,11 +2689,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/chainsawing_trees_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/chainsawing_trees_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -2688,20 +2706,20 @@
               Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.53.29.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.53.32.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.53.41.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.53.53.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2716,11 +2734,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/baby_crying_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/baby_crying_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -2736,20 +2754,20 @@
                 Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.41.30.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.41.35.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.41.37.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 08.41.47.jpeg">
               </div>
               <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2764,11 +2782,11 @@
               </div>
             </div>
             <div class="sampling_row">
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/sampling_results/people_cheering_spec.jpeg">
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/sampling_results/people_cheering_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -2781,20 +2799,20 @@
                 Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 20.58.28.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 20.58.26.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 20.57.51.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 20.58.48.jpeg">
               </div>
               <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2809,11 +2827,11 @@
               </div>
             </div>
             <div class="sampling_row">
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/sampling_results/playing_bongo_spec.jpeg">
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/sampling_results/playing_bongo_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -2826,20 +2844,20 @@
                 Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 22.24.10.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 22.24.18.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 22.24.22.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 22.24.29.jpeg">
               </div>
               <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2854,11 +2872,11 @@
               </div>
             </div>
             <div class="sampling_row">
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/sampling_results/ripping_paper_spec.jpeg">
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/sampling_results/ripping_paper_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -2871,20 +2889,20 @@
                 Trained on <b>VGGSound</b> to sample from <b>VGGSound</b> codebook
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.55.52.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.55.56.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.55.59.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/sampling_results/Screenshot 2021-06-27 at 21.55.43.jpeg">
               </div>
               <div class="middle" style="flex: 4; text-align: left; width: 90%; padding-left: 0.5em;">
@@ -2899,11 +2917,11 @@
               </div>
             </div>
             <div class="sampling_row">
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/sampling_results/wind_chime_spec.jpeg">
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/sampling_results/wind_chime_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -2912,7 +2930,7 @@
         </details>
 
         <div id="b-trained-on-vas-to-sample-from-vggsound-codebook" class="subsection_name" >
-         (b) – Trained on <i>VAS</i> to sample from <i>VGGSound</i> codebook
+        (b) – Trained on <i>VAS</i> to sample from <i>VGGSound</i> codebook
         </div>
 
         <div class="sampling_results">
@@ -2922,20 +2940,20 @@
               Trained on <b>VAS</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 14.58.39.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 14.58.45.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 14.59.02.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 14.59.21.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -2950,11 +2968,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/gun_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/gun_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -2969,20 +2987,20 @@
               Trained on <b>VAS</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.00.27.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.00.30.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.00.33.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.00.45.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -2997,11 +3015,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/dog_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/dog_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -3012,20 +3030,20 @@
               Trained on <b>VAS</b> to sample from <b>VGGSound</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.01.46.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.01.48.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.01.52.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.02.10.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -3040,11 +3058,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/cough_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/cough_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -3055,7 +3073,7 @@
         </div>
 
         <div id="c-trained-on-vas-to-sample-from-vas-codebook" class="subsection_name" style="padding-top: 2em;">
-         (c) – Trained on <i>VAS</i> to sample from <i>VAS</i> codebook
+        (c) – Trained on <i>VAS</i> to sample from <i>VAS</i> codebook
         </div>
 
         <div class="sampling_results">
@@ -3065,20 +3083,20 @@
               Trained on <b>VAS</b> to sample from <b>VAS</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 11.34.42.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 11.34.52.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 11.34.57.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 11.35.00.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -3093,11 +3111,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/drum_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/drum_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -3113,20 +3131,20 @@
               Trained on <b>VAS</b> to sample from <b>VAS</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.03.59.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.04.04.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.04.15.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.04.21.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -3142,12 +3160,12 @@
           </div>
 
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
-                src="./images/specvqgan/sampling_results/drum_spec.jpeg">
+            <img class="middle black_border" style="width: 99.5%;"
+                src="./images/specvqgan/sampling_results/fireworks_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
-              <source src="./images/specvqgan/sampling_results/drum_audio.mp3" type="audio/mpeg">
+            <audio style="width: 100%;" controls preload="none">
+              <source src="./images/specvqgan/sampling_results/fireworks_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
           </div>
@@ -3160,20 +3178,20 @@
               Trained on <b>VAS</b> to sample from <b>VAS</b> codebook
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.05.40.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.05.44.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.05.47.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/sampling_results/Screenshot 2021-06-28 at 15.06.11.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -3188,11 +3206,11 @@
             </div>
           </div>
           <div class="sampling_row">
-            <img class="middle" style="width: 99.5%; border: 3px solid black;"
+            <img class="middle black_border" style="width: 99.5%;"
                 src="./images/specvqgan/sampling_results/hammer_spec.jpeg">
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/sampling_results/hammer_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -3303,20 +3321,20 @@
         <div class="sampling_results" style="padding-bottom: 2em;">
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 21.04.17.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 21.04.30.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 21.04.32.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 21.04.35.jpeg">
             </div>
             <div class="middle" style="flex: 2; text-align: left; padding-left: 0.5em;">
@@ -3350,12 +3368,12 @@
                 </div>
                 <a class="popup_link"> GPU </a>
               </div>)
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/regnet_comparison/regnet_baby_spec.jpeg">
             </div>
           </div>
           <div class="sampling_row">
-            <audio style="width: 100%;" controls>
+            <audio style="width: 100%;" controls preload="none">
               <source src="./images/specvqgan/regnet_comparison/regnet_baby_audio.mp3" type="audio/mpeg">
               Your browser does not support the audio element.
             </audio>
@@ -3370,9 +3388,9 @@
                 </div>
                 <a class="popup_link"> GPU </a>
               </div>)
-              <img class="middle" style="width: 99.5%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/regnet_comparison/ours_baby_spec.jpeg">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/regnet_comparison/ours_baby_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3386,20 +3404,20 @@
           <div class="sampling_results" style="padding-top: 2em;">
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.01.30.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.01.34.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.01.37.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.01.39.jpeg">
               </div>
               <div class="middle" style="flex: 2; text-align: left; padding-left: 0.5em;">
@@ -3433,12 +3451,12 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                     src="./images/specvqgan/regnet_comparison/regnet_drum_spec.jpeg">
               </div>
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/regnet_comparison/regnet_drum_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3453,9 +3471,9 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                     src="./images/specvqgan/regnet_comparison/ours_drum_spec.jpeg">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/regnet_comparison/ours_drum_audio.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3465,20 +3483,20 @@
           <div class="sampling_results" style="padding-bottom: 2em;">
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.16.47.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.16.50.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.16.55.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 20.16.59.jpeg">
               </div>
               <div class="middle" style="flex: 2; text-align: left; padding-left: 0.5em;">
@@ -3512,12 +3530,12 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                     src="./images/specvqgan/regnet_comparison/regnet_dog_spec.jpeg">
               </div>
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/regnet_comparison/regnet_dog_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3532,9 +3550,9 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                     src="./images/specvqgan/regnet_comparison/ours_dog_spec.jpeg">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/regnet_comparison/ours_dog_audio.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3544,20 +3562,20 @@
           <div class="sampling_results">
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 19.34.02.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 19.34.08.jpeg">
               </div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 19.34.12.jpeg">
               </div>
               <div class="middle" style="flex: 1;"><b>•••</b></div>
               <div class="middle" style="flex: 4;">
-                <img class="middle" style="width: 90%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 90%;"
                   src="./images/specvqgan/regnet_comparison/Screenshot 2021-06-28 at 19.34.15.jpeg">
               </div>
               <div class="middle" style="flex: 2; text-align: left; padding-left: 0.5em;">
@@ -3591,12 +3609,12 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/regnet_comparison/regnet_fireworks_spec.jpeg">
               </div>
             </div>
             <div class="sampling_row">
-              <audio style="width: 100%;" controls>
+              <audio style="width: 100%;" controls preload="none">
                 <source src="./images/specvqgan/regnet_comparison/regnet_fireworks_audio.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3611,9 +3629,9 @@
                   </div>
                   <a class="popup_link"> GPU </a>
                 </div>)
-                <img class="middle" style="width: 99.5%; border: 3px solid black;"
+                <img class="middle black_border" style="width: 99.5%;"
                   src="./images/specvqgan/regnet_comparison/ours_fireworks_spec.jpeg">
-                <audio style="width: 100%;" controls>
+                <audio style="width: 100%;" controls preload="none">
                   <source src="./images/specvqgan/regnet_comparison/ours_fireworks_audio.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3654,14 +3672,14 @@
               male singing 0.01<br>
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-29-56.jpeg">
             </div>
           </div>
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12; padding-top: 0.3em;">
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-29-56_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3678,14 +3696,14 @@
               train whistling 0.15
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-24.jpeg">
             </div>
           </div>
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12; padding-top: 0.3em;">
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-24_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3702,14 +3720,14 @@
               playing tennis 0.01<br>
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-40.jpeg">
             </div>
           </div>
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12; padding-top: 0.3em;">
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-40_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -3719,7 +3737,7 @@
 
 
         <details style="border: 2px solid black; padding: 0.5em;">
-          <summary><i>More Samples for the VGGSound Dataset</i></summary>
+          <summary><i>More Samples</i></summary>
 
           <div class="sampling_results" style="padding-bottom: 2em;">
             <div class="sampling_row" style="display: flex; padding-top: 1em;">
@@ -3730,14 +3748,14 @@
                 playing double bass 0.00<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-57.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-30-57_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3754,14 +3772,14 @@
                   playing theremin 0.15<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-14.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-14_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3778,14 +3796,14 @@
                   horse clip-clop 0.08<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-41.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-41_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3802,14 +3820,14 @@
                   horse clip-clop 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-56.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-31-56_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3826,7 +3844,7 @@
                 rairoad car, train wagon 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-11.jpeg">
               </div>
             </div>
@@ -3834,7 +3852,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-11_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3851,14 +3869,14 @@
                   playing volleyball 0.08<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-25.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-25_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3875,14 +3893,14 @@
                   horse neighing 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-44.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-44_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3899,14 +3917,14 @@
                   sharpen knife 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-58.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-32-58_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3923,14 +3941,14 @@
                   people babbling 0.03<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-33-20.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-33-20_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3947,14 +3965,14 @@
                   orchestra 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-33-45.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-33-45_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3971,14 +3989,14 @@
                   pigeon, dove cooing 0.11<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-34-12.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-34-12_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -3995,7 +4013,7 @@
                   people slapping 0.05<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18.jpeg">
               </div>
             </div>
@@ -4003,7 +4021,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4020,7 +4038,7 @@
                   machine gun shooting 0.04<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18.jpeg">
               </div>
             </div>
@@ -4028,7 +4046,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4045,7 +4063,7 @@
                   vacuum cleaner cleaning 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18.jpeg">
               </div>
             </div>
@@ -4053,7 +4071,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-18_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4070,14 +4088,14 @@
                   hair dryer drying 0.03<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-31.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vggsound/nopix_2021-06-15T16-35-31_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4107,14 +4125,14 @@
               dog whimpering 0.03<br>
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-19.jpeg">
             </div>
           </div>
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12; padding-top: 0.3em;">
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-19_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -4131,7 +4149,7 @@
               playing trombone 0.00<br>
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-33.jpeg">
             </div>
           </div>
@@ -4139,7 +4157,7 @@
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12;">
               <span style="color: lightcoral; padding-top: 0;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-33_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -4156,14 +4174,14 @@
               goose honking 0.08<br>
             </div>
             <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-              <img style="width: 97%; border: 3px solid black;"
+              <img class="black_border" style="width: 97%;"
                 src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-48.jpeg">
             </div>
           </div>
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5; text-align: right;"></div>
             <div class="middle" style="flex: 12; padding-top: 0.3em;">
-              <audio style="width: 97%;" controls>
+              <audio style="width: 97%;" controls preload="none">
                 <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-38-48_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -4173,7 +4191,7 @@
 
 
         <details style="border: 2px solid black; padding: 0.5em;">
-          <summary><i>More Samples for the VAS Dataset</i></summary>
+          <summary><i>More Samples</i></summary>
 
           <div class="sampling_results" style="padding-bottom: 2em;">
             <div class="sampling_row" style="display: flex; padding-top: 1em;">
@@ -4184,14 +4202,14 @@
                 fireworks banging 0.03<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-02.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-02_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4208,7 +4226,7 @@
                   francolin calling 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-16.jpeg">
               </div>
             </div>
@@ -4216,7 +4234,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-16_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4233,14 +4251,14 @@
                   playing bass guitar 0.02<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-30.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-30_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4257,14 +4275,14 @@
                   people belly laughing 0.04<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-44.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-44_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4281,14 +4299,14 @@
                   people giggling 0.01<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-59.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-39-59_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4305,14 +4323,14 @@
                   firing cannon 0.00<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-14.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-14_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4329,14 +4347,14 @@
                   train wheels squealing 0.04<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-28.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-28_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4353,14 +4371,14 @@
                   cap gun shooting 0.11<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-42.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-42_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4377,14 +4395,14 @@
                   firing muskets 0.06<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-56.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-40-56_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4401,14 +4419,14 @@
                 volcano explosion 0.03<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-41-11.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-41-11_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4425,14 +4443,14 @@
                   otter growling 0.12<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-41-25.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12; padding-top: 0.3em;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-41-25_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4449,14 +4467,14 @@
                   pig oinking 0.02<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-16.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-16_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4473,14 +4491,14 @@
                 playing cymbal 0.00<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-32.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-32_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4497,14 +4515,14 @@
                   popping popcorn 0.04<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-47.jpeg">
               </div>
             </div>
             <div class="sampling_row" style="display: flex;">
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-43-47_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4521,7 +4539,7 @@
                 dinosaurs bellowing 0.03<br>
               </div>
               <div class="middle zero_font_size_and_line_hight" style="flex: 12">
-                <img style="width: 97%; border: 3px solid black;"
+                <img class="black_border" style="width: 97%;"
                   src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-44-02.jpeg">
               </div>
             </div>
@@ -4529,7 +4547,7 @@
               <div class="middle" style="flex: 5; text-align: right;"></div>
               <div class="middle" style="flex: 12;">
                 <span style="color: lightcoral;">⚠️ WARNING: it might be a bit loud ⚠️</span>
-                <audio style="width: 97%;" controls>
+                <audio style="width: 97%;" controls preload="none">
                   <source src="./images/specvqgan/no_feats/vas/nopix_2021-06-15T22-44-02_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4577,7 +4595,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/half_gt/vggsound/009_baby_crying/2eWobSpugTw_17000_27000/half_2021-06-15T10-41-35_vocoder.mp3"
                   type="audio/mpeg">
@@ -4596,7 +4614,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/half_gt/vggsound/022_bouncing_on_trampoline/2e1tRszQIPE_57000_67000/half_2021-06-15T10-41-05_vocoder.mp3"
                   type="audio/mpeg">
@@ -4614,7 +4632,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/half_gt/vggsound/034_cat_meowing/2eYaXTKSpMI_4000_14000/half_2021-06-15T10-41-56_vocoder.mp3"
                   type="audio/mpeg">
@@ -4626,7 +4644,7 @@
 
 
         <details style="border: 2px solid black; padding: 0.5em;">
-          <summary><i>More Samples for the VGGSound Dataset</i></summary>
+          <summary><i>More Samples</i></summary>
 
           <div class="sampling_results" style="padding-bottom: 2em;">
 
@@ -4648,7 +4666,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/095_francolin_calling/2ehbByOUJjM_16000_26000/half_2021-06-15T10-42-23_vocoder.mp3"
                     type="audio/mpeg">
@@ -4667,7 +4685,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/135_owl_hooting/2eDP3jKoUd4_30000_40000/half_2021-06-15T10-41-20_vocoder.mp3"
                     type="audio/mpeg">
@@ -4686,7 +4704,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/137_penguins_braying/2bEQQ35Wkdc_31000_41000/half_2021-06-15T10-38-56_vocoder.mp3"
                     type="audio/mpeg">
@@ -4705,7 +4723,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/169_pheasant_crowing/2dCFOYuetW0_39000_49000/half_2021-06-15T10-40-08_vocoder.mp3"
                     type="audio/mpeg">
@@ -4724,7 +4742,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/174_playing_accordion/2bCuw7U_Rac_390000_400000/half_2021-06-15T10-38-41_vocoder.mp3"
                     type="audio/mpeg">
@@ -4743,7 +4761,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/197_playing_erhu/2cEM6Hu90v0_38000_48000/half_2021-06-15T10-39-29_vocoder.mp3"
                     type="audio/mpeg">
@@ -4762,7 +4780,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/237_playing_zither/2es7oZzwLWM_30000_40000/half_2021-06-15T10-42-48_vocoder.mp3"
                     type="audio/mpeg">
@@ -4781,7 +4799,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/267_slot_machine/2drXOn18U3Q_136000_146000/half_2021-06-15T10-40-29_vocoder.mp3"
                     type="audio/mpeg">
@@ -4800,7 +4818,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/half_gt/vggsound/272_spraying_water/2dBVv-HHhCc_4000_14000/half_2021-06-15T10-39-52_vocoder.mp3"
                     type="audio/mpeg">
@@ -4834,7 +4852,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/000_baby/video_01965/half_2021-06-15T09-21-17_vocoder.mp3"
                   type="audio/mpeg">
                 Your browser does not support the audio element.
@@ -4851,7 +4869,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
               <source src="./images/specvqgan/half_gt/vas/002_dog/video_02689/half_2021-06-15T09-23-51_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -4867,7 +4885,7 @@
           </div>
           <div class="sampling_row">
             <div class="middle" style="text-align: right;">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
               <source src="./images/specvqgan/half_gt/vas/003_drum/video_02510/half_2021-06-15T09-25-20_vocoder.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
@@ -4879,7 +4897,7 @@
 
 
         <details style="border: 2px solid black; padding: 0.5em;">
-          <summary><i>More Samples for the VAS Dataset</i></summary>
+          <summary><i>More Samples</i></summary>
 
           <div class="sampling_results" style="padding-top: 1em;">
 
@@ -4900,7 +4918,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source src="./images/specvqgan/half_gt/vas/000_baby/video_01997/half_2021-06-15T09-21-00_vocoder.mp3"
                     type="audio/mpeg">
                   Your browser does not support the audio element.
@@ -4917,7 +4935,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/002_dog/video_02721/half_2021-06-15T09-23-10_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4932,7 +4950,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source src="./images/specvqgan/half_gt/vas/001_cough/video_00331/half_2021-06-15T09-22-45_vocoder.mp3"
                     type="audio/mpeg">
                   Your browser does not support the audio element.
@@ -4949,7 +4967,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                   <source src="./images/specvqgan/half_gt/vas/001_cough/video_00347/half_2021-06-15T09-21-44_vocoder.mp3"
                     type="audio/mpeg">
                   Your browser does not support the audio element.
@@ -4968,7 +4986,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/003_drum/video_02542/half_2021-06-15T09-25-40_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -4984,7 +5002,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/004_fireworks/video_03019/half_2021-06-15T09-26-20_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -5000,7 +5018,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/004_fireworks/video_03051/half_2021-06-15T09-26-02_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -5016,7 +5034,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/005_gun/video_00818/half_2021-06-15T09-27-10_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -5032,7 +5050,7 @@
             </div>
             <div class="sampling_row">
               <div class="middle" style="text-align: right;">
-                <audio style="width: 100%; padding-top: 0.5em;" controls>
+                <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source src="./images/specvqgan/half_gt/vas/005_gun/video_00834/half_2021-06-15T09-26-51_vocoder.mp3" type="audio/mpeg">
                   Your browser does not support the audio element.
                 </audio>
@@ -5084,20 +5102,20 @@
               <b>The next codebook index is sampled from the Top-\(X\) codes</b>
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/topx/Screenshot 2021-06-16 at 21.38.06.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/topx/Screenshot 2021-06-16 at 21.38.09.jpeg">
             </div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/topx/Screenshot 2021-06-16 at 21.38.16.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 4;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/topx/Screenshot 2021-06-16 at 21.38.19.jpeg">
             </div>
             <div class="middle" style="flex: 4; text-align: left; padding-left: 0.5em;">
@@ -5111,10 +5129,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay"> Ground Truth </span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/-JUBdOr8Hes_30000_40000_gt_rec.jpg">
               </div>
             </div>
@@ -5127,7 +5145,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/-JUBdOr8Hes_30000_40000_gt.mp3"
                   type="audio/mpeg">
@@ -5140,10 +5158,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay"> \(X=1024\) (all codes) </span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-14-42.jpeg">
               </div>
             </div>
@@ -5156,7 +5174,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-14-42_vocoder.mp3"
                   type="audio/mpeg">
@@ -5169,10 +5187,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">512</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-15-36.jpeg">
               </div>
             </div>
@@ -5185,7 +5203,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-15-36_vocoder.mp3"
                   type="audio/mpeg">
@@ -5198,10 +5216,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">256</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-15-59.jpeg">
               </div>
             </div>
@@ -5214,7 +5232,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-15-59_vocoder.mp3"
                   type="audio/mpeg">
@@ -5227,10 +5245,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">128</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-16-18.jpeg">
               </div>
             </div>
@@ -5243,7 +5261,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-16-18_vocoder.mp3"
                   type="audio/mpeg">
@@ -5256,10 +5274,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">64</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-16-43.jpeg">
               </div>
             </div>
@@ -5272,7 +5290,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-16-43_vocoder.mp3"
                   type="audio/mpeg">
@@ -5285,10 +5303,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">32</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-17-08.jpeg">
               </div>
             </div>
@@ -5301,7 +5319,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-17-08_vocoder.mp3"
                   type="audio/mpeg">
@@ -5314,10 +5332,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">16</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-17-49.jpeg">
               </div>
             </div>
@@ -5330,7 +5348,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-17-49_vocoder.mp3"
                   type="audio/mpeg">
@@ -5343,10 +5361,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">8</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-18-07.jpeg">
               </div>
             </div>
@@ -5359,7 +5377,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-18-07_vocoder.mp3"
                   type="audio/mpeg">
@@ -5372,10 +5390,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">4</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-18-33.jpeg">
               </div>
             </div>
@@ -5388,7 +5406,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-18-33_vocoder.mp3"
                   type="audio/mpeg">
@@ -5401,10 +5419,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">2</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-19-00.jpeg">
               </div>
             </div>
@@ -5417,7 +5435,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-19-00_vocoder.mp3"
                   type="audio/mpeg">
@@ -5430,10 +5448,10 @@
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
               <div style="position: relative;">
-                <div class="right_top_corner_of_the_element" style="position: absolute; top: 0.5em; left: 0.5em">
+                <div class="right_top_corner_of_the_element" style="position: absolute; top: 1em; left: 0.5em">
                   <span class="topx_overlay">1 (always the top one)</span>
                 </div>
-                <img class="zero_font_size_and_line_hight" style="width: 99%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border" style="width: 99%;"
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-19-22.jpeg">
               </div>
             </div>
@@ -5446,7 +5464,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 100%; padding-top: 0.5em;" controls>
+              <audio style="width: 100%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/topx/nopix_2021-06-16T09-19-22_vocoder.mp3"
                   type="audio/mpeg">
@@ -5514,20 +5532,20 @@
 
           <div class="sampling_row" style="display: flex;">
             <div class="middle" style="flex: 5;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/variability/Screenshot 2021-06-16 at 11.24.35.jpeg">
             </div>
             <div class="middle" style="flex: 5;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/variability/Screenshot 2021-06-16 at 11.24.45.jpeg">
             </div>
             <div class="middle" style="flex: 5;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/variability/Screenshot 2021-06-16 at 11.24.48.jpeg">
             </div>
             <div class="middle" style="flex: 1;"><b>•••</b></div>
             <div class="middle" style="flex: 5;">
-              <img class="middle" style="width: 90%; border: 3px solid black;"
+              <img class="middle black_border" style="width: 90%;"
                 src="./images/specvqgan/variability/Screenshot 2021-06-16 at 11.24.51.jpeg">
             </div>
             <div class="middle" style="flex: 5; text-align: left; padding-left: 0.5em;">
@@ -5540,8 +5558,8 @@
 
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
-              <img class="zero_font_size_and_line_hight"
-                  style="width: 98%; border: 3px solid black;"
+              <img class="zero_font_size_and_line_hight black_border"
+                  style="width: 98%;"
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-20-05.jpeg">
             </div>
             <div class="middle" style="flex: 10; text-align: right;">
@@ -5553,7 +5571,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 99%; padding-top: 0.5em;" controls>
+              <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-20-05_vocoder.mp3"
                   type="audio/mpeg">
@@ -5565,8 +5583,8 @@
 
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
-              <img class="zero_font_size_and_line_hight"
-                  style="width: 98%; border: 3px solid black;"
+              <img class="zero_font_size_and_line_hight black_border"
+                  style="width: 98%;"
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-19-50.jpeg">
             </div>
             <div class="middle" style="flex: 10; text-align: right;">
@@ -5578,7 +5596,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 99%; padding-top: 0.5em;" controls>
+              <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-19-50_vocoder.mp3"
                   type="audio/mpeg">
@@ -5590,8 +5608,8 @@
 
           <div class="sampling_row" style="display: flex">
             <div class="middle" style="flex: 26;">
-              <img class="zero_font_size_and_line_hight"
-                  style="width: 98%; border: 3px solid black;"
+              <img class="zero_font_size_and_line_hight black_border"
+                  style="width: 98%;"
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-18-20.jpeg">
             </div>
             <div class="middle" style="flex: 10; text-align: right;">
@@ -5603,7 +5621,7 @@
           </div>
           <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
             <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-              <audio style="width: 99%; padding-top: 0.5em;" controls>
+              <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                 <source
                   src="./images/specvqgan/variability/nopix_2021-06-16T11-18-20_vocoder.mp3"
                   type="audio/mpeg">
@@ -5622,8 +5640,8 @@
 
             <div class="sampling_row" style="display: flex; padding-top: 1em;">
               <div class="middle" style="flex: 26;">
-                <img class="zero_font_size_and_line_hight"
-                    style="width: 98%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border"
+                    style="width: 98%;"
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-18-51.jpeg">
               </div>
               <div class="middle" style="flex: 10; text-align: right;">
@@ -5635,7 +5653,7 @@
             </div>
             <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
               <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-                <audio style="width: 99%; padding-top: 0.5em;" controls>
+                <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-18-51_vocoder.mp3"
                     type="audio/mpeg">
@@ -5647,8 +5665,8 @@
 
             <div class="sampling_row" style="display: flex">
               <div class="middle" style="flex: 26;">
-                <img class="zero_font_size_and_line_hight"
-                    style="width: 98%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border"
+                    style="width: 98%;"
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-19-21.jpeg">
               </div>
               <div class="middle" style="flex: 10; text-align: right;">
@@ -5660,7 +5678,7 @@
             </div>
             <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
               <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-                <audio style="width: 99%; padding-top: 0.5em;" controls>
+                <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-19-21_vocoder.mp3"
                     type="audio/mpeg">
@@ -5672,8 +5690,8 @@
 
             <div class="sampling_row" style="display: flex">
               <div class="middle" style="flex: 26;">
-                <img class="zero_font_size_and_line_hight"
-                    style="width: 98%; border: 3px solid black;"
+                <img class="zero_font_size_and_line_hight black_border"
+                    style="width: 98%;"
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-20-50.jpeg">
               </div>
               <div class="middle" style="flex: 10; text-align: right;">
@@ -5685,7 +5703,7 @@
             </div>
             <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
               <div class="middle zero_font_size_and_line_hight" style="flex: 26">
-                <audio style="width: 99%; padding-top: 0.5em;" controls>
+                <audio style="width: 99%; padding-top: 0.5em;" controls preload="none">
                   <source
                     src="./images/specvqgan/variability/nopix_2021-06-16T11-20-50_vocoder.mp3"
                     type="audio/mpeg">
@@ -5708,14 +5726,25 @@
           However, we believe these are reasonable mistakes considering the difficulty of the scene.
         </p>
 
-
-
       </div>
     </div>
 
   </body>
-  <!-- Prefetching the hidden images for snappier toggles -->
-  <!-- <img src="./images/bmt/encoder.svg" style="display: none;">
-  <img src="./images/bmt/decoder.svg" style="display: none;">
-  <img src="./images/mdvc.gif" style="display: none;"> -->
-  </html>
+  <script>
+    function onlyPlayOneIn(container) {
+      container.addEventListener("play", function(event) {
+      audio_elements = container.getElementsByTagName("audio")
+        for(i=0; i < audio_elements.length; i++) {
+          audio_element = audio_elements[i];
+          if (audio_element !== event.target) {
+            audio_element.pause();
+          }
+        }
+      }, true);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      onlyPlayOneIn(document.body);
+    });
+  </script>
+</html>
