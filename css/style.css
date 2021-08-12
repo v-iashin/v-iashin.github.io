@@ -1,6 +1,5 @@
-html,body
-{
-  font-family: 'Roboto Mono', monospace;
+html,body {
+  font-family: 'Courier Prime', monospace;
   color: #333;
 }
 
@@ -144,7 +143,7 @@ label.btn, button.btn {
   display: inline-block;
   padding: 0.5em 1em;
   cursor: pointer;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Courier Prime', monospace;
   background-color: white;
   color: #333;
 }

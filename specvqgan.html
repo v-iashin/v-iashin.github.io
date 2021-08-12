@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -16,18 +16,21 @@
     :root {
       font-size: 5px;
     }
-    @media (min-width: 400px) and (max-width: 1082px){
+    @media (min-width: 320px) and (max-width: 1090px){
       :root {
-        font-size: calc( 5px + (16 - 5) * ( (100vw - 400px) / (1082 - 400) ));
+        font-size: -webkit-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1090 - 320) ));
+        font-size: -moz-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1090 - 320) ));
+        font-size: -o-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1090 - 320) ));
+        font-size: calc( 5px + (16 - 5) * ( (100vw - 320px) / (1090 - 320) ));
       }
     }
-    @media (min-width: 1082px){
+    @media (min-width: 1090px){
       :root {
         font-size: 16px;
       }
     }
-    a.intext:link {
-      border-bottom-width: 0.1em;
+    a.intext:link, a.social:link, a.bread_crumb:link {
+      border-bottom-width: 0.05em;
     }
     table {
       border-spacing: 0 5px;
@@ -466,7 +469,7 @@
         <p class="p_on_project_pages">
           When sampling of tokens is done, we cut out the visual tokens from the generated sequence
           and replace the predicted codebook indices \(\hat{s}\) with vectors from the codebook \(\mathcal{Z}\)
-          to form the codebook representation \(\hat{z}_\mathbf{q}.\).
+          to form the codebook representation \(\hat{z}_\mathbf{q}.\)
           We reshape the sequence \(\hat{s}\) into the 2D representation \(\hat{z}_\mathbf{q}\) in a
           <a href="https://en.wikipedia.org/wiki/Row-_and_column-major_order" class="intext">column-major</a>
           way.
