@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/popup_detector.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
   <style>
     body { text-align: center; }
+    p { width: 90%; }
   </style>
 
   <body>
@@ -33,20 +33,20 @@
         <a href="https://raw.githubusercontent.com/v-iashin/WebsiteYOLO/master/data/coco.names" class="intext"> 80 classes</a>
         that the model knows. Make sure to adjust your expectations :)
       </p>
-      <p style="width: 90%;">
+      <p>
         The detector is based on <a href="https://pjreddie.com/darknet/yolo/" class="intext">YOLOv3</a>
         and was trained on a large dataset of annotated images called
         <a href="https://cocodataset.org" class="intext">COCO</a>.
         It used to be the state-of-the-art among fast object detectors when I re-implemented it just for
         fun and glued to this project.
       </p>
-      <p class="p_on_project_pages" style="padding: 0;">
+      <p style="padding: 0;">
         Under the hood, the webpage (front-end) will send your image to the cloud server (back-end).
         Then, the model makes detections and sends results for you to see here.
         If you are interested in details, check out my post on
         <a href="./how_did_you_build_my_detector.html" class="intext">how I built it</a>.
       </p>
-      <p style="width: 90%;">
+      <p>
         <i>Please note that the results are saved on the server and inspected later on.</i>
       </p>
 
