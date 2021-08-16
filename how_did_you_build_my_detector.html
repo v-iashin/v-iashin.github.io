@@ -99,7 +99,10 @@
     padding: 0.4em 1em 0.4em 1em;
     text-align: right;
   }
-
+  .date {
+    padding-bottom: 1em;
+    text-align: right;
+  }
   @media screen and (max-width: 50em) {
     table {
       font-size: 2.8vw;
@@ -120,6 +123,10 @@
     body {
       font-size: 0.8em;
     }
+    .date {
+      padding-bottom: 1em;
+      text-align: center;
+    }
   }
 </style>
 
@@ -134,7 +141,7 @@
     </a>
   </div>
   <h1 style="font-size: 2.8em;"> How Did You Build Your Object Detector? </h1>
-  <p class="p_on_project_pages" style="padding-bottom: 1em; text-align: right;">
+  <p class="p_on_project_pages date" style="">
     <i>June, 2021. The project was built in 2019.</i>
   </p>
   <div class="our_framework">
@@ -821,7 +828,7 @@ cd ../</code></pre>
         </tbody>
       </table>
       </p>
-      <p class="p_on_project_pages">
+      <p class="p_on_project_pages" style="padding-bottom: 0;">
         See screenshots <a class="intext" href="#registering-the-domain-name-in-a-dns">above</a> as your guidance.
         Similarly, you can check the presence of the DNS entry in <a class="intext"
           href="https://dnschecker.org/all-dns-records-of-domain.php">dnschecker.org</a> (use
@@ -830,8 +837,11 @@ cd ../</code></pre>
         Once, it appears there, press <code class="javascript inline">Enter</code> in <code
           class="javascript inline">certbot</code>.
         It should congratulate you and say where the certificates are saved.
-        You can use these certificates for some apps running on this instance (Flask, Jupyter, etc).
+        Here is how it all looks in my case:
       </p>
+      <div class="img background_white_squared" style="border: none; padding: 0em; margin-bottom: 0em;">
+        <img src="./images/detector/certbot_challenge.png" alt="The screenshot of a successful acme challenge">
+      </div>
       <p class="p_on_project_pages no_bottom_pad">
         By default, the keys are restricted to a root user only.
         You can loosen the permissions with
@@ -903,14 +913,13 @@ flask run --host=0.0.0.0</code></pre>
         On success, your instance terminal should output something like this for both
         <code class="javascript inline">GET</code> and <code class="javascript inline">POST</code>
         requests:
+      </p>
       <div class="img background_white_squared" style="border: none; padding: 0em; margin-bottom: 0em;">
         <img src="./images/detector/flask_terminal.png" alt="Running Flask App in the Terminal">
       </div>
-      </p>
       <p class="p_on_project_pages">
         If you are seeing this, I think, you succeeded. Well done!
       </p>
-      <p class="p_on_project_pages"></p>
     </div>
   </div>
 
