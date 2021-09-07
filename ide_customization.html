@@ -54,14 +54,24 @@
             </p>
 
             <div class="subsection_name">
-                <a class="intext" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2">Bracket Pair Colorizer <b>2</b></a> (yes, the second)
+                <!-- <a class="intext" href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2">Bracket Pair Colorizer <b>2</b></a> (yes, the second) -->
+                <s>Bracket Pair Colorizer 2</s> (VSCode supports it natively now)
             </div>
             <div class="img background_white_squared" style="border: none; padding: 0em;">
                 <img style="width: 100%;" src="./images/ide_customization/bracket_colorizer.gif" alt="Bracket Pair Colorizer 2 extension">
             </div>
             <p class="p_on_project_pages">
-                I guess there is not much to discuss here. It will color the corresponding level of the nested brackets for you. So, now you can go crazy with your favorite <b>for-comprehensions</b> without a <b>SyntaxError</b> 😉.
+                I guess there is not much to discuss here.
+                It will color the corresponding level of the nested brackets for you.
+                So, now you can go crazy with your favorite <b>for-comprehensions</b>
+                without a <b>SyntaxError</b> 😉.
+                Since the
+                <a href="https://code.visualstudio.com/updates/v1_60#_high-performance-bracket-pair-colorization"
+                   class="intext"> August 2021</a> update VSCode supports this natively (RIP Bracket Pair Colorizer 😞):
             </p>
+            <div class="section_content" style="padding: 0em 0em 2em 0em;">
+                <pre class="code_box bmt old_style_shadow"><code>"editor.bracketPairColorization.enabled": true,</code></pre>
+            </div>
 
             <div class="subsection_name">
                 <a class="intext" href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense">Path Intellisense</a>
@@ -413,6 +423,14 @@
             </div>
 
             <p class="p_on_project_pages">
+                As mentioned before, VSCode supports colorization of the bracket pairs natively.
+                To activate it, use:
+            </p>
+            <div class="section_content" style="padding: 0em 0em 2em 0em;">
+                <pre class="code_box bmt old_style_shadow"><code>"editor.bracketPairColorization.enabled": true,</code></pre>
+            </div>
+
+            <p class="p_on_project_pages">
                 Display the whitespaces and other control characters (remember the "hidden text" in MS Word?):
             </p>
             <div class="section_content" style="padding: 0em 0em 2em 0em;">
@@ -632,10 +650,5 @@
 
     </div>
 </body>
-
-<!-- Prefetching the hidden images for snappier toggles -->
-<img src="./images/bmt/encoder.svg" style="display: none;">
-<img src="./images/bmt/decoder.svg" style="display: none;">
-<img src="./images/mdvc.gif" style="display: none;">
 
 </html>
