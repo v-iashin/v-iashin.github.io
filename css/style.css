@@ -102,7 +102,6 @@ ul.proj_buttons {
 
 li {
   display: inline-block;
-  justify-content: center;
 }
 
 li.social_buttons {
@@ -239,6 +238,24 @@ a.proj_buttons:link {
 a.proj_buttons:hover {
   color: rgba(70, 20, 140, 0.8);
 }
+
+.profile_link_container {
+  display: flex;
+  flex-wrap: wrap;
+  /* border: 3px solid green; */
+  /* max-width: 50em; */
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+}
+.profile_link {
+  /* /* margin: auto; */
+  /* height: 4em; */
+  /* min-width: 15em; */
+  height: 4em;
+  padding: 0 2em 0 2em;
+}
+
 
 /* Project Page Style (Authors, conference) */
 .container_authors {
