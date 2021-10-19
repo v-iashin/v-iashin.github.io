@@ -11,6 +11,12 @@
     <title> Vladimir Iashin </title>
   </head>
 
+  <style>
+    p {
+      line-height: 1.4em;
+    }
+  </style>
+
   <body>
 
     <h1 style="padding-top: 1em;"> <span class="name"></span> </h1>
@@ -54,7 +60,37 @@
 
     <hr style="max-width: 60em;">
 
-    <h1> Publications </h1>
+    <h1 style="padding-top: 1em"> Publications </h1>
+
+      <div class="row">
+        <div class="column_left">
+          <a href="bmt.html">
+            <img onmouseover="this.src='images/specvqgan_out.svg'" onmouseout="this.src='images/specvqgan_in.svg'"
+              src="images/specvqgan_in.svg" />
+          </a>
+        </div>
+        <div class="column_right">
+          <p class="project_description">
+            <b>Vladimir Iashin</b> and Esa Rahtu. <br>
+            Taming Visually Guided Sound Generation <br>
+            In <i>British Machine Vision Conference</i> (BMVC), 2021 (<b>Oral</b>)
+          </p>
+          <ul class="proj_buttons">
+            <li class="proj_buttons">
+              <a href="SpecVQGAN.html" class="proj_buttons"> Project Page </a>
+            </li>
+            <li class="proj_buttons">
+              <a href="https://github.com/v-iashin/SpecVQGAN" class="proj_buttons"> Code </a>
+            </li>
+            <li class="proj_buttons">
+              <a href="https://arxiv.org/abs/2110.08791" class="proj_buttons"> Paper </a>
+            </li>
+            <!-- <li class="proj_buttons">
+              <a href="https://www.youtube.com/watch?v=C4zYVIqGDVQ" class="proj_buttons"> Presentation </a>
+            </li> -->
+          </ul>
+        </div>
+      </div>
 
       <div class="row">
         <div class="column_left">
@@ -115,7 +151,7 @@
         </div>
       </div>
 
-    <h1> Notes </h1>
+    <h1 style="padding-top: 1em;"> Notes </h1>
       <div class="row">
         <div class="column_right" style="width: 97%; margin-top: 0.5em;">
           <a href="./how_did_you_build_my_detector.html" class="project"> How Did You Build Your Object Detector? </a>
@@ -136,7 +172,7 @@
         </div>
       </div>
 
-    <h1> Pet-Projects </h1>
+    <h1 style="padding-top: 1em;"> Pet-Projects </h1>
       <div class="row">
         <div class="column_left">
           <a href="video_features">
@@ -193,6 +229,7 @@
 
     </body>
     <!-- Prefetching the hidden images for snappier hovers-->
+    <img src="./images/specvqgan_out.svg" style="display: none;">
     <img src="./images/typical_russian_day_orig.jpeg" style="display: none;">
     <img src="./images/mdvc.gif" style="display: none;">
     <img src="./images/video_features/vid_feats.gif" style="display: none;">
