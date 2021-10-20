@@ -357,6 +357,11 @@
                     Variability of Samples
                   </a>
                 </li>
+                <li class="toc_subsection">
+                  <a href="#neural-audio-codec" class="intext">
+                    Neural Audio Codec
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -5721,6 +5726,222 @@
 
       </div>
     </div>
+
+    <div id="neural-audio-codec" class="our_framework">
+      <div class="section_name">
+        Results: Spectrogram VQGAN as a Neural Audio Codec
+      </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          A recent (July, 2021)
+          <a href="https://arxiv.org/abs/2107.03312" class="intext">ArXiv submission</a>,
+          show-cased a VQVAE with the adversarial loss, called <i>SoundStream</i>, on lossy
+          compression of a waveform and reported the state-of-the-art results on
+          the <b>3 kbps</b> bitrate, which is designed for music and speech datasets.
+          Since our approach includes sampling from a pre-trained
+          codebook, we can employ our Spectrogram VQGAN pre-trained on an open-domain dataset
+          as a neural audio codec <i>without a change</i>.
+          Our approach allows encoding at, approximately, <b>0.27 kbps</b>
+          bitrate with the VGGSound codebook and <b>0.19 kbps</b> with the VAS codebook.
+        </p>
+
+        <p class="p_on_project_pages" style="padding-top: 1em;">
+          We provide a small qualitative comparison of reconstructions of
+          <a href="https://github.com/google/lyra" class="intext">Lyra</a>
+          (only speech),
+          SoundStream (only speech and music), and Spectrogram VQGAN (open-domain).
+          We will use the same 3-second samples as provided on the
+          <a href="https://google-research.github.io/seanet/soundstream/examples/" class="intext">
+            SoundStream project page</a>
+          since the source code for the SoundStream has not been released
+          to the public (checked on 20 October, 2021; the authors promised to release it
+          <a href="https://github.com/google/lyra" class="intext"> as a part of Lyra toolbox</a>).
+        </p>
+
+      </div>
+
+      <div class="sampling_results">
+
+        <div class="sampling_row" style="display: flex; padding-bottom: 1em;">
+          <div class="middle" style="flex: 4; font-size: 1.2em;"> </div>
+          <div class="middle" style="flex: 10; font-size: 1.2em;"> <b>Reference</b> </div>
+          <div class="middle" style="flex: 15; font-size: 1.2em;"> <b> Spectrogram VQGAN (0.27 kbps) </b> </div>
+          <div class="middle" style="flex: 10; font-size: 1.2em;"> <b> SoundStream (3 kbps) </b> </div>
+          <div class="middle" style="flex: 10; font-size: 1.2em;"> <b> Lyra (3 kbps) </b> </div>
+        </div>
+        <div class="sampling_row" style="display: flex; padding-bottom: 1.5em;">
+          <div class="middle" style="flex: 4; font-size: 1.2em;"> <b>Music</b> </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music2/original.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music1/original.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="middle" style="flex: 15;">
+            <div style="display: flex;">
+              <div style="flex: 2;">
+                <audio style="width: 90%;" controls preload="metadata">
+                  <source src="./images/specvqgan/neural_audio_codec/0_music2/specvqgan_0.26kbps.wav" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div style="flex: 1;" class="middle">
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    <b>All you need to know to reconstruct this sound</b>:
+                    [43, 822, 916, 81, 164, 280, 322, 549, 651, 675, 523, 678, 169, 250, 27, 1012,
+                      66, 792, 392, 838, 334, 61, 1, 545, 960, 173, 894, 228, 1022, 1015, 202, 534,
+                      669, 471, 659, 322, 619, 893, 813, 313, 685, 239, 707, 521, 684, 215, 49, 810,
+                      478, 771, 278, 500, 820, 941, 806, 980, 303, 383, 343, 788, 979, 504, 547, 475,
+                      163, 407, 709, 483, 611, 887, 111, 348, 456, 793, 538,  98, 236, 986, 547, 350]
+                  </div>
+                  <a class="popup_link"> Encrypted Message </a>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div style="flex: 2;">
+                <audio style="width: 90%;" controls preload="metadata">
+                  <source src="./images/specvqgan/neural_audio_codec/0_music1/specvqgan_0.26kbps.wav" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div style="flex: 1;" class="middle">
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    <b>All you need to know to reconstruct this sound</b>:
+                    [15, 944, 647, 934, 143, 68, 943, 617, 867, 243, 653, 57, 165, 108, 714, 592, 1013, 266,
+                    287, 116, 731, 15, 681, 594, 290, 822, 852, 267, 302, 318, 142, 850, 756, 313, 722, 392,
+                    598, 622, 1018, 726, 499, 513, 445, 91, 894, 455, 653, 17, 107, 782, 504, 239, 344, 258,
+                    357, 888, 832, 48, 683, 957, 86, 963, 592, 69, 480, 578, 500, 773, 72, 173, 709, 64, 486,
+                    409, 480, 549, 500, 256, 563, 380]
+                  </div>
+                  <a class="popup_link"> Encrypted Message </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music2/soundstream_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music1/soundstream_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music2/lyra_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/0_music1/lyra_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+        <div class="sampling_row" style="display: flex;">
+          <div class="middle" style="flex: 4; font-size: 1.2em;"> <b>Speech</b> </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech1/original.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech2/original.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="middle" style="flex: 15;">
+            <div style="display: flex;">
+              <div style="flex: 2;">
+                <audio style="width: 90%;" controls preload="metadata">
+                  <source src="./images/specvqgan/neural_audio_codec/1_clean_speech1/specvqgan_0.26kbps.wav" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div style="flex: 1;" class="middle">
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    <b>All you need to know to reconstruct this sound</b>:
+                    [305, 242, 1017, 514, 472, 530, 176, 567, 913, 483, 188, 871, 670, 760, 39, 291, 477,
+                    644, 390, 171, 832, 227, 818, 670, 416, 385, 321, 1001, 232, 682, 97, 575, 367, 739,
+                    1001, 433, 472, 226, 884, 409, 838, 515, 550, 307, 474, 201, 359, 132, 114, 83, 353,
+                    474, 552, 457, 642, 554, 245, 964, 608, 871, 39, 419, 395, 342, 312, 807, 589, 863,
+                    888, 699, 806, 127, 469, 859, 572, 189, 156, 39, 16, 782]
+                  </div>
+                  <a class="popup_link"> Encrypted Message </a>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex;">
+              <div style="flex: 2;">
+                <audio style="width: 90%;" controls preload="metadata">
+                  <source src="./images/specvqgan/neural_audio_codec/1_clean_speech2/specvqgan_0.26kbps.wav" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+              <div style="flex: 1;" class="middle">
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    <b>All you need to know to reconstruct this sound</b>:
+                    [54, 325, 871, 642, 17, 67, 92, 885, 159, 815, 428, 701, 586, 480, 815, 582, 851, 563,
+                    13, 259, 510, 747, 635, 119, 25, 212, 417, 731, 978, 644, 773, 138, 972, 435, 648, 169,
+                    81, 217, 462, 43, 447, 592, 906, 952, 318, 197, 864, 189, 439, 585, 140, 406, 294, 959,
+                    165, 816, 103, 413, 297, 835, 445, 587, 949, 869, 319, 70, 811, 18, 415, 248, 480, 799,
+                    846, 834, 385, 807, 304, 136, 192, 674]
+                  </div>
+                  <a class="popup_link"> Encrypted Message </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech1/soundstream_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech2/soundstream_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+          <div class="middle" style="flex: 10;">
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech1/lyra_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <audio style="width: 90%;" controls  preload="metadata">
+              <source src="./images/specvqgan/neural_audio_codec/1_clean_speech2/lyra_3.0kbps.wav" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div>
+
+      <div class="section_content">
+        <p class="p_on_project_pages" style="padding-top: 1em;">
+          As a result, despite having one order of magnitude smaller bitrate budget, Spectrogram
+          VQGAN achieves comparable performance with SoundStream in reconstruction quality on
+          music data and produces significantly better reconstructions than Lyra.
+          However, as we observed before (Section 4.2 in the paper), Spectrogram VQGAN struggles with the
+          fine details of human speech due to the audio preprocessing (mel-scale spectrogram) and
+          absence of narrow domain pre-training as in Lyra and SoundStream.
+          We highlight that Spectrogram VQGAN is trained on an open-domain hundred-class dataset
+          (VGGSound) while SoundStream is trained on music and speech datasets separately.
+        </p>
+
+      </div>
+
+    </div>
+
+
 
   </body>
   <script>
