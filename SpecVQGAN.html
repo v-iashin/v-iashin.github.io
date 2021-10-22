@@ -54,9 +54,19 @@
     tr.mid_rule {
       border-bottom: 0.1em solid black;
     }
+    th.left_border, td.left_border{
+      border-left: 0.1em solid black;
+    }
     th, td {
       padding: 0.4em 1em 0.4em 1em;
       text-align: right;
+    }
+    .rotate {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        white-space: nowrap;
+        /* display: inline-block; */
+        overflow: visible;
     }
     img.gt {
       border: 0.3em solid black;
@@ -2465,14 +2475,15 @@
           <b><i>VGGSound</i></b> codebook,<br>
           <b>c)</b> the transformer is trained on <b><i>VAS</i></b> to sample from the
           <b><i>VAS</i></b> codebook. <br>
+          We additionally compare different ImageNet-pretrained features: 
+          BN-Inception (RGB + flow) and ResNet-50 (RGB).
           As for spectrogram reconstruction evaluation, we rely on FID and average MKL as our metrics:
         </p>
         <table>
           <thead>
             <tr>
-              <th>Setting</th>
-              <th>Condition</th>
-              <th>FID ↓</th>
+              <th colspan="2">Condition</th>
+              <th class="left_border">FID ↓</th>
               <th>
                 <div class="popup">
                   <div class="popup_content" style="font-weight: normal;">
@@ -2481,7 +2492,25 @@
                   <a class="popup_link"> <span style="text-decoration: overline;">MKL</span> ↓ </a>
                 </div>
               </th>
+              <th class="left_border">FID ↓<br></th>
               <th>
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    Melception-based Kullback–Leibler divergence averaged among all samples in the dataset.
+                  </div>
+                  <a class="popup_link"> <span style="text-decoration: overline;">MKL</span> ↓ </a>
+                </div>
+              </th>
+              <th class="left_border">FID ↓</th>
+              <th>
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    Melception-based Kullback–Leibler divergence averaged among all samples in the dataset.
+                  </div>
+                  <a class="popup_link"> <span style="text-decoration: overline;">MKL</span> ↓ </a>
+                </div>
+              </th>
+              <th class="left_border">
                 <div class="popup">
                   <div class="popup_content" style="font-weight: normal;">
                     The time (in seconds) it requires to sample a ~9.8-second audio.
@@ -2492,105 +2521,123 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><b>(a)</b> Trained on</td>
-              <td>No Features</td>
-              <td>13.5</td>
+            <tr class="mid_rule">
+              <td colspan="2">No Features</td>
+              <td class="left_border">13.5</td>
               <td>9.7</td>
-              <td>7.7</td>
-            </tr>
-            <tr>
-              <td><i>VGGSound</i></td>
-              <td>1 Feature</td>
-              <td>8.6</td>
-              <td>7.7</td>
-              <td>7.7</td>
-            </tr>
-            <tr>
-              <td>to sample from</td>
-              <td>5 Features</td>
-              <td>9.4</td>
-              <td>7.0</td>
-              <td>7.9</td>
-            </tr>
-            <tr class="mid_rule">
-              <td><i>VGGSound</i> codebook</td>
-              <td>212 Features</td>
+              <td class="left_border">33.7</td>
               <td>9.6</td>
-              <td>6.8</td>
-              <td>11.8</td>
-            </tr>
-            <tr>
-              <td><b>(b)</b> Trained on</td>
-              <td>No Features</td>
-              <td>33.7</td>
-              <td>9.6</td>
-              <td>7.7</td>
-            </tr>
-            <tr>
-              <td><i>VAS</i></td>
-              <td>1 Feature</td>
-              <td>38.6</td>
-              <td>7.3</td>
-              <td>7.7</td>
-            </tr>
-            <tr>
-              <td>to sample from</td>
-              <td>5 Features</td>
-              <td>29.1</td>
-              <td>6.9</td>
-              <td>7.9</td>
-            </tr>
-            <tr class="mid_rule">
-              <td><i>VGGSound</i> codebook</td>
-              <td>212 Features</td>
-              <td>20.5</td>
-              <td>6.0</td>
-              <td>11.8</td>
-            <tr>
-            </tr>
-              <td><b>(c)</b> Trained on</td>
-              <td>No Features</td>
-              <td>28.7</td>
+              <td class="left_border">28.7</td>
               <td>9.2</td>
-              <td>7.6</td>
+              <td class="left_border">7.7</td>
             </tr>
             <tr>
-              <td><i>VAS</i></td>
+              <td class="rotate" style="text-align: center;" rowspan="3" >ResNet</td>
               <td>1 Feature</td>
-              <td>25.1</td>
-              <td>6.6</td>
-              <td>7.6</td>
+              <td class="left_border">11.5</td>
+              <td>7.3</td>
+              <td class="left_border">26.5</td>
+              <td>6.7</td>
+              <td class="left_border">25.1</td>
+              <td>6.3</td>
+              <td class="left_border">7.7</td>
             </tr>
             <tr>
-              <td>to sample from</td>
               <td>5 Features</td>
-              <td>24.8</td>
+              <td class="left_border">11.3</td>
+              <td>7.0</td>
+              <td class="left_border">22.3</td>
+              <td>6.5</td>
+              <td class="left_border">20.9</td>
+              <td>6.1</td>
+              <td class="left_border">7.9</td>
+            </tr>
+            <tr class="mid_rule">
+              <td>212 Features</td>
+              <td class="left_border">10.5</td>
+              <td>6.9</td>
+              <td class="left_border">20.8</td>
               <td>6.2</td>
-              <td>7.8</td>
+              <td class="left_border">22.6</td>
+              <td>5.8</td>
+              <td class="left_border">11.8</td>
             </tr>
             <tr>
-              <td><i>VAS</i> codebook</td>
+              <td class="rotate" style="text-align: center;" rowspan="3" >Inception</td>
+              <td>1 Feature</td>
+              <td class="left_border">8.6</td>
+              <td>7.7</td>
+              <td class="left_border">38.6</td>
+              <td>7.3</td>
+              <td class="left_border">25.1</td>
+              <td>6.6</td>
+              <td class="left_border">7.7</td>
+            </tr>
+            <tr>
+              <td>5 Features</td>
+              <td class="left_border">9.4</td>
+              <td>7.0</td>
+              <td class="left_border">29.1</td>
+              <td>6.9</td>
+              <td class="left_border">24.8</td>
+              <td>6.2</td>
+              <td class="left_border">7.9</td>
+            </tr>
+            <tr class="mid_rule">
               <td>212 Features</td>
-              <td>25.4</td>
+              <td class="left_border">9.6</td>
+              <td>6.8</td>
+              <td class="left_border">20.5</td>
+              <td>6.0</td>
+              <td class="left_border">25.4</td>
               <td>5.9</td>
-              <td>11.6</td>
+              <td class="left_border">11.8</td>
+            </tr>
+            <tr>
+              <td colspan="2">Codebook</td>
+              <td class="left_border" style="text-align: center;" colspan="2">VGGSound<br></td>
+              <td class="left_border" style="text-align: center;" colspan="2">VGGSound</td>
+              <td class="left_border" style="text-align: center;" colspan="2">VAS</td>
+              <td class="left_border"></td>
+            </tr>
+            <tr>
+              <td colspan="2">Sampling for</td>
+              <td class="left_border" style="text-align: center;" colspan="2">VGGSound</td>
+              <td class="left_border" style="text-align: center;" colspan="2">VAS</td>
+              <td class="left_border" style="text-align: center;" colspan="2">VAS</td>
+              <td class="left_border"></td>
+            </tr>
+            <tr>
+              <td colspan="2">Setting</td>
+              <td class="left_border" style="text-align: center;" colspan="2"> <b>(a)</b> </td>
+              <td class="left_border" style="text-align: center;" colspan="2"> <b>(b)</b> <br></td>
+              <td class="left_border" style="text-align: center;" colspan="2"> <b>(c)</b> </td>
+              <td class="left_border"></td>
             </tr>
           </tbody>
         </table>
 
         <p class="p_on_project_pages" style="padding: 2em 0 0 0;">
           We observe that: <br>
-          1) In general, the more features from a video are used, the better the result in terms of relevance.
-          However, there is a trade-off imposed by the sampling speed which increases with the size of the conditioning. <br>
-          2) A large gap in mean MKL between visual and "empty" conditioning suggests the importance of visual
-          conditioning in producing relevant samples. <br>
-          3) When the sampler and codebook are trained on the same dataset settings [<b>(a)</b> and
-          <b>(c)</b>] the fidelity remains on a similar level if visual conditioning is
-          used. This suggests that it is easier for the model to learn "features-codebook" (visual-audio)
-          correspondence even from just a few visual features. However, if trained on different datasets
-          <b>(b)</b>, the sampler benefits from more visual information.
+          1) In general, the more features from a corresponding video are used,
+          the better the result in terms of relevance. However, there is a trade-off imposed by the sampling 
+          speed which decreases with the size of the conditioning. <br>
+          2) A large gap (log-scale) in mean MKL between visual and “empty” conditioning suggests the 
+          importance of visual conditioning in producing relevant samples.  <br>
+          3) When the sampler and codebook are trained on the same dataset—settings <b>(a)</b> and 
+          <b>(c)</b>—the fidelity remains on a similar level if visual conditioning
+          is used. This suggests that it is easier for the model to learn “features-codebook”
+          (visual-audio) correspondence even from just a few features. However, if trained on different
+          datasets (b), the sampler benefits from more visual information.  <br>
+          4) Both BN-Inception and ResNet-50 features achieve comparable performance, with BN-Inception 
+          being slightly better on VGGSound and with longer conditioning in each setting. 
+          Notably, the ResNet-50 features are RGB-only which significantly eases practical applications. 
+          We attribute the small difference between the RGB + flow features and RGB-only features to the 
+          fact that ResNet-50 is a 
+          <a href="https://arxiv.org/abs/1810.00736" class="intext">stronger</a>
+          architecture than BN-Inception on the ImageNet benchmark.
         </p>
+
         <div class="subsection_name">
           Generated Samples
         </div>
@@ -3248,6 +3295,14 @@
                   <a class="popup_link"> <span style="text-decoration: overline;">MKL</span> ↓ </a>
                 </div>
               </th>
+              <th>
+                <div class="popup">
+                  <div class="popup_content" style="font-weight: normal;">
+                    The time (in seconds) it requires to sample a ~9.8-second audio.
+                  </div>
+                  <a class="popup_link"> <b>Timer</b> ↓ </a>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -3260,7 +3315,7 @@
                 </div>
                 <a class="popup_link"> <b>(b)</b> </a>
               </div>
-            </td> <td>379M</td> <td>20.5</td> <td>6.0</td> </tr>
+            </td> <td>379M</td> <td>20.5</td> <td>6.0</td> <td>12</td></tr>
             <tr> <td>Ours
               <div class="popup">
                 <div class="popup_content">
@@ -3269,7 +3324,7 @@
                 </div>
                 <a class="popup_link"> <b>(c)</b> </a>
               </div>
-            </td> <td>377M</td> <td>25.4</td> <td>5.9</td> </tr>
+            </td> <td>377M</td> <td>25.4</td> <td>5.9</td> <td>12</td></tr>
             <tr>
               <td><a href="https://arxiv.org/abs/2008.00820" class="intext">RegNet</a></td>
               <td>
@@ -3279,7 +3334,7 @@
                   </div>
                   <a class="popup_link"> 8\(\times\)</a>
                 </div>105M
-              </td> <td>78.8</td> <td>5.7</td>
+              </td> <td>78.8</td> <td>5.7</td> <td>1500</td>
             </tr>
             <tr> <td>Ours
               <div class="popup">
@@ -3290,7 +3345,7 @@
                 <a class="popup_link"> <b>(b)</b> </a>
               </div>
               + cls
-            </td> <td>379M</td> <td>20.2</td> <td>5.7</td> </tr>
+            </td> <td>379M</td> <td>20.2</td> <td>5.7</td> <td>12</td></tr>
             <tr> <td>Ours
               <div class="popup">
                 <div class="popup_content">
@@ -3298,7 +3353,7 @@
                   <b>VAS</b>-pretrained codebook
                 </div>
                 <a class="popup_link"> <b>(c)</b> </a>
-              </div> + cls</td> <td>377M</td> <td>24.9</td> <td>5.5</td> </tr>
+              </div> + cls</td> <td>377M</td> <td>24.9</td> <td>5.5</td> <td>12</td></tr>
           </tbody>
         </table>
 
@@ -5745,7 +5800,7 @@
           bitrate with the VGGSound codebook and <b>0.19 kbps</b> with the VAS codebook.
         </p>
 
-        <p class="p_on_project_pages" style="padding-top: 1em;">
+        <p class="p_on_project_pages">
           We provide a small qualitative comparison of reconstructions of
           <a href="https://github.com/google/lyra" class="intext">Lyra</a>
           (only speech),
@@ -5926,7 +5981,7 @@
       </div>
 
       <div class="section_content">
-        <p class="p_on_project_pages" style="padding-top: 1em;">
+        <p class="p_on_project_pages" style="padding-top: 2em; padding-bottom: 0;">
           As a result, despite having one order of magnitude smaller bitrate budget, Spectrogram
           VQGAN achieves comparable performance with SoundStream in reconstruction quality on
           music data and produces significantly better reconstructions than Lyra.
@@ -5935,6 +5990,19 @@
           absence of narrow domain pre-training as in Lyra and SoundStream.
           We highlight that Spectrogram VQGAN is trained on an open-domain hundred-class dataset
           (VGGSound) while SoundStream is trained on music and speech datasets separately.
+        </p>
+
+        <p class="p_on_project_pages" style="padding-top: 2em; padding-bottom: 0;">
+          Try our model on a custom audio on Google Colab:
+          <a href="https://colab.research.google.com/drive/1K_-e6CRQFLk9Uq6O46FOsAYt63TeEdXf?usp=sharing">
+            <img style="max-width: 6em;" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" />
+          </a>
+        </p>
+        <p class="p_on_project_pages">
+          Or with an even simplier interface without any exposed code:
+          <a href="https://huggingface.co/spaces/akhaliq/SpecVQGAN_Neural_Audio_Codec">
+            <img style="max-width: 8em;" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue" alt="Open In Hugging Face Spaces" />
+          </a>
         </p>
 
       </div>
