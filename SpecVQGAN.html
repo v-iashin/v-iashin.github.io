@@ -62,11 +62,11 @@
       text-align: right;
     }
     .rotate {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        white-space: nowrap;
-        /* display: inline-block; */
-        overflow: visible;
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
     }
     img.gt {
       border: 0.3em solid black;
@@ -2532,7 +2532,7 @@
               <td class="left_border">7.7</td>
             </tr>
             <tr>
-              <td class="rotate" style="text-align: center;" rowspan="3" >ResNet</td>
+              <td style="text-align: center; padding-bottom: 0;" rowspan="3"> <span class="rotate">ResNet</span> </td>
               <td>1 Feature</td>
               <td class="left_border">11.5</td>
               <td>7.3</td>
@@ -2563,7 +2563,7 @@
               <td class="left_border">11.8</td>
             </tr>
             <tr>
-              <td class="rotate" style="text-align: center;" rowspan="3" >Inception</td>
+              <td style="text-align: center; padding-bottom: 0;" rowspan="3" > <span class="rotate">Inception</span> </td>
               <td>1 Feature</td>
               <td class="left_border">8.6</td>
               <td>7.7</td>
@@ -6030,3 +6030,217 @@
     });
   </script>
 </html>
+<!-- <script>
+    // const players = Plyr.setup('audio', {
+    //   "controls": ['play', 'progress', 'current-time', 'mute', 'volume'],
+    //   "invertTime": false,
+    // });
+    // window.players = players;
+
+    // players.forEach(function (player) {
+    //   player.on('play', function () {
+    //     var others = players.filter(other => other != player)
+    //     others.forEach(function (other) {
+    //       other.pause();
+    //     })
+    //   });
+    // });
+    function onlyPlayOneIn(container) {
+      container.addEventListener("play", function(event) {
+      audio_elements = container.getElementsByTagName("audio")
+        for(i=0; i < audio_elements.length; i++) {
+          audio_element = audio_elements[i];
+          if (audio_element !== event.target) {
+            audio_element.pause();
+          }
+        }
+      }, true);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      onlyPlayOneIn(document.body);
+    });
+  </script> -->
+<!-- <style>
+    body {
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+    }
+    /* .plyr {
+      min-width: 0;
+    } */
+    :root {
+      /* --plyr-badge-border-radius: 0.111em;
+      --plyr-control-icon-size: 1.0em;
+      --plyr-control-spacing: 0.556em;
+      --plyr-control-radius: 0.167em;
+      --plyr-menu-radius: 0.222em;
+      --plyr-menu-arrow-size: 0.333em;
+      --plyr-menu-item-arrow-size: 0.222em;
+      --plyr-progress-loading-size: 1.389em;
+      --plyr-range-thumb-height:  0.722em;
+      --plyr-range-thumb-active-shadow-width: 0.167em;
+      --plyr-range-track-height: 0.278em;
+      --plyr-tooltip-arrow-size: 0.222em;
+      --plyr-tooltip-radius: 0.167em;
+      --plyr-font-size-base: 0.833em;
+      --plyr-font-size-small: 0.722em;
+      --plyr-font-size-large: 1.0em;
+      --plyr-font-size-xlarge: 1.167em;
+      --plyr-font-size-badge: 0.5em; */
+      font-size: 5px;
+    }
+    @media (min-width: 320px) and (max-width: 1081.6px){
+      :root {
+        font-size: -webkit-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: -moz-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: -o-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+      }
+    }
+    @media (min-width: 1081.6px){
+      :root {
+        font-size: 16px;
+      }
+    }
+    a.intext:link, a.social:link, a.bread_crumb:link {
+      border-bottom-width: 0.05em;
+    }
+    table {
+      border-spacing: 0 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border-top: 0.15em solid black;
+      border-bottom: 0.15em solid black;
+      margin-bottom: 0.15em;
+      border-collapse: collapse;
+      padding-bottom: 3em;
+    }
+    thead, th {
+      border-bottom: 0.1em solid black;
+      border-spacing: 5px 5px;
+    }
+    tr.mid_rule {
+      border-bottom: 0.1em solid black;
+    }
+    th, td {
+      padding: 0.4em 1em 0.4em 1em;
+      text-align: right;
+    }
+    img.gt {
+      border: 0.3em solid black;
+    }
+    img.rec_vggsound_with_vggsound {
+      border: 0.3em solid #99FFFF;
+    }
+    img.rec_vas_with_vggsound {
+      border: 0.3em solid #CC99FF;
+    }
+    img.rec_vas_with_vas {
+      border: 0.3em solid #FFCC99;
+    }
+    img.black_border {
+      border: 0.22em solid black;
+    }
+    div.middle {
+      margin: auto 0em auto 0em;
+    }
+    div.rec_results, div.sampling_results {
+      text-align: center;
+      font-size: 0.8em;
+      line-height: 1.4em;
+    }
+    div.bold {
+      font-weight: bold;
+    }
+    div.italic {
+      font-style: italic;
+    }
+    .zero_font_size_and_line_hight {
+      line-height: 0em;
+    }
+    details {
+      border: 0.15em solid black;
+      padding: 0.5em;
+    }
+    summary {
+      cursor: pointer;
+    }
+    /* Popup */
+    .popup_link {
+      color: black;
+      border-bottom: 0.1em dotted;
+      color: #333;
+    }
+    .popup {
+      position: relative;
+      display: inline-block;
+    }
+    .popup_content {
+      text-align: left;
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 0.075em solid lightgray;
+      padding: 1em;
+      border-radius: 1em;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 20em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .popup:hover .popup_content {
+      display: block;
+    }
+    /* hopefully helps with hovers on touch screens */
+    .popup:active .popup_content {
+      display: block;
+    }
+    /* Double Border Color */
+    .double {
+      float: left;
+      position: relative;
+      padding: 0.22em;
+      background: #01BAEF;
+    }
+    .double:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #20BF55;
+      right: 0;
+      bottom: 0;
+    }
+    .double img {
+      position: relative;
+      z-index: 1;
+    }
+    /* Top-X overlay */
+    .topx_overlay {
+      border: 0.075em solid black;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0.3em;
+    }
+    /* ToC */
+    ul {
+      padding-left: 2em;
+    }
+    li {
+      display: list-item;
+    }
+    .toc_section {
+      padding-top: 2em;
+    }
+    .toc_subsection {
+      padding-top: 0.7em;
+      font-size: 0.8em;
+      padding-bottom: 0em;
+    }
+    #toc_container li, #toc_container ul, #toc_container ul li {
+      list-style: outside none none !important;
+    }
+  </style> -->
