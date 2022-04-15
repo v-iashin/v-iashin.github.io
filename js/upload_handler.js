@@ -6,7 +6,7 @@ var MAX_SIDE_LEN = 1280;
 
 upload = document.querySelector('#file-input');
 examples_text = document.querySelector('#examples_text');
-example_street = document.querySelector('#example_street');
+example_crosswalk = document.querySelector('#example_crosswalk');
 example_wedding = document.querySelector('#example_wedding');
 example_ngc1499 = document.querySelector('#example_ngc1499');
 example_dog = document.querySelector('#example_dog');
@@ -48,13 +48,13 @@ example_dog.addEventListener('click', function () {
   img.onload = onload_func;
   img.src = "../images/detector_examples/dog.jpg";
 });
-example_street.addEventListener('click', function () {
+example_crosswalk.addEventListener('click', function () {
   event.preventDefault();
   // clean the previous result
   preview.innerHTML = '';
   // resize the image, send to the server, and show to a user
   img.onload = onload_func;
-  img.src = "../images/detector_examples/street.jpg";
+  img.src = "../images/detector_examples/crosswalk.jpg";
 });
 example_wedding.addEventListener('click', function () {
   event.preventDefault();
