@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -2475,7 +2475,7 @@
           <b><i>VGGSound</i></b> codebook,<br>
           <b>c)</b> the transformer is trained on <b><i>VAS</i></b> to sample from the
           <b><i>VAS</i></b> codebook. <br>
-          We additionally compare different ImageNet-pretrained features: 
+          We additionally compare different ImageNet-pretrained features:
           BN-Inception (RGB + flow) and ResNet-50 (RGB).
           As for spectrogram reconstruction evaluation, we rely on FID and average MKL as our metrics:
         </p>
@@ -2620,20 +2620,20 @@
         <p class="p_on_project_pages" style="padding: 2em 0 0 0;">
           We observe that: <br>
           1) In general, the more features from a corresponding video are used,
-          the better the result in terms of relevance. However, there is a trade-off imposed by the sampling 
+          the better the result in terms of relevance. However, there is a trade-off imposed by the sampling
           speed which decreases with the size of the conditioning. <br>
-          2) A large gap (log-scale) in mean MKL between visual and “empty” conditioning suggests the 
+          2) A large gap (log-scale) in mean MKL between visual and “empty” conditioning suggests the
           importance of visual conditioning in producing relevant samples.  <br>
-          3) When the sampler and codebook are trained on the same dataset—settings <b>(a)</b> and 
+          3) When the sampler and codebook are trained on the same dataset—settings <b>(a)</b> and
           <b>(c)</b>—the fidelity remains on a similar level if visual conditioning
           is used. This suggests that it is easier for the model to learn “features-codebook”
           (visual-audio) correspondence even from just a few features. However, if trained on different
           datasets (b), the sampler benefits from more visual information.  <br>
-          4) Both BN-Inception and ResNet-50 features achieve comparable performance, with BN-Inception 
-          being slightly better on VGGSound and with longer conditioning in each setting. 
-          Notably, the ResNet-50 features are RGB-only which significantly eases practical applications. 
-          We attribute the small difference between the RGB + flow features and RGB-only features to the 
-          fact that ResNet-50 is a 
+          4) Both BN-Inception and ResNet-50 features achieve comparable performance, with BN-Inception
+          being slightly better on VGGSound and with longer conditioning in each setting.
+          Notably, the ResNet-50 features are RGB-only which significantly eases practical applications.
+          We attribute the small difference between the RGB + flow features and RGB-only features to the
+          fact that ResNet-50 is a
           <a href="https://arxiv.org/abs/1810.00736" class="intext">stronger</a>
           architecture than BN-Inception on the ImageNet benchmark.
         </p>

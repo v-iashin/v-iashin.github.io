@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <title> Vladimir Iashin </title>
   </head>
@@ -19,14 +19,12 @@
 
   <body>
 
-    <h1 style="padding-top: 1em;"> <span class="name"></span> </h1>
+    <h1 style="padding-top: 1.5em;"> <span class="name"></span> </h1>
 
     <p style="text-align: center; width: 90%; padding-bottom: 1em;">
-      I am a Ph.D. student at Tampere University, where I work with
-      <a href="https://esa.rahtu.fi" class="intext">Esa Rahtu</a>
-      on multi-modal neural architectures for video understanding.
-      I enjoy working at the intersection of deep learning, computer vision, sound,
-      and natural language processing.
+      I am a deep learning researcher and Ph.D. candidate who specializes in designing neural nets for video content understanding.
+      I enjoy working at the intersection of deep learning, computer vision, sound, and natural language processing.
+      <!-- Currently, I am working with <a href="https://esa.rahtu.fi" class="intext">Esa Rahtu</a> at Tampere University. -->
       <!-- In my free time, I am keen on developing pet-projects that are somewhat
       <a href="https://v-iashin.github.io/video_features/" class="intext">serious</a> and
       <a href="https://v-iashin.github.io/detector" class="intext">just-for-fun</a> othertimes. -->
@@ -43,8 +41,6 @@
       <div class="profile_link">
         <a class="social" href="https://scholar.google.com/citations?user=rh8_sSkAAAAJ"> Google Scholar </a>
       </div>
-    </div>
-    <div class="profile_link_container">
       <div class="profile_link">
         <a class="social" href="https://github.com/v-iashin"> GitHub </a>
       </div>
@@ -52,15 +48,9 @@
         <a class="social" href="./resume.pdf"> Resume </a>
       </div>
     </div>
-    <div class="profile_link_container">
-      <div class="profile_link">
-        <div class="author_name" style="font-size: larger;"> vladimir.iashin@tuni.fi </div>
-      </div>
-    </div>
 
-    <hr style="max-width: 60em;">
 
-    <h1 style="padding-top: 1em"> Publications </h1>
+    <h1> Publications </h1>
 
       <div class="row">
         <div class="column_left">
@@ -68,8 +58,8 @@
             <img onmouseover="this.src='images/specvqgan_out.svg'" onmouseout="this.src='images/specvqgan_in.svg'"
               src="images/specvqgan_in.svg" />
           </a> -->
-            <img onmouseover="this.src='images/sync_in.svg'" onmouseout="this.src='images/sync_out.svg'"
-              src="images/sync_out.svg" />
+            <img onmouseover="this.src='images/sync_out.svg'" onmouseout="this.src='images/sync_in.svg'"
+              src="images/sync_in.svg" />
         </div>
         <div class="column_right">
           <p class="project_description">
@@ -243,8 +233,9 @@
           <p class="project_description">
             It will tell you what's on the image you uploaded. <br><br>
             The detector is based on
-            <a href="https://pjreddie.com/darknet/yolo/" class="intext"> YOLOv3</a>, implemented in PyTorch.
-            The computation is done on a cloud server which runs a Flask application. </p>
+            <a href="https://pjreddie.com/darknet/yolo/" class="intext"> YOLOv3</a> and implemented in PyTorch.
+            The computation is done on a cloud server which runs a Flask application.
+          </p>
           <ul class="proj_buttons">
             <li class="proj_buttons">
               <a href="https://v-iashin.github.io/detector" class="proj_buttons"> Demo </a>
