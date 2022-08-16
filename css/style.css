@@ -35,7 +35,7 @@ div.row {
   justify-content: center;
   vertical-align: middle;
   width: 90%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: auto;
   margin-bottom: 1.5em;
 }
