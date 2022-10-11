@@ -259,13 +259,11 @@ a.proj_buttons:hover {
   display: flex;
   margin: auto;
   flex-wrap: wrap;
-  /* border: 3px solid green; */
-  max-width: 50em;
-  align-items: center;
+  max-width: 60em;
 }
 .author_affiliation {
   margin: auto;
-  height: 4em;
+  padding-bottom: 1em;
   min-width: 15em;
 }
 .author_name {
@@ -274,6 +272,7 @@ a.proj_buttons:hover {
 }
 .affiliation {
   height: 50%;
+  padding-top: 1ex;
   text-align: center;
 }
 .conference {
