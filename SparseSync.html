@@ -52,20 +52,83 @@
       </div>
     </div>
 
+    <!-- Conference -->
+    <div class="conference">
+      <!-- <a class="social" href="https://www.bmvc2021-virtualconference.com/conference/papers/paper_1213.html"> British Machine Vision Conference (BMVC), 2021 – Oral Presentation </a> -->
+      <div style="font-size: larger;">British Machine Vision Conference (BMVC), 2022</div>
+    </div>
 
     <!-- Links -->
     <div class="code_and_links">
-      <div style="padding: 1em 0 1em 0;" class="div_link"> <a class="social" href="https://github.com/v-iashin/SparseSync"> Code </a> </div>
+      <div style="padding: 1em 0 1em 0;" class="div_link"> <a class="social" href="https://github.com/v-iashin/SparseSync"> Code & Models </a> </div>
+      <div style="padding: 1em 0 1em 0;" class="div_link">
+        <a class="social" href="./assets/sparsesync/vggsound_sparse.csv">Download Dataset (.csv)</a>
+      </div>
+      <div style="padding: 1em 0 1em 0;" class="div_link">
+        <a class="social" href="https://colab.research.google.com/drive/1rawAPksDHUioSXcAbQTn_kMbDl3nYg8q?usp=sharing"> Demo on Google Colab </a>
+      </div>
       <!-- <div style="padding: 1em 0 1em 0;" class="div_link"> <a class="social" href="https://www.youtube.com/watch?v=C4zYVIqGDVQ"> Presentation (YouTube) </a> </div> -->
       <!-- <div style="padding: 1em 0 1em 0;" class="div_link"> <a class="social" href="https://arxiv.org/abs/2005.08271"> Paper </a> </div> -->
     </div>
 
-    <!-- Conference -->
-    <div class="conference">
-      <!-- TODO -->
-      <!-- <a class="social" href="https://www.bmvc2022-conference.com/conference/papers/paper_0395.html"> British Machine Vision Conference (BMVC), 2022 </a> -->
-      <div style="font-size: large;">British Machine Vision Conference (BMVC), 2022</div>
+
+    <div id="overview" style="padding-top: 3em;" class="our_framework">
+      <div class="section_name"> Overview </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          Audio-visual synchronisation requires a model to relate changes in the visual and audio streams.
+          The objective of this paper is the synchronisation of general videos 'in the wild'.
+          For such videos, the events that may be harnessed for synchronisation cues may be
+          spatially small and may occur only infrequently during a many seconds-long video clip,
+          i.e. the synchronisation signal is 'sparse in space and time'.
+          This contrasts with the case of synchronising videos of talking heads,
+          where audio-visual correspondence is dense in both time and space.
+        </p>
+      </div>
     </div>
+
+    <div class="our_framework">
+      <div class="section_name"> Dense vs. Sparse Synchronisation Signals </div>
+      <div class="section_content">
+        <div class="img background_white_squared" style="border: none; padding: 0em;">
+          <img src="./images/sparsesync/sparse_selector_teaser.png"
+               alt="Comparison of dense and sparse synchronisation signals" >
+        </div>
+        <p class="p_on_project_pages">
+          Prior work focused primarily on the synchronisation of talking head videos.
+          Open-domain videos often have a small visual indication, i.e. sparse in space (right).
+          Moreover, cues may be intermittent and scattered, i.e. sparse across time, e.g. a lion only
+          roars once during a video clip. This differs from a tight face crop of a speaker where cues
+          are dense in space and time (left).
+        </p>
+      </div>
+    </div>
+
+    <div class="our_framework">
+      <div class="section_name"> <i>VGGSound-Sparse</i>: Video Dataset with Sparse Audio-visual Cues </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          Due to its challenging nature, a public benchmark to measure progress has not yet been established.
+          To bridge this gap, we curate a subset of
+          <a href="https://www.robots.ox.ac.uk/~vgg/data/vggsound/" class="intext">VGGSound</a>
+          with 'sparse' audio-visual correspondence called VGGSound-Sparse.
+          It consists of 6.5k videos and spans 12 'sparse' classes such as
+          <i>dog barking</i>, <i>chopping wood</i>, <i>skateboarding</i>, etc.
+        </p>
+      </div>
+    </div>
+
+    <!-- A note on LRS3 -->
+
+    <!-- Syncrhonising vidoes with sparse cues -->
+
+    <!-- Demo -->
+
+    <!-- Artefacts -->
+
+    <!-- Citation -->
+    <!-- Relink asserts to readme code -->
+
 
   </body>
 
