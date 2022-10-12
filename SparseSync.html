@@ -60,7 +60,9 @@
 
     <!-- Links -->
     <div class="code_and_links">
-      <div style="padding: 1em 0 1em 0;" class="div_link"> <a class="social" href="https://github.com/v-iashin/SparseSync"> Code & Models </a> </div>
+      <div style="padding: 1em 0 1em 0;" class="div_link">
+        <a class="social" href="https://github.com/v-iashin/SparseSync"> Code & Models </a>
+      </div>
       <div style="padding: 1em 0 1em 0;" class="div_link">
         <a class="social" href="./assets/sparsesync/vggsound_sparse.csv">Download Dataset (.csv)</a>
       </div>
@@ -99,32 +101,140 @@
           Open-domain videos often have a small visual indication, i.e. sparse in space (right).
           Moreover, cues may be intermittent and scattered, i.e. sparse across time, e.g. a lion only
           roars once during a video clip. This differs from a tight face crop of a speaker where cues
-          are dense in space and time (left).
+          are dense in space and time as it is in the
+          <a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html" class="intext">LRS3</a>
+          dataset (left).
         </p>
       </div>
     </div>
 
     <div class="our_framework">
-      <div class="section_name"> <i>VGGSound-Sparse</i>: Video Dataset with Sparse Audio-visual Cues </div>
+      <div class="section_name"> <i>VGGSound-Sparse:</i> Video Dataset with Sparse Audio-visual Cues </div>
       <div class="section_content">
         <p class="p_on_project_pages">
+          Opposed to a <i>dense in time and space</i> dataset (e.g such as cropped talking faces as in
+          <a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html" class="intext">LRS3</a>),
+          we are interested in solving synchronisation on <i>sparse in time and space</i> videos.
           Due to its challenging nature, a public benchmark to measure progress has not yet been established.
           To bridge this gap, we curate a subset of
           <a href="https://www.robots.ox.ac.uk/~vgg/data/vggsound/" class="intext">VGGSound</a>
-          with 'sparse' audio-visual correspondence called VGGSound-Sparse.
+          of videos with audio-visual correspondence that is <i>sparse in time and space</i>.
+          We call it <b>VGGSound-Sparse</b>.
           It consists of 6.5k videos and spans 12 'sparse' classes such as
           <i>dog barking</i>, <i>chopping wood</i>, <i>skateboarding</i>, etc.
+        </p>
+        <p class="p_on_project_pages">
+          Download annotations:
+          <a href="./assets/sparsesync/vggsound_sparse.csv" class="intext">vggsound_sparse.csv</a>
         </p>
       </div>
     </div>
 
-    <!-- A note on LRS3 -->
+    <div class="our_framework">
+      <div class="section_name"> <i>LRS3-H.264 ('No Face Crop'):</i> Dense in Time but Sparse in Space </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          In addition to the VGGSound-Sparse dataset, we encourage benchmarking future models on
+          videos from LRS3 dataset without the tight face crop or, as we refer to it,
+          <i>dense in time but sparse in space</i>.
+          The shift from the cropped setting to uncropped one is motivated by the following two arguments:<br>
+          1) The LRS3 dataset can be considered to be 'solved' as models reach 95%
+          performance and above with as few as 11 RGB frames; <br>
+          2) The videos that are officially distributed are encoded in
+          <a href="https://en.wikipedia.org/wiki/MPEG-4_Part_2" class="intext">MPEG-4 Part 2</a>, a codec with a strict
+          I-frame temporal locations which might encourage a model to learn a shortcut rather than
+          semantic audio-visual correspondence (see later sections and the paper for details). <br>
+        </p>
+        <p class="p_on_project_pages">
+          In this project, we retrieve the original videos of LRS3 from YouTube and call this variation
+          <b>LRS3-H.264 ('No Face Crop')</b>.
+          Furthermore, these videos are encoded with the
+          <a href="https://en.wikipedia.org/wiki/Advanced_Video_Coding" class="intext">H.264</a>
+          video codec which has a more complicated frame-prediction algorithm compared to the MPEG-4 Pt. 2
+          which makes it hard for a model to learn a 'shortcut'.
+          <i>Note, simply transcoding from MPEG-4 Pt. 2 to H.264 does not solve the issue</i>.
+        </p>
+      </div>
+    </div>
+
+    <div class="our_framework">
+      <div class="section_name">Synchronising Videos with Sparse Signal</div>
+      <div class="section_content">
+        <div class="img background_white_squared" style="border: none; padding: 0em;">
+          <img src="./images/sparsesync/sparse_selector_arch.png"
+               alt="The overview of the proposed architecture (SparseSync)" >
+        </div>
+        <p class="p_on_project_pages">
+          It is well-known that transformers have flattered many areas of deep learning including video
+          understanding.
+          Despite reaching the state-of-the-art in many tasks, it scales quadratically with input length.
+          Moreover, the fine-grained audio-visual synchronisation of videos with sparse cues
+          requires higher frame rate, resolution, and duration.
+          To this end, we propose SparseSelector, a transformer-based architecture that enables the
+          processing of long videos with linear complexity with respect to the duration of a video clip.
+          It achieves this by 'compressing' the audio and visual
+          input tokens into two small sets of learnable selectors.
+          These selectors form an input to a transformer which predicts the temporal offset between the
+          audio and visual streams.
+        </p>
+        <p class="p_on_project_pages">
+          We open-source the code and the pre-trained models
+          <a href="https://github.com/v-iashin/SparseSync" class="intext">GitHub</a>.
+          For a quick start, you may check our
+          <a href="https://colab.research.google.com/drive/1rawAPksDHUioSXcAbQTn_kMbDl3nYg8q?usp=sharing" class="intext">Google Colab Demo</a>.
+        </p>
+      </div>
+    </div>
+
+    <div class="our_framework">
+      <div class="section_name">Avoiding Temporal Artefacts</div>
+      <div class="section_content">
+        <div class="img background_white_squared" style="border: none; padding: 0em;">
+          <img src="./images/sparsesync/rgb_diffs.jpeg"
+               alt="The temporal artefacts occur every 12-th frame on a MPEG-4 Pt. 2. video and it does not with H.264 codec." >
+        </div>
+        <div class="img background_white_squared" style="border: none; padding: 0em;">
+          <img src="./images/sparsesync/artefacts.png"
+               alt="Left: a scheme showing the simple pipeline for detecting the artefacts; right: performance across different video and audio codecs" >
+        </div>
+        <p class="p_on_project_pages">
+          The synchronisation model should rely solely on temporal positions of conceptual cues instead
+          of, what we call, temporal artefacts.
+          To check if data is polluted with artefacts, we suggest training a model to predict the start
+          time of a random trim of an available video clip as shown on the left.
+          Of course, it should not be possible to determine the start time of the trim in the
+          original clip from the trim itself, and a network trained for this task should achieve
+          only chance performance. However, for some audio and video codecs, the performance is
+          far higher indicating artefact leakage.
+          See our paper for more details.
+        </p>
+        <p class="p_on_project_pages">
+          <b>Recommendation 1: Prefer H.264 over MPEG-4 Part 2.</b> <br>
+          The algorithm that selects key-frames in
+          MPEG-4 Part 2 (mpeg4) is less flexible than the one of H.264. In particular, ffmpeg
+          which is commonly used in practice,
+          <a href="https://ffmpeg.org/ffmpeg-all.html#toc-Codec-Options" class="intext">by default</a>,
+          encodes key frames every 12 frames.
+          This means that each of the following 11 frames is merely a residual of the key frame,
+          and it is noticeable on the RGB stream as shown above.
+        </p>
+        <p class="p_on_project_pages">
+          <b>Recommendation 2: Reduce the audio sampling rate.</b> <br>
+          There is a substantial difference in the model's ability to predict the start of a trim depending
+          on the sampling rate of the audio track (see the table above, bottom-right).
+          While the reason behind the temporal artefacts in AAC is unknown, we recommend avoiding
+          higher sampling rates.
+          In our experiments, we rely on a 16kHz sampling rate as it provides a
+          reasonable trade-off between audio quality and the start prediction performance.
+        </p>
+      </div>
+    </div>
+
+    <!-- examples from vggsound sparse + spectrogram + class (vid id) + border -->
 
     <!-- Syncrhonising vidoes with sparse cues -->
 
     <!-- Demo -->
-
-    <!-- Artefacts -->
 
     <!-- Citation -->
     <!-- Relink asserts to readme code -->
