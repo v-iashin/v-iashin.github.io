@@ -12,6 +12,224 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
   </head>
+  <style>
+    .lrs_examples {
+       padding-bottom: 1em;
+    }
+    .lrs_example_row {
+       display: flex;
+       flex-direction: row;
+       padding-bottom: 1em;
+    }
+    .lrs_example {
+       display: flex;
+       flex-direction: row;
+       padding: 0 1.5em 0 1.5em;
+    }
+    .class_lrs_column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 0.2em 0 0.2em;
+    }
+    .arrow {
+      font-size: 150%;
+      margin: auto;
+      font-weight: 800;
+    }
+    .vggsound_example_row {
+       display: flex;
+       flex-direction: row;
+       padding-bottom: 1em;
+    }
+    .class_video_column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 1em 0 1em;
+    }
+    .video_class {
+      font-weight: 800;
+    }
+    .scalable_vid {
+      flex: 1 1 auto;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+    body {
+      -webkit-text-size-adjust: none;
+      -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+    }
+    :root {
+      font-size: 5px;
+    }
+    @media (min-width: 320px) and (max-width: 1081.6px){
+      :root {
+        font-size: -webkit-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: -moz-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: -o-calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+        font-size: calc( 5px + (16 - 5) * ( (100vw - 320px) / (1081.6 - 320) ));
+      }
+    }
+    @media (min-width: 1081.6px){
+      :root {
+        font-size: 16px;
+      }
+    }
+    a.intext:link, a.social:link, a.bread_crumb:link {
+      border-bottom-width: 0.05em;
+    }
+    table {
+      border-spacing: 0 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border-top: 0.15em solid black;
+      border-bottom: 0.15em solid black;
+      margin-bottom: 0.15em;
+      border-collapse: collapse;
+      padding-bottom: 3em;
+    }
+    thead, th {
+      border-bottom: 0.1em solid black;
+      border-spacing: 5px 5px;
+    }
+    tr.mid_rule {
+      border-bottom: 0.1em solid black;
+    }
+    th.left_border, td.left_border{
+      border-left: 0.1em solid black;
+    }
+    th, td {
+      padding: 0.4em 1em 0.4em 1em;
+      text-align: right;
+    }
+    .rotate {
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+    }
+    img.gt {
+      border: 0.3em solid black;
+    }
+    img.rec_vggsound_with_vggsound {
+      border: 0.3em solid #99FFFF;
+    }
+    img.rec_vas_with_vggsound {
+      border: 0.3em solid #CC99FF;
+    }
+    img.rec_vas_with_vas {
+      border: 0.3em solid #FFCC99;
+    }
+    img.black_border {
+      border: 0.22em solid black;
+    }
+    div.middle {
+      margin: auto 0em auto 0em;
+    }
+    div.rec_results, div.sampling_results {
+      text-align: center;
+      font-size: 0.8em;
+      line-height: 1.4em;
+    }
+    div.bold {
+      font-weight: bold;
+    }
+    div.italic {
+      font-style: italic;
+    }
+    .zero_font_size_and_line_hight {
+      line-height: 0em;
+    }
+    details {
+      border: 0.15em solid black;
+      padding: 0.5em;
+    }
+    summary {
+      cursor: pointer;
+    }
+    /* Popup */
+    .popup_link {
+      color: black;
+      border-bottom: 0.1em dotted;
+      color: #333;
+    }
+    .popup {
+      position: relative;
+      display: inline-block;
+    }
+    .popup_content {
+      text-align: left;
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 0.075em solid lightgray;
+      padding: 1em;
+      border-radius: 1em;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      width: 20em;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .popup:hover .popup_content {
+      display: block;
+    }
+    /* hopefully helps with hovers on touch screens */
+    .popup:active .popup_content {
+      display: block;
+    }
+    /* Double Border Color */
+    .double {
+      float: left;
+      position: relative;
+      padding: 0.22em;
+      background: #01BAEF;
+    }
+    .double:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      background: #20BF55;
+      right: 0;
+      bottom: 0;
+    }
+    .double img {
+      position: relative;
+      z-index: 1;
+    }
+    /* Top-X overlay */
+    .topx_overlay {
+      border: 0.075em solid black;
+      background-color: rgba(255, 255, 255, 0.4);
+      padding: 0.3em;
+    }
+    /* ToC */
+    ul {
+      padding-left: 2em;
+    }
+    li {
+      display: list-item;
+    }
+    .toc_section {
+      padding-top: 2em;
+    }
+    .toc_subsection {
+      padding-top: 0.7em;
+      font-size: 0.8em;
+      padding-bottom: 0em;
+    }
+    #toc_container li, #toc_container ul, #toc_container ul li {
+      list-style: outside none none !important;
+    }
+  </style>
 
   <body>
     <ul class="breadcrumb">
@@ -63,6 +281,9 @@
       <div style="padding: 1em 0 1em 0;" class="div_link">
         <a class="social" href="https://github.com/v-iashin/SparseSync"> Code & Models </a>
       </div>
+      <div style="padding: 1em 0 1em 0; font-size: larger;" class="div_link">
+        Paper (Coming Soon...)
+      </div>
       <div style="padding: 1em 0 1em 0;" class="div_link">
         <a class="social" href="./assets/sparsesync/vggsound_sparse.csv">Download Dataset (.csv)</a>
       </div>
@@ -108,9 +329,61 @@
       </div>
     </div>
 
+
     <div class="our_framework">
       <div class="section_name"> <i>VGGSound-Sparse:</i> Video Dataset with Sparse Audio-visual Cues </div>
       <div class="section_content">
+
+        <div class="vggsound_examples" style="padding-bottom: 2em;">
+
+          <div class="vggsound_example_row">
+            <div class="class_video_column">
+              <div class="video_class">striking bowling</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/e9ECf2ZGBdk?start=211&end=221" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">lion roaring</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/GCDWVj9BjU8?start=12&end=22" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">dog barking</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/JXBNGfDy2DY?start=354&end=364" title="YouTube player" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="vggsound_example_row">
+            <div class="class_video_column">
+              <div class="video_class">skateboarding</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/lNG8l7BtwQo?start=0&end=10" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">chopping wood</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/JMpqsef4w8g?start=18&end=28" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">playing tennis</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/ZYc410CE4Rg?start=0&end=10" title="YouTube player" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- If other ones will be unavailable with time -->
+          <!-- <div class="vggsound_example_row">
+            <div class="class_video_column">
+              <div class="video_class">hammering nails</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/Lo6-F9U-qUg?start=2&end=12" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">playing badminton</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/Map8EOl5fbk?start=61&end=71" title="YouTube player" allowfullscreen></iframe>
+            </div>
+            <div class="class_video_column">
+              <div class="video_class">people sneezing</div>
+              <iframe class="scalable_vid" src="https://www.youtube-nocookie.com/embed/PjK77Fekmnc?start=120&end=130" title="YouTube player" allowfullscreen></iframe>
+            </div>
+          </div> -->
+
+        </div>
+
         <p class="p_on_project_pages">
           Opposed to a <i>dense in time and space</i> dataset (e.g such as cropped talking faces as in
           <a href="https://www.robots.ox.ac.uk/~vgg/data/lip_reading/lrs3.html" class="intext">LRS3</a>),
@@ -133,6 +406,70 @@
     <div class="our_framework">
       <div class="section_name"> <i>LRS3-H.264 ('No Face Crop'):</i> Dense in Time but Sparse in Space </div>
       <div class="section_content">
+        <div class="lrs_examples">
+
+          <div class="lrs_example_row">
+
+            <div class="lrs_example">
+              <div class="class_lrs_column" style="flex: 18">
+                <div class="video_class">LRS3</div>
+                <img class="black_border" src="./images/sparsesync/lrs_examples/01GWGmg5jn8_00001_orig.jpg">
+              </div>
+              <div class="class_lrs_column" style="flex: 1;">
+                <div class="arrow"> → </div>
+              </div>
+              <div class="class_lrs_column" style="flex: 32">
+                <div class="video_class">LRS3 ('No Face Crop')</div>
+                <img class="black_border" src="./images/sparsesync/lrs_examples/01GWGmg5jn8_00001_nfc.jpg">
+              </div>
+            </div>
+
+            <div class="lrs_example">
+              <div class="class_lrs_column" style="flex: 18">
+                <div class="video_class">LRS3</div>
+                <img class="black_border" src="./images/sparsesync/lrs_examples/G17iMOw0ar8_00001_orig.jpg">
+              </div>
+              <div class="class_lrs_column" style="flex: 1">
+                <div class="arrow"> → </div>
+              </div>
+              <div class="class_lrs_column" style="flex: 32">
+                <div class="video_class">LRS3 ('No Face Crop')</div>
+                <img class="black_border" src="./images/sparsesync/lrs_examples/G17iMOw0ar8_00001_nfc.jpg">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="lrs_example_row">
+
+            <div class="lrs_example">
+              <div class="class_lrs_column" style="flex: 18">
+                <img class="black_border" src="./images/sparsesync/lrs_examples/i0QKBKWnkxg_00001_orig.jpg">
+              </div>
+              <div class="class_lrs_column" style="flex: 1;">
+                <div class="arrow"> → </div>
+              </div>
+              <div class="class_lrs_column" style="flex: 32">
+                <img class="black_border" src="./images/sparsesync/lrs_examples/i0QKBKWnkxg_00001_nfc.jpg">
+              </div>
+            </div>
+
+            <div class="lrs_example">
+              <div class="class_lrs_column" style="flex: 18">
+                <img class="black_border" src="./images/sparsesync/lrs_examples/l141Mauo74A_00001_orig.jpg">
+              </div>
+              <div class="class_lrs_column" style="flex: 1">
+                <div class="arrow"> → </div>
+              </div>
+              <div class="class_lrs_column" style="flex: 32">
+                <img class="black_border" src="./images/sparsesync/lrs_examples/l141Mauo74A_00001_nfc.jpg">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
         <p class="p_on_project_pages">
           In addition to the VGGSound-Sparse dataset, we encourage benchmarking future models on
           videos from LRS3 dataset without the tight face crop or, as we refer to it,
@@ -230,15 +567,9 @@
       </div>
     </div>
 
-    <!-- examples from vggsound sparse + spectrogram + class (vid id) + border -->
-
-    <!-- Syncrhonising vidoes with sparse cues -->
-
     <!-- Demo -->
 
-    <!-- Citation -->
     <!-- Relink asserts to readme code -->
-
 
   </body>
 
