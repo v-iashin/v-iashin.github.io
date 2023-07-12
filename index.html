@@ -1,264 +1,162 @@
 <!DOCTYPE html>
+
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/style_phd_times.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏼‍💻</text></svg>">
+    <meta name="description" content="Vladimir Iashin's personal website">
     <title> Vladimir Iashin </title>
   </head>
 
   <style>
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.5;
+      margin: 0 auto;
+      max-width: 70ex;
+      padding: 0 20px 2em;
+      background-color: #f7f7f7;
+      color: #222222;
+    }
+    /* links */
+    a {
+      color: #0077ff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover {
+      color: #0055ff;
+      text-decoration: underline;
+    }
+    a:active {
+      color: #0000ff;
+    }
+    /* headers */
+    h1, h2 {
+      line-height: 1.2;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    h2 {
+      font-size: 2em;
+    }
+    h3 {
+      font-size: 1.5em;
+    }
+    /* paragraphs */
     p {
-      line-height: 1.5em;
-      font-size: larger;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
     }
-    li {
-      font-size: larger;
-    }
+
   </style>
 
   <body>
+    <h1> Vladimir Iashin </h1>
 
-    <h1 style="padding-top: 1.5em;"> <span class="name" style="font-size: larger;"></span> </h1>
-
-    <p style="text-align: center; max-width: 45em;">
+    <p>
       I am a deep learning researcher and Ph.D. candidate who specializes in designing neural nets for video content understanding.
       I enjoy working at the intersection of deep learning, computer vision, sound, and natural language processing.
-      <!-- Currently, I am working with <a href="https://esa.rahtu.fi" class="intext">Esa Rahtu</a> at Tampere University. -->
-      <!-- In my free time, I am keen on developing pet-projects that are somewhat
-      <a href="https://v-iashin.github.io/video_features/" class="intext">serious</a> and
-      <a href="https://v-iashin.github.io/detector" class="intext">just-for-fun</a> othertimes. -->
     </p>
 
+    <p>
+      [<a href="https://www.linkedin.com/in/vladimir-iashin/">LinkedIn</a>] •
+      [<a href="https://scholar.google.com/citations?user=rh8_sSkAAAAJ">Google Scholar</a>] •
+      [<a href="https://github.com/v-iashin">GitHub</a>] •
+      [<a href="https://twitter.com/_iashin">Twitter</a>]
+    </p>
 
-    <div class="profile_link_container">
-      <div class="profile_link">
-        <a class="social" href="https://www.linkedin.com/in/vladimir-iashin/"> LinkedIn </a>
-      </div>
-      <div class="profile_link">
-        <a class="social" href="https://twitter.com/_iashin"> Twitter </a>
-      </div>
-      <div class="profile_link">
-        <a class="social" href="https://scholar.google.com/citations?user=rh8_sSkAAAAJ"> Google Scholar </a>
-      </div>
-      <div class="profile_link">
-        <a class="social" href="https://github.com/v-iashin"> GitHub </a>
-      </div>
-    </div>
+    <h2> Publications </h2>
 
+      <p>
+        <b>Sparse in Space and Time: Audio-visual Synchronisation with Trainable Selectors</b> <br>
+        <i>Vladimir Iashin</i>, Weidi Xie, Esa Rahtu, and Andrew Zisserman <br>
+        BMVC, 2022 (Spotlight) <br>
+        [<a href="SparseSync.html">Project Page</a>] •
+        [<a href="https://github.com/v-iashin/SparseSync">Code</a>] •
+        [<a href="https://arxiv.org/abs/2210.07055">Paper</a>] •
+        [<a href="https://www.youtube.com/watch?v=q-232MJo0_E">Presentation</a>]
+      </p>
 
-    <h1> Publications </h1>
+      <p>
+        <b>Taming Visually Guided Sound Generation</b> <br>
+        <i>Vladimir Iashin</i> and Esa Rahtu <br>
+        BMVC, 2021 (Oral) <br>
+        [<a href="SpecVQGAN.html">Project Page</a>] •
+        [<a href="https://github.com/v-iashin/SpecVQGAN">Code</a>] •
+        [<a href="https://arxiv.org/abs/2110.08791">Paper</a>] •
+        [<a href="https://www.youtube.com/watch?v=Bucb3nAa398">Presentation</a>]
+      </p>
 
-      <div class="row">
-        <div class="column_left">
-          <a href="SparseSync.html">
-            <img onmouseover="this.src='images/sync_out.png'" onmouseout="this.src='images/sync_in.png'"
-              src="images/sync_in.png" />
-          </a>
-        </div>
-        <div class="column_right">
-          <p class="project_description">
-            <i><b>Vladimir Iashin</b>, Weidi Xie, Esa Rahtu, and Andrew Zisserman.</i> <br>
-            <span style="color: #ad662b;">Sparse in Space and Time:</span>  <br>
-            <span style="color: #ad662b;">Audio-visual Synchronisation with Trainable Selectors.</span> <br>
-            In <i>British Machine Vision Conference</i> (BMVC), 2022 <br>(<b>Spotlight Presentation</b>)
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="SparseSync.html" class="proj_buttons"> Project Page </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/SparseSync" class="proj_buttons"> Code </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://arxiv.org/abs/2210.07055" class="proj_buttons"> Paper </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://www.youtube.com/watch?v=q-232MJo0_E" class="proj_buttons"> Presentation </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <p>
+        <b>A Better Use of Audio-Visual Cues: Dense Video Captioning with Bi-modal Transformer</b> <br>
+        <i>Vladimir Iashin</i> and Esa Rahtu <br>
+        BMVC, 2020 <br>
+        [<a href="bmt.html">Project Page</a>] •
+        [<a href="https://github.com/v-iashin/BMT">Code</a>] •
+        [<a href="https://arxiv.org/abs/2005.08271">Paper</a>] •
+        [<a href="https://www.youtube.com/watch?v=C4zYVIqGDVQ">Presentation</a>]
+      </p>
 
-      <div class="row">
-        <div class="column_left">
-          <a href="SpecVQGAN.html">
-            <img onmouseover="this.src='images/specvqgan_out.svg'" onmouseout="this.src='images/specvqgan_in.svg'"
-              src="images/specvqgan_in.svg" />
-          </a>
-        </div>
-        <div class="column_right">
-          <p class="project_description">
-            <i><b>Vladimir Iashin</b> and Esa Rahtu.</i> <br>
-            <span style="color: #ad662b;">Taming Visually Guided Sound Generation.</span> <br>
-            In <i>British Machine Vision Conference</i> (BMVC), 2021 <br> (<b>Oral Presentation</b>)
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="SpecVQGAN.html" class="proj_buttons"> Project Page </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/SpecVQGAN" class="proj_buttons"> Code </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://arxiv.org/abs/2110.08791" class="proj_buttons"> Paper </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://www.youtube.com/watch?v=Bucb3nAa398" class="proj_buttons"> Presentation </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <p>
+        <b>Multi-modal Dense Video Captioning</b> <br>
+        <i>Vladimir Iashin</i> and Esa Rahtu <br>
+        CVPR Workshops, 2020 <br>
+        [<a href="mdvc.html">Project Page</a>] •
+        [<a href="https://github.com/v-iashin/mdvc">Code</a>] •
+        [<a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w56/Iashin_Multi-Modal_Dense_Video_Captioning_CVPRW_2020_paper.html">Paper</a>] •
+        [<a href="https://www.youtube.com/watch?v=0Vmx_gzP1bM">Presentation</a>]
+      </p>
 
-      <div class="row">
-        <div class="column_left">
-          <a href="bmt.html">
-            <img onmouseover="this.src='images/enc_dec.png'" onmouseout="this.src='images/bmt_enc_dec_novel.png'"
-              src="images/bmt_enc_dec_novel.png" />
-          </a>
-        </div>
-        <div class="column_right">
-          <p class="project_description">
-            <i><b>Vladimir Iashin</b> and Esa Rahtu.</i> <br>
-            <span style="color: #ad662b;">A Better Use of Audio-Visual Cues:</span> <br>
-            <span style="color: #ad662b;">Dense Video Captioning with Bi-modal Transformer.</span> <br>
-            In <i>British Machine Vision Conference</i> (BMVC), 2020
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="bmt.html" class="proj_buttons"> Project Page </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/BMT" class="proj_buttons"> Code </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://arxiv.org/abs/2005.08271" class="proj_buttons"> Paper </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://www.youtube.com/watch?v=C4zYVIqGDVQ" class="proj_buttons"> Presentation </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <h2> Projects </h2>
 
-      <div class="row">
-        <div class="column_left">
-          <a href="mdvc.html">
-            <img onmouseover="this.src='images/mdvc.gif'" onmouseout="this.src='images/mdvc.jpg'" src="images/mdvc.jpg" />
-          </a>
-        </div>
-        <div class="column_right">
-          <p class="project_description">
-            <i><b>Vladimir Iashin</b> and Esa Rahtu.</i> <br>
-            <span style="color: #ad662b;">Multi-modal Dense Video Captioning.</span> <br>
-            In <i>Computer Vision and Pattern Recognition</i> (CVPR) Workshops, 2020.
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="mdvc.html" class="proj_buttons"> Project Page </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/mdvc" class="proj_buttons"> Code </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="http://openaccess.thecvf.com/content_CVPRW_2020/html/w56/Iashin_Multi-Modal_Dense_Video_Captioning_CVPRW_2020_paper.html" class="proj_buttons"> Paper </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://www.youtube.com/watch?v=0Vmx_gzP1bM" class="intext">Presentation</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <p>
+          <b> Video Features </b> <br>
+          Provides an easy and flexible API for feature extraction as well as optical flow frame extraction
+          from raw videos allowing multi-GPU acceleration. <br>
+          [<a href="https://v-iashin.github.io/video_features/">Documentation</a>] •
+          [<a href="https://github.com/v-iashin/video_features/">Code</a>]
+        </p>
 
-    <h1 style="padding-top: 1em;"> Notes </h1>
-      <div class="row">
-        <div class="column_right" style="width: 97%; margin-top: 0.5em;">
-          <a href="./how_did_you_build_your_detector.html" class="project"> Website with an Object Detector: How to Build It? </a>
-          <p class="project_description" style="line-height: 1.4;">
-            Some engineering notes describing how I built my
-            <a href="./detector.html" class="intext"> Online Object Detector</a>
-            as a full-stack website app.
-            It describes how to design very basic front- and back-ends, rent a server in the cloud,
-            use DNS, and rent a domain name.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="column_right" style="width: 97%; margin-top: 0.5em;">
-          <a href="ide_customization.html" class="project"> IDE Customization </a>
-          <p class="project_description" style="line-height: 1.4;">
-            A note about VSCode customization ⚙️. It contains a list of cool extensions 🧩 and settings 🎛
-            that I found exceptionally useful in my daily coding routine.
-          </p>
-        </div>
-      </div>
+        <p>
+          <b> Object Detector </b> <br>
+          It will tell you what's on the image you uploaded. <br>
+          The detector is based on YOLOv3 and implemented in PyTorch.
+          The computation is done on a cloud server which runs a Flask application. <br>
+          [<a href="https://v-iashin.github.io/detector">Demo</a>] •
+          [<a href="https://github.com/v-iashin/WebsiteYOLO/">Back-end</a>] •
+          [<a href="https://v-iashin.github.io/how_did_you_build_your_detector">Note</a>]
+        </p>
 
-    <h1 style="padding-top: 1em;"> Projects </h1>
-      <div class="row">
-        <div class="column_left">
-          <a href="video_features">
-            <img onmouseover="this.src='images/video_features/vid_feats.gif'" onmouseout="this.src='images/video_features/main.gif'" src="images/video_features/main.gif" />
-          </a>
-        </div>
-        <div class="column_right">
-          <a href="https://v-iashin.github.io/video_features/" class="project"> Video Features </a>
-          <p class="project_description">
-            Provides an easy and flexible API for feature extraction as well as optical flow frame extraction
-            from raw videos allowing multi-GPU acceleration.
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="https://v-iashin.github.io/video_features/" class="proj_buttons"> Documentation </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/video_features/" class="proj_buttons"> Code </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <h2> Notes </h2>
 
-      <div class="row">
-        <div class="column_left">
-          <a href="detector.html">
-            <img onmouseover="this.src='images/typical_russian_day_orig.jpeg'"
-                 onmouseout="this.src='images/typical_russian_day_res.jpeg'"
-                 src="images/typical_russian_day_res.jpeg" />
-          </a>
-        </div>
-        <div class="column_right">
-          <a href="detector.html" class="project"> Object Detector </a>
-          <p class="project_description">
-            It will tell you what's on the image you uploaded. <br><br>
-            The detector is based on
-            <a href="https://pjreddie.com/darknet/yolo/" class="intext"> YOLOv3</a> and implemented in PyTorch.
-            The computation is done on a cloud server which runs a Flask application.
-          </p>
-          <ul class="proj_buttons">
-            <li class="proj_buttons">
-              <a href="https://v-iashin.github.io/detector" class="proj_buttons"> Demo </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://github.com/v-iashin/WebsiteYOLO/" class="proj_buttons"> Back-end </a>
-            </li>
-            <li class="proj_buttons">
-              <a href="https://v-iashin.github.io/how_did_you_build_your_detector" class="proj_buttons">
-                How Does It Work?
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+        <p>
+          <b>IDE Customization</b> <br>
+          A note about VSCode customization ⚙️. It contains a list of cool extensions 🧩 and settings 🎛 that
+          I found useful in my daily coding routine. <br>
+          [<a href="ide_customization.html">Note</a>]
+        </p>
+
+        <p>
+          <b> Object Detector as a Web App: How to Build It? </b> <br>
+          Engineering notes describing how to build a basic full-stack website app that serves user requests.
+          It describes how to design front- and back-ends, rent a server in the cloud, use DNS, and rent a domain name. <br>
+          [<a href="https://v-iashin.github.io/how_did_you_build_your_detector">Note</a>]
+        </p>
 
     </body>
+
     <!-- Prefetching the hidden images for snappier hovers-->
-    <img src="./images/sync_out.png" style="display: none;">
+    <!-- <img src="./images/sync_out.png" style="display: none;">
     <img src="./images/specvqgan_out.svg" style="display: none;">
     <img src="./images/typical_russian_day_orig.jpeg" style="display: none;">
     <img src="./images/mdvc.gif" style="display: none;">
     <img src="./images/video_features/vid_feats.gif" style="display: none;">
-    <img src="./images/enc_dec.png" style="display: none;">
+    <img src="./images/enc_dec.png" style="display: none;"> -->
 </html>
