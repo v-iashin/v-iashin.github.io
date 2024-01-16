@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Synchformer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style_phd_times.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+</head>
+<style>
+  .our_framework {
+    margin: auto;
+    max-width: 60em;
+    text-align: left;
+  }
+
+  .lrs_examples {
+    padding-bottom: 1em;
+  }
+
+  .lrs_example_row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1em;
+  }
+
+  .lrs_example {
+    display: flex;
+    flex-direction: row;
+    padding: 0 1.5em 0 1.5em;
+  }
+
+  .class_lrs_column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.2em 0 0.2em;
+  }
+
+  .arrow {
+    font-size: 150%;
+    margin: auto;
+    font-weight: 800;
+  }
+
+  .vggsound_example_row {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1em;
+  }
+
+  .class_video_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 1em 0 1em;
+  }
+
+  .video_class {
+    font-weight: 800;
+  }
+
+  .scalable_vid {
+    flex: 1 1 auto;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+  body {
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+  }
+
+  :root {
+    font-size: 5px;
+  }
+
+  @media (min-width: 320px) and (max-width: 1081.6px) {
+    :root {
+      font-size: -webkit-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+      font-size: -moz-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+      font-size: -o-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+      font-size: calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+    }
+  }
+
+  @media (min-width: 1081.6px) {
+    :root {
+      font-size: 16px;
+    }
+  }
+
+  a.intext:link,
+  a.social:link,
+  a.bread_crumb:link {
+    border-bottom-width: 0.05em;
+  }
+
+  table {
+    border-spacing: 0 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 0.15em solid black;
+    border-bottom: 0.15em solid black;
+    margin-bottom: 0.15em;
+    border-collapse: collapse;
+    padding-bottom: 3em;
+  }
+
+  thead {
+    border-bottom: 0.1em solid black;
+    border-spacing: 5px 5px;
+  }
+
+  th {
+    border-spacing: 5px 5px;
+  }
+
+  tr.mid_rule {
+    border-bottom: 0.1em solid black;
+  }
+
+  th.left_border,
+  td.left_border {
+    border-left: 0.1em solid black;
+  }
+
+  th,
+  td {
+    padding: 0.4em 1em 0.4em 1em;
+    text-align: right;
+  }
+
+  .rotate {
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+
+  img.gt {
+    border: 0.3em solid black;
+  }
+
+  img.rec_vggsound_with_vggsound {
+    border: 0.3em solid #99FFFF;
+  }
+
+  img.rec_vas_with_vggsound {
+    border: 0.3em solid #CC99FF;
+  }
+
+  img.rec_vas_with_vas {
+    border: 0.3em solid #FFCC99;
+  }
+
+  img.black_border {
+    border: 0.22em solid black;
+  }
+
+  div.middle {
+    margin: auto 0em auto 0em;
+  }
+
+  div.rec_results,
+  div.sampling_results {
+    text-align: center;
+    font-size: 0.8em;
+    line-height: 1.4em;
+  }
+
+  div.bold {
+    font-weight: bold;
+  }
+
+  div.italic {
+    font-style: italic;
+  }
+
+  .zero_font_size_and_line_hight {
+    line-height: 0em;
+  }
+
+  details {
+    border: 0.15em solid black;
+    padding: 0.5em;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  /* Popup */
+  .popup_link {
+    color: black;
+    border-bottom: 0.1em dotted;
+    color: #333;
+  }
+
+  .popup {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popup_content {
+    text-align: left;
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 0.075em solid lightgray;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 20em;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .popup:hover .popup_content {
+    display: block;
+  }
+
+  /* hopefully helps with hovers on touch screens */
+  .popup:active .popup_content {
+    display: block;
+  }
+
+  /* Double Border Color */
+  .double {
+    float: left;
+    position: relative;
+    padding: 0.22em;
+    background: #01BAEF;
+  }
+
+  .double:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #20BF55;
+    right: 0;
+    bottom: 0;
+  }
+
+  .double img {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Top-X overlay */
+  .topx_overlay {
+    border: 0.075em solid black;
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 0.3em;
+  }
+
+  /* ToC */
+  ul {
+    padding-left: 2em;
+  }
+
+  li {
+    display: list-item;
+  }
+
+  .toc_section {
+    padding-top: 2em;
+  }
+
+  .toc_subsection {
+    padding-top: 0.7em;
+    font-size: 0.8em;
+    padding-bottom: 0em;
+  }
+
+  #toc_container li,
+  #toc_container ul,
+  #toc_container ul li {
+    list-style: outside none none !important;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.8em;
+  }
+</style>
+
+<body>
+  <h1 style="padding: 1em 0 1em;"> Synchformer: <br> Efficient Synchronization from Sparse Cues </h1>
+
+  <!-- Authors -->
+  <div class="container_authors">
+    <div class="author_affiliation">
+      <div class="author_name">
+        <a class="social" href="https://v-iashin.github.io/"> Vladimir Iashin </a>
+      </div>
+      <div class="affiliation"> Tampere University </div>
+      <div class="affiliation"> <br> </div>
+    </div>
+    <div class="author_affiliation">
+      <div class="author_name">
+        <a class="social" href="https://weidixie.github.io/"> Weidi Xie </a>
+      </div>
+      <div class="affiliation"> Shanghai Jiao Tong University </div>
+      <div class="affiliation"> University of Oxford </div>
+    </div>
+    <div class="author_affiliation">
+      <div class="author_name">
+        <a class="social" href="https://esa.rahtu.fi/"> Esa Rahtu </a>
+      </div>
+      <div class="affiliation"> Tampere University </div>
+      <div class="affiliation"> <br> </div>
+    </div>
+    <div class="author_affiliation">
+      <div class="author_name">
+        <a class="social" href="https://www.robots.ox.ac.uk/~az/"> Andrew Zisserman </a>
+      </div>
+      <div class="affiliation"> University of Oxford </div>
+      <div class="affiliation"> <br> </div>
+    </div>
+  </div>
+
+  <!-- Conference -->
+  <div class="conference">
+    <!-- <a class="social" href="https://www.bmvc2021-virtualconference.com/conference/papers/paper_1213.html"> British Machine Vision Conference (BMVC), 2022 – <b>Spotlight Presentation</b> </a> -->
+    <div style="font-size: larger;"> ICASSP 2024 </div>
+  </div>
+
+  <!-- Links -->
+  <div class="code_and_links">
+    <div style="padding: 1em 0 1em 0;" class="div_link">
+      <!-- <a class="social" href="https://arxiv.org/abs/2210.07055"> Paper [Coming soon] </a> -->
+      Paper [Coming soon]
+    </div>
+    <div style="padding: 1em 0 1em 0;" class="div_link">
+      <!-- <a class="social" href="https://github.com/v-iashin/Synchformer"> Code & Models [TODO] </a> -->
+      Code & Models [Coming soon]
+    </div>
+    <!-- <div style="padding: 1em 0 1em 0;" class="div_link">
+      <a class="social" href="./assets/sparsesync/vggsound_sparse.csv">Download Dataset (.csv)</a>
+    </div>
+    <div style="padding: 1em 0 1em 0;" class="div_link">
+      <a class="social" href="https://github.com/v-iashin/SparseSync"> Code & Models </a>
+    </div>
+    <div style="padding: 1em 0 1em 0;" class="div_link">
+      <a class="social" href="https://colab.research.google.com/drive/1rawAPksDHUioSXcAbQTn_kMbDl3nYg8q?usp=sharing">
+        Demo on Google Colab </a>
+    </div> -->
+  </div>
+
+
+  <!-- <div id="overview" style="padding-top: 3em;" class="our_framework">
+      <div class="section_name"> Overview </div>
+      <div class="section_content">
+        <p class="p_on_project_pages">
+          Audio-visual synchronisation requires a model to relate changes in the visual and audio streams.
+          The objective of this paper is the synchronisation of general videos 'in the wild'.
+          For such videos, the events that may be harnessed for synchronisation cues may be
+          spatially small and may occur only infrequently during a many seconds-long video clip,
+          i.e. the synchronisation signal is 'sparse in space and time'.
+          This contrasts with the case of synchronising videos of talking heads,
+          where audio-visual correspondence is dense in both time and space.
+        </p>
+      </div>
+    </div> -->
+
+  <div class="our_framework" style="padding-top: 3em;">
+    <div class="section_name"> Abstract </div>
+    <div class="section_content">
+      <!-- <div class="img background_white_squared" style="border: none; padding: 0em;">
+        <img src="./images/sparsesync/sparse_selector_teaser.png"
+          alt="Comparison of dense and sparse synchronisation signals">
+      </div> -->
+      <p class="p_on_project_pages">
+        Our objective is audio-visual synchronization with a focus on 'in-the-wild' videos,
+        such as those on YouTube, where synchronization cues can be <i>sparse</i>, i.e. synchronization signals
+        occur rarely in time and in space.
+        Our contributions include a novel audio-visual synchronization model and training that decouples feature
+        extraction from synchronization modeling through multi-modal segment-level contrastive pre-training.
+        This approach achieves state-of-the-art performance in both <i>dense</i> and <i>sparse</i> settings.
+        We also extend synchronization model training to AudioSet a million-scale 'in-the-wild' dataset,
+        investigate evidence attribution techniques for interpretability,
+        and explore a new capability for synchronization models: audio-visual synchronizability.
+      </p>
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div class="section_name">Synchformer</div>
+    <div class="section_content">
+      <div class="img background_white_squared" style="border: none; padding: 0em;">
+        <img src="./images/synchformer/synchformer.png" alt="The overview of the proposed architecture (Synchformer)">
+      </div>
+      <p class="p_on_project_pages">
+        Given audio and visual streams, a synchronization
+        model predicts the temporal offset between them.
+        Instead of extracting features
+        from the entire video, we extract features from shorter
+        temporal segments (0.64 sec) of the video. The segment-level
+        audio and visual inputs are fed into their respective feature
+        extractors independently to obtain temporal features.
+        Finally, the synchronization module inputs the concatenated
+        sequence of audio and
+        visual features to predict the temporal offset.
+        We call our model <i>Synchformer</i>.
+      </p>
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div class="section_name">Segment-level Cross-modal Contrastive Pre-training</div>
+    <div class="section_content">
+      <div class="img background_white_squared" style="border: none; padding: 0em;">
+        <img src="./images/synchformer/avclip.png" alt="Pre-training feature extractors contrastivelly across time">
+      </div>
+      <p class="p_on_project_pages">
+        The synchronization of 'in-the-wild' videos requires the model to process long video clips
+        and have enough capacity (number of parameters)
+        to learn the complexity of various scenes.
+        Transformers are a natural choice for such a model but processing long sequences is computationally
+        expensive.
+        To address this issue, we separate training of feature extractors from training of the synchronization module.
+        We aim to extract features that are useful for synchronization, which requires the features to be
+        discriminative across time.
+        To this end, instead of contrasting features across video clips, we contrast features across time within
+        a video clip.
+        This allows to use higher-capacity feature extractors (e.g.
+        <a href="https://arxiv.org/abs/2104.01778" class="intext">AST</a> and
+        <a href="https://arxiv.org/abs/2106.05392" class="intext">Motionformer</a>)
+        which lead to better performance compared to previous methods.
+        We call this approach <i>Segment-level Cross-modal Contrastive Pre-training</i>.
+      </p>
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div class="section_name"> Synchronization Results </div>
+    <div class="section_content">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th style="font-weight: normal; font-style: italic;"> LRS3 ('Full Scene') </th>
+            <th style="font-weight: normal; font-style: italic;"> VGGSound-Sparse</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>
+              <div class="popup">
+                <div class="popup_content" style="font-weight: normal;">
+                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
+                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
+                <a class="popup_link"> Accuracy </a>
+              </div>
+            </th>
+            <th>
+              <div class="popup">
+                <div class="popup_content" style="font-weight: normal;">
+                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
+                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
+                <a class="popup_link"> Accuracy </a>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://arxiv.org/abs/2112.04432" class="intext">AVST<sub>dec</sub> </a>
+            </td>
+            <td>85.3</td>
+            <td>29.3</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://arxiv.org/abs/2210.07055" class="intext">SparseSync </a>
+            </td>
+            <td>96.9</td>
+            <td>51.2</td>
+          </tr>
+          <tr style="border-bottom: 0.1em solid black">
+            <td>Ours</td>
+            <td>99.6</td>
+            <td>60.2</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="padding-top: 2em;" class="p_on_project_pages">
+        Our appraoch achieves state-of-the-art performance on both <i>dense</i> and <i>sparse</i>
+        synchronization tasks.
+        We open-source the code and the pre-trained models:
+        <a href="https://github.com/v-iashin/Synchformer" class="intext">GitHub</a>.
+        <!-- For a quick start, you may check our
+        <a href="https://colab.research.google.com/drive/1rawAPksDHUioSXcAbQTn_kMbDl3nYg8q?usp=sharing"
+          class="intext">Google Colab Demo</a>. -->
+      </p>
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div class="section_name"> Acknowledgements </div>
+    <div class="section_content">
+      <p class="p_on_project_pages">
+        This research was funded by the Academy of Finland projects 327910 and 324346,
+        EPSRC Programme Grant VisualAI EP/T028572/1, and a Royal Society Research Professorship.
+        We also acknowledge CSC (Finland) for awarding this project access to the
+        <a href="https://www.lumi-supercomputer.eu/" class="intext">LUMI</a>
+        supercomputer,
+        owned by the EuroHPC JU, hosted by CSC and the LUMI consortium through CSC.
+      </p>
+    </div>
+  </div>
+
+</body>
+
+<!-- Prefetching the hidden images for snappier toggles -->
+<!-- <img src="./images/bmt/encoder.png" style="display: none;">
+  <img src="./images/bmt/decoder.png" style="display: none;">
+  <img src="./images/mdvc.gif" style="display: none;"> -->
+
+</html>
