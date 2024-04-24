@@ -429,7 +429,7 @@
           <tr>
             <th></th>
             <th style="font-weight: normal; font-style: italic;"> LRS3 ('Full Scene') </th>
-            <th style="font-weight: normal; font-style: italic;"> VGGSound-Sparse</th>
+            <th style="font-weight: normal; font-style: italic;"> VGGSound-Sparse (Clean)</th>
           </tr>
           <tr>
             <th></th>
@@ -457,30 +457,97 @@
               <a href="https://arxiv.org/abs/2112.04432" class="intext">AVST<sub>dec</sub> </a>
             </td>
             <td>85.3</td>
-            <td>29.3</td>
+            <td>32.1</td>
           </tr>
           <tr>
             <td>
               <a href="https://arxiv.org/abs/2210.07055" class="intext">SparseSync </a>
             </td>
             <td>96.9</td>
-            <td>51.2</td>
+            <td>62.2</td>
           </tr>
           <tr style="border-bottom: 0.1em solid black">
             <td>Ours</td>
             <td>99.6</td>
-            <td>60.2</td>
+            <td>70.1</td>
           </tr>
         </tbody>
       </table>
       <p style="padding-top: 2em;" class="p_on_project_pages">
-        Our appraoch achieves state-of-the-art performance on both <i>dense</i> and <i>sparse</i>
+        Our approach achieves state-of-the-art performance on both <i>dense</i> and <i>sparse</i>
         synchronization tasks.
         We open-source the code and the pre-trained models:
         <a href="https://github.com/v-iashin/Synchformer" class="intext">GitHub</a>.
+      </p>
+
+      <p class="p_on_project_pages">
         For a quick start, you may check our
         <a href="https://colab.research.google.com/github/v-iashin/Synchformer/blob/main/example.ipynb"
           class="intext">Google Colab Demo</a>.
+      </p>
+
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div class="section_name">Evaluation Datasets</div>
+    <div class="section_content">
+      <table>
+        <thead>
+          <tr>
+            <th style="font-weight: normal; font-style: italic;"></th>
+            <th style="font-weight: normal; font-style: italic;"> N </th>
+            <th style="font-weight: normal; font-style: italic;"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LRS3 (test set)</td>
+            <td>5'966</td>
+            <td>
+              <a href="https://raw.githubusercontent.com/v-iashin/Synchformer/main/data/fixed_offsets_lrs3/test_size21_crop5_min-2.00_max2.00.csv"
+                class="intext">
+                download (.csv)
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>VGGSound (test set)</td>
+            <td>14'022</td>
+            <td>
+              <a href="https://raw.githubusercontent.com/v-iashin/Synchformer/main/data/fixed_offsets_vggsound/test_size21_crop5_min-2.00_max2.00.csv"
+                class="intext">
+                download (.csv)
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>AudioSet (test set)</td>
+            <td>15'734</td>
+            <td>
+              <a href="https://raw.githubusercontent.com/v-iashin/Synchformer/main/data/fixed_offsets_audioset/test_size21_crop5_min-2.00_max2.00.csv"
+                class="intext">
+                download (.csv)
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td><b>VGGSound-Sparse (Clean) (test set)</b></td>
+            <td>439</td>
+            <td>
+              <a href="https://raw.githubusercontent.com/v-iashin/Synchformer/main/data/vggsound_sparse_clean_fixed_offsets.csv"
+                class="intext">
+                download (.csv)
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="padding-top: 2em;" class="p_on_project_pages">
+        Considering the noisy nature of VGGSound, we curated a list of synchronizable video clips
+        with sparse synchronization cues which we call <b>VGGSound-Sparse (Clean)</b> and release it with this work.
+        We recommend using this dataset to benchmark general-purpose audio-visual synchronization models.
       </p>
     </div>
   </div>
@@ -498,6 +565,16 @@
       </p>
     </div>
   </div>
+
+  <div class="our_framework">
+    <div class="section_name"> Slides </div>
+    <div class="section_content">
+      <iframe
+        src="https://docs.google.com/presentation/d/e/2PACX-1vR6cszfRM1qAfSyo5BeJzejXfD0plaOPX6WxTPa32djOokBHThJDqWUDvOadx97Zoa6IZuizB-XNJW3/embed?start=false&loop=false&delayms=3000"
+        frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
+        webkitallowfullscreen="true">
+      </iframe>
+    </div>
 
 </body>
 
