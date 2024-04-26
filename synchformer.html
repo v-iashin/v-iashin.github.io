@@ -422,76 +422,16 @@
   </div>
 
   <div class="our_framework">
-    <div class="section_name"> Synchronization Results </div>
+    <div class="section_name">Datasets</div>
     <div class="section_content">
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th style="font-weight: normal; font-style: italic;"> LRS3 ('Full Scene') </th>
-            <th style="font-weight: normal; font-style: italic;"> VGGSound-Sparse (Clean)</th>
-          </tr>
-          <tr>
-            <th></th>
-            <th>
-              <div class="popup">
-                <div class="popup_content" style="font-weight: normal;">
-                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
-                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
-                <a class="popup_link"> Accuracy </a>
-              </div>
-            </th>
-            <th>
-              <div class="popup">
-                <div class="popup_content" style="font-weight: normal;">
-                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
-                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
-                <a class="popup_link"> Accuracy </a>
-              </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <a href="https://arxiv.org/abs/2112.04432" class="intext">AVST<sub>dec</sub> </a>
-            </td>
-            <td>85.3</td>
-            <td>32.1</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="https://arxiv.org/abs/2210.07055" class="intext">SparseSync </a>
-            </td>
-            <td>96.9</td>
-            <td>62.2</td>
-          </tr>
-          <tr style="border-bottom: 0.1em solid black">
-            <td>Ours</td>
-            <td>99.6</td>
-            <td>70.1</td>
-          </tr>
-        </tbody>
-      </table>
-      <p style="padding-top: 2em;" class="p_on_project_pages">
-        Our approach achieves state-of-the-art performance on both <i>dense</i> and <i>sparse</i>
-        synchronization tasks.
-        We open-source the code and the pre-trained models:
-        <a href="https://github.com/v-iashin/Synchformer" class="intext">GitHub</a>.
-      </p>
-
       <p class="p_on_project_pages">
-        For a quick start, you may check our
-        <a href="https://colab.research.google.com/github/v-iashin/Synchformer/blob/main/example.ipynb"
-          class="intext">Google Colab Demo</a>.
+        Considering the noisy nature of VGGSound, we curated a list of synchronizable video clips
+        with sparse synchronization cues which we call <b>VGGSound-Sparse (Clean)</b> and release it with this work.
+        It is a subset of the test set of VGGSound, and <a href="sparsesync.html" class="intext">VGGSound-Sparse</a>.
+        We recommend using this dataset to benchmark general-purpose audio-visual synchronization models.
+        As well as, we provide the synchronization offsets for other datasets used in our experiments:
       </p>
 
-    </div>
-  </div>
-
-  <div class="our_framework">
-    <div class="section_name">Evaluation Datasets</div>
-    <div class="section_content">
       <table>
         <thead>
           <tr>
@@ -544,11 +484,89 @@
         </tbody>
       </table>
 
-      <p style="padding-top: 2em;" class="p_on_project_pages">
-        Considering the noisy nature of VGGSound, we curated a list of synchronizable video clips
-        with sparse synchronization cues which we call <b>VGGSound-Sparse (Clean)</b> and release it with this work.
-        We recommend using this dataset to benchmark general-purpose audio-visual synchronization models.
+    </div>
+  </div>
+
+  <div class="our_framework">
+    <div style="padding-top: 2em;" class="section_name"> Synchronization Results </div>
+    <div class="section_content">
+      <p class="p_on_project_pages">
+        Our approach achieves state-of-the-art performance on both <i>dense</i> and <i>sparse</i>
+        synchronization tasks:
       </p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th style="font-weight: normal; font-style: italic;"> LRS3 ('Full Scene') </th>
+            <th style="font-weight: normal; font-style: italic;"> VGGSound-Sparse (Clean)</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th>
+              <div class="popup">
+                <div class="popup_content" style="font-weight: normal;">
+                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
+                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
+                <a class="popup_link"> Accuracy </a>
+              </div>
+            </th>
+            <th>
+              <div class="popup">
+                <div class="popup_content" style="font-weight: normal;">
+                  21 offset classes from –2.0 to +2.0 sec with 0.2-sec step size.
+                  The metric tolerates ±1 temporal class (±0.2 sec) mistakes.</div>
+                <a class="popup_link"> Accuracy </a>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="https://arxiv.org/abs/2112.04432" class="intext">AVST<sub>dec</sub> </a>
+            </td>
+            <td>85.3</td>
+            <td>32.1</td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://arxiv.org/abs/2210.07055" class="intext">SparseSync </a>
+            </td>
+            <td>96.9</td>
+            <td>62.2</td>
+          </tr>
+          <tr style="border-bottom: 0.1em solid black">
+            <td>Ours</td>
+            <td>99.6</td>
+            <td>70.1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="padding-top: 1em;" class="p_on_project_pages">
+        We open-source the code and the pre-trained models:
+        <a href="https://github.com/v-iashin/Synchformer" class="intext">GitHub</a>.
+        Also, for a quick start, you may check our
+        <a href="https://colab.research.google.com/github/v-iashin/Synchformer/blob/main/example.ipynb"
+          class="intext">Google Colab Demo</a>.
+      </p>
+
+    </div>
+  </div>
+
+
+  <div class="our_framework">
+    <div class="section_name"> Slides </div>
+    <div class="section_content">
+      <iframe
+        src="https://docs.google.com/presentation/d/e/2PACX-1vR6cszfRM1qAfSyo5BeJzejXfD0plaOPX6WxTPa32djOokBHThJDqWUDvOadx97Zoa6IZuizB-XNJW3/embed?start=false&loop=false&delayms=3000"
+        frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
+        style="padding-bottom: 1em;" webkitallowfullscreen="true">
+      </iframe>
+
+      <!-- or download as .pptx (insert link to ./assets/synchformer/synchformer.pptx) -->
+      Download (<a href="./assets/synchformer/synchformer.pptx" class="intext">.pptx</a>)
     </div>
   </div>
 
@@ -565,16 +583,6 @@
       </p>
     </div>
   </div>
-
-  <div class="our_framework">
-    <div class="section_name"> Slides </div>
-    <div class="section_content">
-      <iframe
-        src="https://docs.google.com/presentation/d/e/2PACX-1vR6cszfRM1qAfSyo5BeJzejXfD0plaOPX6WxTPa32djOokBHThJDqWUDvOadx97Zoa6IZuizB-XNJW3/embed?start=false&loop=false&delayms=3000"
-        frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
-        webkitallowfullscreen="true">
-      </iframe>
-    </div>
 
 </body>
 
