@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ChimpUFE – Universal Chimpanzee Face Embedder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- External stylesheet used by the original template (optional) -->
+    <link rel="stylesheet" href="css/style_phd_times.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <style>
+        .our_framework {
+            margin: auto;
+            max-width: 60em;
+            text-align: left;
+        }
+
+        .lrs_examples {
+            padding-bottom: 1em;
+        }
+
+        .lrs_example_row {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 1em;
+        }
+
+        .lrs_example {
+            display: flex;
+            flex-direction: row;
+            padding: 0 1.5em 0 1.5em;
+        }
+
+        .class_lrs_column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 0.2em 0 0.2em;
+        }
+
+        .arrow {
+            font-size: 150%;
+            margin: auto;
+            font-weight: 800;
+        }
+
+        .vggsound_example_row {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 1em;
+        }
+
+        .class_video_column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 1em 0 1em;
+        }
+
+        .video_class {
+            font-weight: 800;
+        }
+
+        .scalable_vid {
+            flex: 1 1 auto;
+            aspect-ratio: 16 / 9;
+            width: 100%;
+        }
+
+        body {
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+        }
+
+        :root {
+            font-size: 5px;
+        }
+
+        @media (min-width: 320px) and (max-width: 1081.6px) {
+            :root {
+                font-size: -webkit-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+                font-size: -moz-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+                font-size: -o-calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+                font-size: calc(5px + (16 - 5) * ((100vw - 320px) / (1081.6 - 320)));
+            }
+        }
+
+        @media (min-width: 1081.6px) {
+            :root {
+                font-size: 16px;
+            }
+        }
+
+        a.intext:link,
+        a.social:link,
+        a.bread_crumb:link {
+            border-bottom-width: 0.05em;
+        }
+
+        table {
+            border-spacing: 0 5px;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 0.15em solid black;
+            border-bottom: 0.15em solid black;
+            margin-bottom: 0.15em;
+            border-collapse: collapse;
+        }
+
+        thead {
+            border-bottom: 0.1em solid black;
+            border-spacing: 5px 5px;
+        }
+
+        th {
+            border-spacing: 5px 5px;
+        }
+
+        tr.mid_rule {
+            border-bottom: 0.1em solid black;
+        }
+
+        th.left_border,
+        td.left_border {
+            border-left: 0.1em solid black;
+        }
+
+        th,
+        td {
+            padding: 0.4em 1em 0.4em 1em;
+            text-align: right;
+        }
+
+        .rotate {
+            -ms-writing-mode: tb-rl;
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            white-space: nowrap;
+        }
+
+        img.gt {
+            border: 0.3em solid black;
+        }
+
+        img.rec_vggsound_with_vggsound {
+            border: 0.3em solid #99FFFF;
+        }
+
+        img.rec_vas_with_vggsound {
+            border: 0.3em solid #CC99FF;
+        }
+
+        img.rec_vas_with_vas {
+            border: 0.3em solid #FFCC99;
+        }
+
+        img.black_border {
+            border: 0.22em solid black;
+        }
+
+        div.middle {
+            margin: auto 0em auto 0em;
+        }
+
+        div.rec_results,
+        div.sampling_results {
+            text-align: center;
+            font-size: 0.8em;
+            line-height: 1.4em;
+        }
+
+        div.bold {
+            font-weight: bold;
+        }
+
+        b,
+        strong {
+            font-weight: 600;
+        }
+
+        div.italic {
+            font-style: italic;
+        }
+
+        .zero_font_size_and_line_hight {
+            line-height: 0em;
+        }
+
+        details {
+            border: 0.15em solid black;
+            padding: 0.5em;
+        }
+
+        summary {
+            cursor: pointer;
+        }
+
+        /* Popup */
+        .popup_link {
+            color: black;
+            border-bottom: 0.1em dotted;
+            color: #333;
+        }
+
+        .popup {
+            position: relative;
+            display: inline-block;
+        }
+
+        .popup_content {
+            text-align: left;
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 0.075em solid lightgray;
+            padding: 1em;
+            border-radius: 1em;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            width: 20em;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .popup:hover .popup_content {
+            display: block;
+        }
+
+        /* hopefully helps with hovers on touch screens */
+        .popup:active .popup_content {
+            display: block;
+        }
+
+        /* Double Border Color */
+        .double {
+            float: left;
+            position: relative;
+            padding: 0.22em;
+            background: #01BAEF;
+        }
+
+        .double:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            background: #20BF55;
+            right: 0;
+            bottom: 0;
+        }
+
+        .double img {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top-X overlay */
+        .topx_overlay {
+            border: 0.075em solid black;
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 0.3em;
+        }
+
+        /* ToC */
+        ul {
+            padding-left: 2em;
+        }
+
+        li {
+            display: list-item;
+            line-height: 1.8em;
+        }
+
+        .toc_section {
+            padding-top: 2em;
+        }
+
+        .section_name {
+            padding-top: 2.5em;
+            padding-bottom: 0.5em;
+        }
+
+        .toc_subsection {
+            padding-top: 0.7em;
+            font-size: 0.8em;
+            padding-bottom: 0em;
+        }
+
+        #toc_container li,
+        #toc_container ul,
+        #toc_container ul li {
+            list-style: outside none none !important;
+        }
+
+        p {
+            font-size: 1em;
+            line-height: 1.8em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Conference -->
+    <div style="border: 2px solid red; border-radius: 8px; padding: 1em; margin: 1.5em auto; max-width: 40em; background: #fff8f8;">
+        <div class="conference" style="text-align:center; font-size: larger; color: red;">
+            The website is under construction and to be completed by the 15th of July.
+            Excuse the faulty links and other issues.
+        </div>
+    </div>
+    <!-- Title -->
+    <h1 style="padding: 1em 0 1em;">ChimpUFE: <br> Universal Chimpanzee Face Embedder</h1>
+
+    <!-- Authors -->
+    <div class="container_authors">
+        <div class="author_affiliation">
+            <div class="author_name"><a class="social" href="https://v-iashin.github.io/">Vladimir Iashin</a></div>
+        </div>
+        <div class="author_affiliation">
+            <div class="author_name"><a class="social" href="https://uk.linkedin.com/in/horace-lee-9615b1121">Horace Lee</a></div>
+        </div>
+        <div class="author_affiliation">
+            <div class="author_name"><a class="social" href="https://scholar.google.com/citations?user=a8NUQYIAAAAJ&hl=en">Dan Schofield</a></div>
+        </div>
+        <div class="author_affiliation">
+            <div class="author_name"><a class="social" href="https://www.robots.ox.ac.uk/~az/">Andrew Zisserman</a>
+            </div>
+        </div>
+    </div>
+    <div class="conference" style="text-align:center; font-size: larger; padding-top:0.8em;">
+        Visual Geometry Group (VGG), University of Oxford
+    </div>
+
+    <!-- Conference -->
+    <div class="conference" style="text-align:center; font-size: larger; padding-top:0.8em;">
+        Computer Vision for Ecological and Biodiversity Monitoring Workshop, ICIP, 2025
+    </div>
+
+    <!-- Links -->
+    <div class="code_and_links" style="padding-top:1em;">
+        <div class="div_link"><a class="social" href="https://www.robots.ox.ac.uk/~vgg/research/ChimpUFE/">Project
+                Page</a></div>
+        <div class="div_link"><a class="social" href="">Paper (arXiv)</a></div>
+        <div class="div_link"><a class="social" href="https://github.com/v-iashin/ChimpUFE">Code & Models</a></div>
+    </div>
+
+    <!-- Abstract -->
+    <div class="our_framework">
+        <div class="section_name">Abstract</div>
+        <div class="section_content">
+            <p>
+                Camera traps are revolutionising wildlife monitoring by capturing vast amounts of visual data; however,
+                the manual
+                identification of individual animals remains a significant bottleneck. This study introduces a fully
+                self-supervised approach to learning robust <strong>chimpanzee face embeddings</strong> from unlabelled
+                camera-trap footage.
+                Leveraging the <i>DINOv2</i>
+                framework, we train Vision Transformers on automatically mined face crops, eliminating the need for
+                identity labels. Our method demonstrates strong <em>open-set</em> re-identification performance,
+                surpassing supervised baselines on challenging benchmarks such as Bossou, despite utilising no labelled
+                data during training. This work underscores the potential of self-supervised learning in biodiversity
+                monitoring and paves the way for scalable, non-invasive population studies.
+            </p>
+        </div>
+    </div>
+
+    <!-- Overview Figure -->
+    <div class="our_framework">
+        <div class="section_name">Pipeline Overview</div>
+        <div class="section_content">
+            <div class="img background_white_squared" style="border: none; padding: 0em;">
+                <img src="./images/chimp_ufe/method.webp" alt="Pre-training feature extractors contrastivelly across time">
+            </div>
+            <p>
+                Our <strong>Universal Face Embedder</strong> leverages large-scale, unlabelled training data and a
+                self-supervised ViT backbone to learn a retrieval-friendly embedding without identity annotations. A
+                lightweight face detector and optional tracker form a <em>Data Engine</em> that mines high-quality face
+                crops from raw camera-trap videos.
+            </p>
+        </div>
+    </div>
+
+    <!-- Model Design -->
+    <div class="our_framework">
+        <div class="section_name">Model Design</div>
+        <div class="section_content">
+            <p>
+                We train a Vision Transformer (ViT-Small and ViT-Base variants, see <a class="intext" href="https://github.com/v-iashin/ChimpUFE/">code</a> for weights) with the DINOv2 self-distillation
+                objective. The model maps each face crop to a <em>d</em>-dimensional representation. During
+                inference, open-set identification is performed via <em>k</em>-nearest-neighbour search in the embedding
+                space.
+            </p>
+            <ul>
+                <li><b>No identity labels</b> required during training.</li>
+                <li>Embeddings are optimised for cosine-similarity retrieval useful for clustering and search tasks.</li>
+                <li>ViT-Small variant runs at &gt;100 FPS on a single NVIDIA A4000 GPU.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Data Engine -->
+    <div class="our_framework">
+        <div class="section_name">Data Engine</div>
+        <div class="section_content">
+            <p>
+                The Data Engine converts raw camera-trap footage into a large corpus of in-the-wild face crops:
+            </p>
+            <ol>
+                <li><strong>Face Detection:</strong> A task-specific YOLOX model trained on ≈2k annotated frames.</li>
+                <li><strong>Bounding-Box Tracking:</strong> ByteTrack associates detections across frames, lengthening
+                    trajectories, suppressing false positives, and enabling within-video positives and negatives if needed.</li>
+                <li><strong>Quality Filtering:</strong> We filter ~630k high-confidence crops from two in-the-wild camera trap datasets: <a class="intext" href="https://data.bris.ac.uk/data/dataset/1h73erszj3ckn2qjwm4sqmr2wt">PanAf-20K</a> and <a class="intext" href="https://www.tacugama.com/">Loma Mountains</a>.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Datasets -->
+    <div class="our_framework">
+        <div class="section_name">Datasets</div>
+        <div class="section_content">
+            <p>
+                We <strong>train</strong> on two large in-the-wild datasets of chimpanzee faces, including camera trap datasets and an additional wild dataset called Bossou-14, which consists of 335k images for 14 individuals. Identity labels are not used during training.
+            </p>
+
+            <!-- Training Datasets Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Training Dataset</th>
+                        <th># Faces</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PanAf-20K <strong>(P)</strong></td>
+                        <td>314 k</td>
+                    </tr>
+                    <tr>
+                        <td>Loma Mountains <strong>(L)</strong></td>
+                        <td>314 k</td>
+                    </tr>
+                    <tr>
+                        <td>Bossou-14 <strong>(B)</strong></td>
+                        <td>335 k</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                We evaluate our model on two open-set face recognition tasks: <strong>re-identification</strong> (retrieving the correct identity for a query image) and <strong>verification</strong> (determining if two images belong to the same individual).
+                <br>
+            </p>
+
+            <p>
+                Evaluation is performed on two datasets: <strong>Bossou-9</strong> and <strong>PetFaceChimp</strong>. Bossou-9 contains 9 identities that are disjoint from the training set, providing a strict open-set test. PetFaceChimp is collected in a captive environment, unlike our training data, and thus benchmarks the model's generalisation to new domains.
+            </p>
+            <!-- Evaluation Datasets Table -->
+            <table style="margin-top:1.5em;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th colspan="2" style="border-left:0.1em solid black; text-align:center;"><strong>Re-Identification</strong></th>
+                        <th style="border-left:0.1em solid black; text-align:center;"><strong>Verification</strong></th>
+                    </tr>
+                    <tr>
+                        <th><strong>Eval Dataset</strong></th>
+                        <th><strong>IDs</strong></th>
+                        <th class="left_border" style="text-align:center;"><strong>Gallery</strong></th>
+                        <th style="text-align:center;"><strong>Queries</strong></th>
+                        <th class="left_border" style="text-align:center;"><strong>+/–</strong></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bossou-9</td>
+                        <td>9</td>
+                        <td class="left_border" style="text-align:center;">3 150</td>
+                        <td style="text-align:center;">630</td>
+                        <td class="left_border" style="text-align:center;">7 749</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="popup">
+                                <div class="popup_content" style="font-weight: normal;">
+                                    We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
+                                </div>
+                                <a class="popup_link">PetFaceChimp*</a>
+                            </div>
+                        </td>
+                        <td>376</td>
+                        <td class="left_border" style="text-align:center;">2 477</td>
+                        <td style="text-align:center;">376</td>
+                        <td class="left_border" style="text-align:center;">15 205</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div class="our_framework">
+        <div class="section_name">Results</div>
+        <div class="section_content">
+            <p>
+                Our study shows that self-supervised Vision Transformers trained with DINOv2 on chimpanzee face tracks can serve as universal face embedders, surpassing supervised baselines on Bossou and approaching their performance on PetFace, while outperforming all baselines on verification, without requiring identity labels.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th colspan="2" style="text-align:center;"><strong>Re-ID (Accuracy, %)</strong></th>
+                        <th colspan="2" style="text-align:center;"><strong>Verification (AUC-ROC)</strong></th>
+                    </tr>
+                    <tr>
+                        <th><strong>Method</strong></th>
+                        <th><strong>Res.</strong></th>
+                        <th><strong>Params</strong></th>
+                        <th><strong>Bossou-9</strong></th>
+                        <th>
+                            <div class="popup">
+                                <div class="popup_content" style="font-weight: normal;">
+                                    We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
+                                </div>
+                                <a class="popup_link">PetFaceC*</a>
+                            </div>
+                        </th>
+                        <th><strong>Bossou-9</strong></th>
+                        <th>
+                            <div class="popup">
+                                <div class="popup_content" style="font-weight: normal;">
+                                    We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
+                                </div>
+                                <a class="popup_link">PetFaceC*</a>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7" style="text-align: left; font-style: italic;">Supervised baselines</td>
+                    </tr>
+                    <tr>
+                        <td>PetFace-ArcFace</td>
+                        <td>224x</td>
+                        <td>24M</td>
+                        <td>49.6</td>
+                        <td>
+                            <div class="popup">
+                                <div class="popup_content" style="font-weight: normal;">
+                                    PetFace-ArcFace (†) is omitted on PetFaceC* because its public checkpoint was partially trained on these images, causing split contamination.
+                                </div>
+                                <a class="popup_link">&mdash;</a>
+                            </div>
+                        </td>
+                        <td>57.5</td>
+                        <td>
+                            <div class="popup">
+                                <div class="popup_content" style="font-weight: normal;">
+                                    PetFace-ArcFace (†) is omitted on PetFaceC* because its public checkpoint was partially trained on these images, causing split contamination.
+                                </div>
+                                <a class="popup_link">&mdash;</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>MegaDescriptor</td>
+                        <td>384x</td>
+                        <td>229M</td>
+                        <td>51.1</td>
+                        <td>26.2</td>
+                        <td>64.5</td>
+                        <td>71.7</td>
+                    </tr>
+                    <tr>
+                        <td>MiewID-msv3</td>
+                        <td>440x</td>
+                        <td>51M</td>
+                        <td>56.7</td>
+                        <td><strong>49.4</strong></td>
+                        <td>61.5</td>
+                        <td>74.6</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7" style="text-align: left; font-style: italic; padding-top: 1em;">Self-supervised, DINOv2</td>
+                    </tr>
+                    <tr>
+                        <td>Ours (<strong>L+P</strong>)</td>
+                        <td>224x</td>
+                        <td>22M</td>
+                        <td>74.6</td>
+                        <td>35.7</td>
+                        <td>67.6</td>
+                        <td>71.3</td>
+                    </tr>
+                    <tr>
+                        <td>Ours (<strong>L+P+B</strong>)</td>
+                        <td>224x</td>
+                        <td>22M</td>
+                        <td>78.1</td>
+                        <td>39.3</td>
+                        <td>71.8</td>
+                        <td>73.7</td>
+                    </tr>
+                    <tr>
+                        <td>Ours (<strong>L+P+B</strong>)</td>
+                        <td>224x</td>
+                        <td>87M</td>
+                        <td><strong>82.2</strong></td>
+                        <td>45.9</td>
+                        <td><strong>74.2</strong></td>
+                        <td><strong>76.3</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Acknowledgements -->
+    <div class="our_framework">
+        <div class="section_name">Acknowledgements</div>
+        <div class="section_content">
+            <p>
+                This research was funded by EPSRC Programme Grant VisualAI EP/T028572/1. We thank the Guinean
+                authorities (DGERSIT &amp; IREB), T. Matsuzawa, Kyoto University, and contributors to the Bossou
+                dataset, Tacugama Chimpanzee Sanctuary, local authorities, and field staff for access to Loma Mountains
+                camera-trap data and support with data sharing and conservation.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
