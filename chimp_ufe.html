@@ -8,7 +8,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- External stylesheet used by the original template (optional) -->
     <link rel="stylesheet" href="css/style_phd_times.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -184,7 +184,7 @@
 
         b,
         strong {
-            font-weight: 600;
+            font-weight: 700;
         }
 
         div.italic {
@@ -366,16 +366,47 @@
         </div>
     </div>
 
+    <!-- Face Recognition -->
+    <div class="our_framework">
+        <div class="section_name">Chimp Face Recognition</div>
+        <div class="section_content">
+            <p>
+                Face recognition is a crucial tool for studying chimpanzees as it enables researchers to identify and track individual animals over time, facilitating long-term behavioral studies, population monitoring, and conservation efforts. By automating the identification process, it reduces the reliance on manual labeling, saving time and resources while improving accuracy.
+            </p>
+            <p>
+                Face recognition involves several tasks, including <strong>verification</strong>, where the objective is to determine whether two chimpanzee face images belong to the same individual.
+            </p>
+            <div class="img background_white_squared" style="border: none; padding: 0em 0; width: 70%;">
+                <img src="./images/chimp_ufe/verification.jpg" alt="Verification example" style="width: 100%;">
+                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">Is it the same individual or not?</p>
+            </div>
+            <p>
+                Another important task is <strong>re-identification</strong>, which involves matching a chimpanzee face image to a gallery of faces, often across different cameras or time frames.
+            </p>
+            <div class="img background_white_squared" style="border: none; padding: 0em 0;">
+                <img src="./images/chimp_ufe/re_identification.jpg" alt="Re-identification example">
+                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">Which individual from the gallery does this query face belong to?</p>
+            </div>
+            <p>
+                Our approach tackles <strong>open</strong>-set face recognition, which means identifying individuals not seen during training. This is a challenging yet essential aspect for real-world applications, as it ensures scalability and adaptability to new data.
+            </p>
+        </div>
+    </div>
+
     <!-- Camera Traps -->
     <div class="our_framework">
         <div class="section_name">Camera Traps</div>
         <div class="section_content">
-            <div class="img background_white_squared" style="border: none; padding: 1em 0;">
-                <img src="./images/chimp_ufe/camera_trap_details.jpg" alt="Camera trap details showing its size, mounting, and night footage">
-            </div>
+            <p>
+                Several chimpanzee face recognition datasets have been presented, including <a class="intext" href="https://www.robots.ox.ac.uk/~vgg/publications/2019/Schofield19/schofield19.pdf">Bossou</a>, <a class="intext" href="https://dahlian00.github.io/PetFacePage/">PetFace</a>, <a class="intext" href="https://inf-cv.uni-jena.de/home/research/datasets/chimpanzee-faces/">C-Tai, and C-Zoo</a>.
+                However, these datasets are either collected in-captive environments or are relatively small in scale, limiting their utility for training robust models. Instead, we propose to focus on a self-supervised approach to this task and leverage a large-scale, easy-to-collect footage recorded by camera traps in the wild.
+            </p>
             <p>
                 Camera traps are small, motion-triggered devices typically mounted to trees, designed to capture short video clips or images of wildlife in their natural habitat. They operate effectively both during the day and at night, recording up to one-minute clips when motion is detected.
             </p>
+            <div class="img background_white_squared" style="border: none; padding: 1em 0;">
+                <img src="./images/chimp_ufe/camera_trap_details.jpg" alt="Camera trap details showing its size, mounting, and night footage">
+            </div>
             <p>
                 These devices are widely accessible, affordable, and scalable, making them a popular choice for researchers and wildlife enthusiasts alike. Camera traps are extensively used to monitor wildlife populations, study animal behavior, and record in-the-wild interactions without human interference.
             </p>
@@ -386,15 +417,15 @@
     <div class="our_framework">
         <div class="section_name">Pipeline Overview</div>
         <div class="section_content">
-            <div class="img background_white_squared" style="border: none; padding: 0em;">
-                <img src="./images/chimp_ufe/method.webp" alt="Pre-training feature extractors contrastivelly across time">
-            </div>
             <p>
                 Our <strong>Universal Face Embedder</strong> leverages large-scale, unlabelled training data and a
                 self-supervised ViT backbone to learn a retrieval-friendly embedding without identity annotations. A
                 lightweight face detector and optional tracker form a <em>Data Engine</em> that mines high-quality face
                 crops from raw camera-trap videos.
             </p>
+            <div class="img background_white_squared" style="border: none; padding: 1em 0 0 0;">
+                <img src="./images/chimp_ufe/method.webp" alt="Pre-training feature extractors contrastivelly across time">
+            </div>
         </div>
     </div>
 
