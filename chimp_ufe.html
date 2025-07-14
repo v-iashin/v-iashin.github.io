@@ -12,6 +12,28 @@
     <!-- External stylesheet used by the original template (optional) -->
     <link rel="stylesheet" href="css/style_phd_times.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <script>
+        /* Hide any open .popup when the user clicks / taps elsewhere */
+        function closeOpenPopups(event) {
+            // Element that currently has focus (could be <a class="popup_link">)
+            const active = document.activeElement;
+
+            /* If something inside a .popup was tapped, do nothing.
+               Otherwise, remove focus from the trigger so :focus-within ends. */
+            if (
+                active &&                       // there *is* a focused element
+                active.classList.contains('popup_link') &&      // and it’s a trigger
+                !event.target.closest('.popup')                 // but the tap was outside
+            ) {
+                active.blur();                 // clears focus ⇒ CSS rule no longer matches
+            }
+        }
+
+        document.addEventListener('click', closeOpenPopups, false);
+        document.addEventListener('touchstart', closeOpenPopups, false); // mobile
+    </script>
+
     <style>
         .our_framework {
             margin: auto;
@@ -137,7 +159,8 @@
             transform: translateX(-50%);
         }
 
-        .popup:hover .popup_content {
+        .popup:hover .popup_content,
+        .popup:focus-within .popup_content {
             display: block;
         }
 
@@ -200,8 +223,7 @@
 
     <!-- Links -->
     <div class="code_and_links" style="padding-top:1em;">
-        <div class="div_link"><a class="social" href="https://www.robots.ox.ac.uk/~vgg/research/ChimpUFE/">Project Page</a></div>
-        <div class="div_link"><a class="social" href="https://github.com/v-iashin/v-iashin.github.io/raw/refs/heads/master/assets/chimp_ufe.pdf">Paper</a></div>
+        <div class="div_link"><a class="social" href="https://www.robots.ox.ac.uk/~vgg/publications/2025/Iashin25a/iashin25a.pdf">Paper</a></div>
         <div class="div_link"><a class="social" href="https://github.com/v-iashin/ChimpUFE">Code & Models</a></div>
     </div>
 
@@ -257,7 +279,9 @@
         <div class="section_name">Camera Traps for Biodiversity Monitoring</div>
         <div class="section_content">
             <div class="img background_white_squared" style="border: none; padding: 0em 0;">
-                <img src="./images/chimp_ufe/camera_trap_details.jpg" alt="Camera trap details showing its size, mounting, and night footage">
+                <!-- <img src="./images/chimp_ufe/camera_trap_details.jpg" alt="Camera trap details showing its size, mounting, and night footage"> -->
+                <img src="./images/chimp_ufe/camera_trap_on_tree.jpg" alt="Camera trap mounted on a tree" style="width: 41%; border: 2px solid #333; margin-right: 1em;">
+                <img src="./images/chimp_ufe/camera_trap_animation.webp" alt="Sample frame from a camera trap clip" style="width: 53.4%; border: 2px solid #333;">
                 <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">
                     Camera trap mounted on a tree (left) and sample frame from a camera trap clip (right).
                 </p>
@@ -341,7 +365,7 @@
             </ul>
         </div>
     </div>
-
+<!--
     <!-- Data Engine -->
     <div class="our_framework">
         <div class="section_name">Data Engine</div>
@@ -398,7 +422,6 @@
             <p>
                 Evaluation is performed on two datasets: <strong>Bossou-9</strong> and <strong>PetFaceChimp</strong>. Bossou-9 contains 9 identities that are disjoint from the training set, providing a strict open-set test. PetFaceChimp is collected in a captive environment, unlike our training data, and thus benchmarks the model's generalisation to new domains.
             </p>
-            <!-- Evaluation Datasets Table -->
             <table style="margin-top:1.5em;">
                 <thead>
                     <tr>
@@ -429,7 +452,7 @@
                                 <div class="popup_content" style="font-weight: normal;">
                                     We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
                                 </div>
-                                <a class="popup_link">PetFaceChimp*</a>
+                                <a class="popup_link"  tabindex="0">PetFaceChimp*</a>
                             </div>
                         </td>
                         <td>376</td>
@@ -468,7 +491,7 @@
                                 <div class="popup_content" style="font-weight: normal;">
                                     We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
                                 </div>
-                                <a class="popup_link">PetFaceC*</a>
+                                <a class="popup_link"  tabindex="0">PetFaceC*</a>
                             </div>
                         </th>
                         <th><strong>Bossou-9</strong></th>
@@ -477,7 +500,7 @@
                                 <div class="popup_content" style="font-weight: normal;">
                                     We took the chimpanzee subset of the PetFace dataset, filtered it for near-duplicates, and re-split it for re-identification and verification tasks.
                                 </div>
-                                <a class="popup_link">PetFaceC*</a>
+                                <a class="popup_link"  tabindex="0">PetFaceC*</a>
                             </div>
                         </th>
                     </tr>
@@ -485,29 +508,6 @@
                 <tbody>
                     <tr>
                         <td colspan="7" style="text-align: left; font-style: italic;">Supervised baselines</td>
-                    </tr>
-                    <tr>
-                        <td>PetFace-ArcFace</td>
-                        <td>224x</td>
-                        <td>24M</td>
-                        <td>49.6</td>
-                        <td>
-                            <div class="popup">
-                                <div class="popup_content" style="font-weight: normal;">
-                                    PetFace-ArcFace is omitted on PetFaceC* because its public checkpoint was partially trained on these images, causing split contamination.
-                                </div>
-                                <a class="popup_link">&mdash;</a>
-                            </div>
-                        </td>
-                        <td>57.5</td>
-                        <td>
-                            <div class="popup">
-                                <div class="popup_content" style="font-weight: normal;">
-                                    PetFace-ArcFace is omitted on PetFaceC* because its public checkpoint was partially trained on these images, causing split contamination.
-                                </div>
-                                <a class="popup_link">&mdash;</a>
-                            </div>
-                        </td>
                     </tr>
                     <tr>
                         <td>MegaDescriptor</td>
@@ -531,16 +531,7 @@
                         <td colspan="7" style="text-align: left; font-style: italic; padding-top: 1em;">Self-supervised</td>
                     </tr>
                     <tr>
-                        <td>Ours (<strong>L+P</strong>)</td>
-                        <td>224x</td>
-                        <td>22M</td>
-                        <td>74.6</td>
-                        <td>35.7</td>
-                        <td>67.6</td>
-                        <td>71.3</td>
-                    </tr>
-                    <tr>
-                        <td>Ours (<strong>L+P+B</strong>)</td>
+                        <td>Ours </td>
                         <td>224x</td>
                         <td>22M</td>
                         <td>78.1</td>
@@ -549,7 +540,7 @@
                         <td>73.7</td>
                     </tr>
                     <tr>
-                        <td>Ours (<strong>L+P+B</strong>)</td>
+                        <td>Ours </td>
                         <td>224x</td>
                         <td>87M</td>
                         <td><strong>82.2</strong></td>
@@ -568,9 +559,12 @@
         <div class="section_name">Acknowledgements</div>
         <div class="section_content">
             <p>
-                This research was funded by EPSRC Programme Grant VisualAI EP/T028572/1. We thank the Guinean
-                authorities (DGERSIT &amp; IREB), T. Matsuzawa, Kyoto University, and contributors to the Bossou
-                dataset, Tacugama Chimpanzee Sanctuary, local authorities, and field staff for access to Loma Mountains
+                This research was funded by EPSRC Programme Grant
+                <a class="intext" href="https://www.robots.ox.ac.uk/~vgg/projects/visualai/">VisualAI</a>
+                EP/T028572/1. We thank the Guinean
+                authorities (DGERSIT &amp; IREB), Tetsuro Matsuzawa, Kyoto University, and contributors to the Bossou
+                dataset, <a class="intext" href="https://www.tacugama.com/">Tacugama Chimpanzee Sanctuary (TCS)</a>, local authorities,
+                and field staff for access to Loma Mountains National Park
                 camera-trap data and support with data sharing and conservation.
             </p>
         </div>
