@@ -32,6 +32,14 @@
 
         document.addEventListener('click', closeOpenPopups, false);
         document.addEventListener('touchstart', closeOpenPopups, false); // mobile
+
+        function revealAnswer(button) {
+            button.style.display = 'none';
+            const answer = button.nextElementSibling;
+            if (answer) {
+                answer.style.display = 'inline';
+            }
+        }
     </script>
 
     <style>
@@ -188,6 +196,26 @@
             font-size: 1em;
             line-height: 1.8em;
         }
+
+        .reveal-btn {
+            font-size: 1em;
+            padding: 0.2em 0.8em;
+            border: 1px solid #888;
+            border-radius: 0.4em;
+            background: #f5f5f5;
+            color: #222;
+            cursor: pointer;
+            transition: background 0.2s, border 0.2s;
+            outline: none;
+            margin-left: 0.5em;
+            vertical-align: middle;
+        }
+
+        .reveal-btn:hover,
+        .reveal-btn:focus {
+            background: #e0e0e0;
+            border-color: #333;
+        }
     </style>
 
 </head>
@@ -259,14 +287,22 @@
             </p>
             <div class="img background_white_squared" style="border: none; padding: 0em 0; width: 70%;">
                 <img src="./images/chimp_ufe/verification.jpg" alt="Verification example" style="width: 100%;">
-                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">Is it the same individual or not?</p>
+                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">
+                    Is it the same individual or not?
+                    <button class="reveal-btn" onclick="revealAnswer(this)">Show Answer</button>
+                    <span style="display: none; margin-left: 0.5em; font-style: italic; font-weight: bold;">Yes</span>
+                </p>
             </div>
             <p>
                 Another important task is <strong>re-identification</strong>, which involves matching a chimpanzee face image to a gallery of faces, often across different cameras or time frames.
             </p>
             <div class="img background_white_squared" style="border: none; padding: 0em 0;">
                 <img src="./images/chimp_ufe/re_identification.jpg" alt="Re-identification example">
-                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">Which individual from the gallery does this query face belong to?</p>
+                <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">
+                    Which individual from the gallery does this query face belong to?
+                    <button class="reveal-btn" onclick="revealAnswer(this)">Show Answer</button>
+                    <span style="display: none; margin-left: 0.5em; font-style: italic; font-weight: bold;">Group 1</span>
+                </p>
             </div>
             <p>
                 Our approach tackles <strong>open</strong>-set face recognition, which means identifying individuals not seen during training. This is a challenging yet essential aspect for real-world applications, as it ensures scalability and adaptability to new data.
@@ -539,17 +575,24 @@
         <div class="section_name">Qualitative Examples</div>
         <div class="section_content">
             <p>
-                Below we show random qualitative samples of our face recognition model in action. Each row displays an anchor image
-                (middle, <b>anchor</b>), a <b style="color: #66CC00;">positive</b> sample (left, same individual), and a <b
+                Below we show random qualitative samples of our face recognition model in action. Each row displays a <b>reference</b> image
+                (middle), a <b style="color: #66CC00;">positive</b> sample (left, same individual as the reference), and a <b
                     style="color: #EA6B66;">negative</b> sample (right, different individual). The cosine
-                similarity scores between the anchor and each sample are shown below the images.
+                similarity scores between the reference and each sample are shown below the images.
             </p>
             <div class="img background_white_squared" style="border: none; padding: 0em 0 0 0; text-align: center;">
                 <img src="./images/chimp_ufe/verification_samples.jpg" alt="Qualitative verification samples" style="width: 80%; max-width: 700px;">
                 <p style="text-align: center; font-style: italic; margin-top: 0.5em; padding: 0em;">
-                    Example rows: anchor (middle), positive (left), negative (right), with cosine similarity scores.
+                    Example rows: reference (middle), positive (left), negative (right), with cosine similarity scores.
                 </p>
             </div>
+            <p>
+                In all cases the similarity scores to the
+                <b style="color: #66CC00;">positive</b>
+                are larger than those to the
+                <b style="color: #EA6B66;">negative</b>,
+                indicating a correct ranking.
+            </p>
         </div>
     </div>
 
