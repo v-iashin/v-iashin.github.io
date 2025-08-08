@@ -8,53 +8,96 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏼‍💻</text></svg>">
     <meta name="description" content="Vladimir Iashin's personal website">
     <title> Vladimir Iashin </title>
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
   </head>
 
   <style>
-    body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 18px;
-      line-height: 1.5;
-      margin: 0 auto;
-      max-width: 80ex;
-      padding: 0 20px 2em;
-      background-color: #ffffff;
-      color: #222222;
-    }
-    /* links */
-    a {
-      color: #0077ff;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-    a:hover {
-      color: #0055ff;
-      text-decoration: underline;
-    }
-    a:active {
-      color: #0000ff;
-    }
-    /* headers */
-    h1, h2 {
-      line-height: 1.2;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    h2 {
-      font-size: 2em;
-    }
-    h3 {
-      font-size: 1.5em;
-    }
-    /* paragraphs */
-    p {
-      margin-top: 1.5em;
-      margin-bottom: 1.5em;
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937; /* slate-800 */
+      --muted: #6b7280; /* gray-500 */
+      --link: #2563eb; /* blue-600 */
+      --link-hover: #1d4ed8; /* blue-700 */
+      --border: #e5e7eb; /* gray-200 */
     }
 
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f19; /* near-navy */
+        --text: #e5e7eb; /* gray-200 */
+        --muted: #9aa4b2; /* slate-400 */
+        --link: #93c5fd; /* blue-300 */
+        --link-hover: #bfdbfe; /* blue-200 */
+        --border: #1f2937; /* slate-800 */
+      }
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 0 auto;
+      max-width: 70ch;
+      padding: 2.5rem 20px 3rem;
+      background-color: var(--bg);
+      color: var(--text);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* headers */
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin-top: 1.75em;
+      margin-bottom: 0.5em;
+      letter-spacing: -0.01em;
+    }
+    h1 { font-size: clamp(2rem, 1.5rem + 1.5vw, 2.5rem); }
+    h2 { font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem); }
+    h3 { font-size: 1.25rem; }
+
+    /* paragraphs */
+    p {
+      margin: 1.1em 0;
+    }
+
+    /* links */
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-decoration-color: color-mix(in oklab, var(--link) 35%, transparent);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    }
+    a:hover {
+      color: var(--link-hover);
+      text-decoration-color: var(--link-hover);
+    }
+    a:active { color: var(--link-hover); }
+    a:focus-visible {
+      outline: 2px solid color-mix(in oklab, var(--link) 50%, transparent);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+
+    ::selection {
+      background: color-mix(in oklab, var(--link) 25%, transparent);
+    }
+
+    /* Slightly mute the phonetic hint under the name */
+    h1 span {
+      color: var(--muted) !important;
+    }
+
+    /* Gentle spacing after section headings */
+    h2 + p { margin-top: 0.75em; }
   </style>
 
   <body>
